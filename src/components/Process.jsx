@@ -28,40 +28,40 @@ const Process = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ProcessStep 
+          <ProcessStep
             number="1"
-            title="Discovery"
-            description="We begin by understanding your business, goals, and requirements to create a tailored strategy."
+            title="Discovery &amp; Strategy"
+            description="Understand your goals and craft an effective roadmap."
           />
-          
-          <ProcessStep 
+
+          <ProcessStep
             number="2"
-            title="Planning"
-            description="Our team creates detailed project plans, wireframes, and prototypes for your approval."
+            title="Design &amp; Prototype"
+            description="Visualize solutions with wireframes and prototypes."
           />
-          
-          <ProcessStep 
+
+          <ProcessStep
             number="3"
-            title="Development"
-            description="We bring your project to life using cutting-edge technologies and best practices."
+            title="Iterative Development"
+            description="Build features in cycles for constant improvement."
           />
-          
-          <ProcessStep 
+
+          <ProcessStep
             number="4"
-            title="Testing"
-            description="Rigorous quality assurance to ensure your solution works flawlessly across all devices."
+            title="Quality Assurance"
+            description="Test rigorously to ensure a reliable product."
           />
-          
-          <ProcessStep 
+
+          <ProcessStep
             number="5"
-            title="Launch"
-            description="We deploy your solution and ensure a smooth transition to the live environment."
+            title="Launch &amp; Scale"
+            description="Deploy seamlessly and prepare for growth."
           />
-          
-          <ProcessStep 
+
+          <ProcessStep
             number="6"
-            title="Support"
-            description="Ongoing maintenance and support to keep your digital solution performing at its best."
+            title="Ongoing Partnership"
+            description="Continuous support and enhancements for success."
           />
         </div>
         
