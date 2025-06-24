@@ -4,7 +4,7 @@ import './index.css';
 import { Routes, Route } from 'react-router-dom'; // Notice no BrowserRouter here
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import ProcessPage from './pages/ProcessPage';
 import PortfolioPage from './pages/PortfolioPage';
@@ -15,7 +15,7 @@ function App() {
     <div className="font-sans">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
@@ -27,4 +27,3 @@ function App() {
 }
 
 export default App;
-
