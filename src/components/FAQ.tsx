@@ -109,7 +109,7 @@ const FAQ = ({}: FAQProps) => {
         
         <div className="text-center mt-12">
           <p className="text-dark-gray mb-6 font-inter">
-            Can't find what you're looking for? We're here to help!
+            Can&apos;t find what you&apos;re looking for? We&apos;re here to help!
           </p>
           <a 
             href="/contact" 
