@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const ProcessStep = ({ number, title, description }) => {
   return (
@@ -67,7 +67,7 @@ const Process = () => {
         
         <div className="text-center mt-16">
           <Link 
-            to="/contact" 
+            href="/contact" 
             className="inline-block btn-primary"
           >
             Start Your Project

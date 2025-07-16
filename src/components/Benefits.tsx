@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Benefits = () => {
   return (
@@ -23,7 +23,7 @@ const Benefits = () => {
               on time and within budget.
             </p>
             <Link 
-              to="/services" 
+              href="/services" 
               className="inline-block btn-primary"
             >
               Explore Our Services

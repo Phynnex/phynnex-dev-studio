@@ -1,6 +1,6 @@
 // components/CTA.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const CTA = () => {
   return (
@@ -14,7 +14,7 @@ const CTA = () => {
           Get in touch with our team to discuss your project.
         </p>
         <Link 
-          to="/contact" 
+          href="/contact" 
           className="inline-block btn-primary"
         >
           Contact Us Now
