@@ -159,7 +159,7 @@ const Contact = ({}: ContactProps) => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="5"
+                rows={5}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple focus:border-transparent"
                 required
               ></textarea>
