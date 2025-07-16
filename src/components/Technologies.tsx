@@ -1,7 +1,10 @@
 // components/Technologies.jsx
 import React from 'react';
 
-const TechnologyItem = ({ name }) => {
+interface TechnologyItemProps {
+  name: string;
+}
+const TechnologyItem = ({ name }: TechnologyItemProps) => {
   return (
     <div className="bg-white rounded-lg shadow-sm p-4 flex items-center justify-center hover:shadow-md transition-all duration-300 border border-light-purple border-opacity-20">
       <span className="text-dark-gray font-medium font-inter">{name}</span>
@@ -9,7 +12,12 @@ const TechnologyItem = ({ name }) => {
   );
 };
 
-const TechnologyCategory = ({ title, technologies }) => {
+interface TechnologyCategoryProps {
+  title: string;
+  technologies: string[];
+}
+
+const TechnologyCategory = ({ title, technologies }: TechnologyCategoryProps) => {
   return (
     <div className="mb-10">
       <h3 className="text-xl font-semibold mb-6 text-deep-blue font-montserrat">{title}</h3>
@@ -22,7 +30,9 @@ const TechnologyCategory = ({ title, technologies }) => {
   );
 };
 
-const Technologies = () => {
+interface TechnologiesProps {}
+
+const Technologies = ({}: TechnologiesProps) => {
   const frontendTechnologies = [
     "React", 
     "JavaScript", 

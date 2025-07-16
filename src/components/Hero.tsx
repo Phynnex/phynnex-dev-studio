@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Hero = () => {
+interface HeroProps {}
+const Hero = ({}: HeroProps) => {
   return (
     <section className="bg-off-white pt-20 pb-20 ">
       <div className="px-12">

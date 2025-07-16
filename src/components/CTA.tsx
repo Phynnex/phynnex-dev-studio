@@ -2,7 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 
-const CTA = () => {
+interface CTAProps {}
+const CTA = ({}: CTAProps) => {
   return (
     <section className="py-20 bg-deep-blue text-white">
       <div className="container mx-auto max-w-7xl px-4 text-center">
