@@ -113,7 +113,7 @@ const Team = ({}: TeamProps) => {
         <div className="mt-16 text-center bg-white p-8 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold text-deep-blue mb-4 font-montserrat">Join Our Team</h3>
           <p className="text-dark-gray mb-6 font-inter">
-            We're always looking for talented individuals who are passionate about creating amazing digital experiences.
+            We&apos;re always looking for talented individuals who are passionate about creating amazing digital experiences.
           </p>
           <a 
             href="/careers" 

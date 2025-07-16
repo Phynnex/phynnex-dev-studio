@@ -79,7 +79,7 @@ const Process = ({}: ProcessProps) => {
           >
             Start Your Project
           </Link>
-          <p className="mt-4 text-dark-gray font-inter">No commitment consultation – Let's discuss your vision</p>
+          <p className="mt-4 text-dark-gray font-inter">No commitment consultation – Let&apos;s discuss your vision</p>
         </div>
       </div>
     </section>

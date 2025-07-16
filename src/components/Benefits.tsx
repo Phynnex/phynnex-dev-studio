@@ -12,10 +12,10 @@ const Benefits = ({}: BenefitsProps) => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-deep-blue font-montserrat">
               Discover the Benefits of Partnering with Our Expert Team
             </h2>
-            <p className="text-dark-gray mb-4 font-inter">
-              When you choose our agency, you're not just getting a service provider – you're gaining a strategic partner 
-              committed to your success.
-            </p>
+              <p className="text-dark-gray mb-4 font-inter">
+                When you choose our agency, you&apos;re not just getting a service provider – you&apos;re gaining a strategic partner
+                committed to your success.
+              </p>
             <p className="text-dark-gray mb-4 font-inter">
               Our team of experienced professionals brings a wealth of knowledge across various industries, ensuring that 
               your digital solutions are not only beautiful but also effective at achieving your business goals.
