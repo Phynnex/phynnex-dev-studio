@@ -31,7 +31,7 @@ npm start
 
 ## Email configuration
 
-Create a `.env.local` file in the project root and provide the following variables so the `/api/contact` endpoint can send mail using Nodemailer:
+Copy `.env.example` to `.env.local` in the project root and provide the following variables so the `/api/contact` endpoint can send mail using Nodemailer:
 
 ```
 EMAIL_HOST=
