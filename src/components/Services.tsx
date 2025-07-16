@@ -1,6 +1,11 @@
 import React from 'react';
 
-const ServiceCard = ({ title, description, icon }) => {
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}
+const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
   return (
     <div className="bg-white p-8 rounded-lg text-center transform transition-transform hover:-translate-y-2 hover:shadow-xl">
       <div className="w-16 h-16 bg-light-purple bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -12,7 +17,9 @@ const ServiceCard = ({ title, description, icon }) => {
   );
 };
 
-const Services = () => {
+interface ServicesProps {}
+
+const Services = ({}: ServicesProps) => {
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container-custom">

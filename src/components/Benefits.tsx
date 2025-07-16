@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
-const Benefits = () => {
+interface BenefitsProps {}
+
+const Benefits = ({}: BenefitsProps) => {
   return (
     <section className="py-20 bg-off-white">
       <div className="container mx-auto max-w-7xl px-4">
@@ -23,7 +25,7 @@ const Benefits = () => {
               on time and within budget.
             </p>
             <Link 
-              to="/services" 
+              href="/services" 
               className="inline-block btn-primary"
             >
               Explore Our Services

@@ -1,7 +1,13 @@
-// components/Contact.jsx
+// components/Contact.tsx
 import React, { useState } from 'react';
 
-const ContactMethod = ({ icon, title, text }) => {
+interface ContactMethodProps {
+  icon: React.ReactNode;
+  title: string;
+  text: React.ReactNode;
+}
+
+const ContactMethod = ({ icon, title, text }: ContactMethodProps) => {
   return (
     <div className="text-center mb-8 md:mb-0">
       <div className="w-14 h-14 bg-perfume bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -13,15 +19,20 @@ const ContactMethod = ({ icon, title, text }) => {
   );
 };
 
-const Contact = () => {
+interface ContactProps {}
+
+const Contact = ({}: ContactProps) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
@@ -29,19 +40,23 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
-    // Show success message or redirect
-    alert('Thank you for your message! We will get back to you soon.');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -157,6 +172,12 @@ const Contact = () => {
               >
                 Send Message
               </button>
+              {status === 'success' && (
+                <p className="mt-4 text-green-600">Message sent successfully.</p>
+              )}
+              {status === 'error' && (
+                <p className="mt-4 text-red-600">Failed to send message.</p>
+              )}
             </div>
           </form>
         </div>

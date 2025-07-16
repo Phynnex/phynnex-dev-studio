@@ -1,7 +1,20 @@
-// components/Team.jsx
+// components/Team.tsx
 import React from 'react';
 
-const TeamMember = ({ name, role, bio, image, socialLinks }) => {
+interface SocialLink {
+  platform: string;
+  url: string;
+  icon: React.ReactNode;
+}
+
+interface TeamMemberProps {
+  name: string;
+  role: string;
+  bio: string;
+  image?: string;
+  socialLinks?: SocialLink[];
+}
+const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
       <div className="h-64 bg-light-purple bg-opacity-10 relative">
@@ -37,7 +50,9 @@ const TeamMember = ({ name, role, bio, image, socialLinks }) => {
   );
 };
 
-const Team = () => {
+interface TeamProps {}
+
+const Team = ({}: TeamProps) => {
   const teamMembers = [
     {
       id: 1,

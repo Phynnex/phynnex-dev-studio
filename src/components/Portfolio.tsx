@@ -1,7 +1,14 @@
-// components/Portfolio.jsx
+// components/Portfolio.tsx
 import React, { useState } from 'react';
 
-const ProjectCard = ({ title, category, description, image, tags }) => {
+interface ProjectCardProps {
+  title: string;
+  category: string;
+  description: string;
+  image?: string;
+  tags: string[];
+}
+const ProjectCard = ({ title, category, description, image, tags }: ProjectCardProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
       <div className="h-56 bg-light-purple bg-opacity-20 relative">
@@ -34,7 +41,9 @@ const ProjectCard = ({ title, category, description, image, tags }) => {
   );
 };
 
-const Portfolio = () => {
+interface PortfolioProps {}
+
+const Portfolio = ({}: PortfolioProps) => {
   const [filter, setFilter] = useState('all');
   
   const projects = [

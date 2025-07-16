@@ -1,15 +1,16 @@
-// components/Footer.jsx
+// components/Footer.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
-const Footer = () => {
+interface FooterProps {}
+const Footer = ({}: FooterProps) => {
   return (
     <footer className="bg-off-white py-10 border-t border-gray-100">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="flex flex-col items-center mb-10">
           {/* Logo */}
           <div className="mb-8">
-            <Link to="/" className="text-2xl font-bold text-primary-purple font-montserrat">
+            <Link href="/" className="text-2xl font-bold text-primary-purple font-montserrat">
               Phynnex Dev Studio
             </Link>
           </div>
@@ -18,27 +19,27 @@ const Footer = () => {
           <nav className="w-full flex justify-center">
             <ul className="flex flex-wrap justify-center gap-5 md:gap-8">
               <li>
-                <Link to="/services" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
+                <Link href="/services" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link to="/process" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
+                <Link href="/process" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
                   Get Started
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
+                <Link href="/contact" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
+                <Link href="/about" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/support" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
+                <Link href="/support" className="text-sm text-dark-gray hover:text-primary-purple transition-colors font-inter">
                   Support Center
                 </Link>
               </li>
@@ -52,13 +53,13 @@ const Footer = () => {
             &copy; 2025 Phynnex Dev Studio. All rights reserved.
           </div>
           <div className="flex gap-5">
-            <Link to="/privacy" className="text-dark-gray hover:text-primary-purple transition-colors font-inter">
+            <Link href="/privacy" className="text-dark-gray hover:text-primary-purple transition-colors font-inter">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-dark-gray hover:text-primary-purple transition-colors font-inter">
+            <Link href="/terms" className="text-dark-gray hover:text-primary-purple transition-colors font-inter">
               Terms of Service
             </Link>
-            <Link to="/cookies" className="text-dark-gray hover:text-primary-purple transition-colors font-inter">
+            <Link href="/cookies" className="text-dark-gray hover:text-primary-purple transition-colors font-inter">
               Cookies Settings
             </Link>
           </div>

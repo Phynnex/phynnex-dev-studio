@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
-const Hero = () => {
+interface HeroProps {}
+const Hero = ({}: HeroProps) => {
   return (
     <section className="bg-off-white pt-20 pb-20 ">
       <div className="px-12">
@@ -14,10 +15,7 @@ const Hero = () => {
               We help businesses grow by leveraging cutting-edge technology and creative strategies. 
               Our team of experts will bring your vision to life.
             </p>
-            <Link 
-              to="/contact" 
-              className="btn-primary inline-block"
-            >
+            <Link href="/contact" className="btn-primary inline-block">
               Get Started
             </Link>
           </div>

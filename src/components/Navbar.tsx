@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Full from '../assets/images/New.png';
 
-const Navbar = () => {
+interface NavbarProps {}
+
+const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -11,19 +13,19 @@ const Navbar = () => {
         <div className="w-full flex items-center justify-between">
           <div className='w-2/5 flex items-center justify-between'>
             {/* Logo */}
-            <Link to="/" className="text-2xl font-bold italic text-deep-blue">
+            <Link href="/" className="text-2xl font-bold italic text-deep-blue">
               <img src={Full} alt="Logo" className='w-20 h-14' />
             </Link>
             
             {/* Navigation Links - Desktop */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="font-inter text-deep-blue hover:text-primary-purple transition-colors">
+              <Link href="/" className="font-inter text-deep-blue hover:text-primary-purple transition-colors">
                 Home Page
               </Link>
-              <Link to="/about" className="font-inter text-deep-blue hover:text-primary-purple transition-colors">
+              <Link href="/about" className="font-inter text-deep-blue hover:text-primary-purple transition-colors">
                 About Us
               </Link>
-              <Link to="/services" className="font-inter text-deep-blue hover:text-primary-purple transition-colors">
+              <Link href="/services" className="font-inter text-deep-blue hover:text-primary-purple transition-colors">
                 Services
               </Link>
               <div className="relative group">
@@ -46,21 +48,21 @@ const Navbar = () => {
                 {isOpen && (
                   <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-10">
                     <Link 
-                      to="/portfolio" 
+                      href="/portfolio" 
                       className="block px-4 py-2 text-deep-blue hover:bg-off-white hover:text-primary-purple"
                       onClick={() => setIsOpen(false)}
                     >
                       Portfolio
                     </Link>
                     <Link 
-                      to="/process" 
+                      href="/process" 
                       className="block px-4 py-2 text-deep-blue hover:bg-off-white hover:text-primary-purple"
                       onClick={() => setIsOpen(false)}
                     >
                       Our Process
                     </Link>
                     <Link 
-                      to="/contact" 
+                      href="/contact" 
                       className="block px-4 py-2 text-deep-blue hover:bg-off-white hover:text-primary-purple"
                       onClick={() => setIsOpen(false)}
                     >
@@ -76,13 +78,13 @@ const Navbar = () => {
           <div className='w-2/5 flex justify-end'>
             <div className="hidden md:flex items-center space-x-4">
               <Link 
-                to="/join" 
+                href="/join" 
                 className="px-4 py-2 border border-primary-purple text-deep-blue hover:bg-off-white transition-colors font-inter rounded-md"
               >
                 Join
               </Link>
               <Link 
-                to="/learn" 
+                href="/learn" 
                 className="px-4 py-2 bg-primary-purple text-white hover:bg-opacity-90 transition-colors font-inter rounded-md"
               >
                 Learn
@@ -108,21 +110,21 @@ const Navbar = () => {
           <div className="md:hidden pt-4 pb-2 border-t mt-4">
             <nav className="flex flex-col space-y-3">
               <Link 
-                to="/" 
+                href="/" 
                 className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Home Page
               </Link>
               <Link 
-                to="/about" 
+                href="/about" 
                 className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 About Us
               </Link>
               <Link 
-                to="/services" 
+                href="/services" 
                 className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -145,21 +147,21 @@ const Navbar = () => {
               </button>
               <div className="pl-4 flex flex-col space-y-2">
                 <Link 
-                  to="/portfolio" 
+                  href="/portfolio" 
                   className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Portfolio
                 </Link>
                 <Link 
-                  to="/process" 
+                  href="/process" 
                   className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Our Process
                 </Link>
                 <Link 
-                  to="/contact" 
+                  href="/contact" 
                   className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
@@ -170,14 +172,14 @@ const Navbar = () => {
               {/* Mobile CTA Buttons */}
               <div className="flex space-x-4 pt-2">
                 <Link 
-                  to="/join" 
+                  href="/join" 
                   className="px-4 py-2 border border-primary-purple text-deep-blue hover:bg-off-white transition-colors text-center font-inter"
                   onClick={() => setIsOpen(false)}
                 >
                   Join
                 </Link>
                 <Link 
-                  to="/learn" 
+                  href="/learn" 
                   className="px-4 py-2 bg-primary-purple text-white hover:bg-opacity-90 transition-colors text-center font-inter"
                   onClick={() => setIsOpen(false)}
                 >

@@ -1,8 +1,9 @@
-// components/CTA.jsx
+// components/CTA.tsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
-const CTA = () => {
+interface CTAProps {}
+const CTA = ({}: CTAProps) => {
   return (
     <section className="py-20 bg-deep-blue text-white">
       <div className="container mx-auto max-w-7xl px-4 text-center">
@@ -14,7 +15,7 @@ const CTA = () => {
           Get in touch with our team to discuss your project.
         </p>
         <Link 
-          to="/contact" 
+          href="/contact" 
           className="inline-block btn-primary"
         >
           Contact Us Now

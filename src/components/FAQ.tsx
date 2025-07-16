@@ -1,7 +1,13 @@
-// components/FAQ.jsx
+// components/FAQ.tsx
 import React, { useState } from 'react';
 
-const FAQItem = ({ question, answer, isOpen, toggleOpen }) => {
+interface FAQItemProps {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  toggleOpen: () => void;
+}
+const FAQItem = ({ question, answer, isOpen, toggleOpen }: FAQItemProps) => {
   return (
     <div className="mb-4 border border-light-purple border-opacity-20 rounded-lg overflow-hidden">
       <button
@@ -32,7 +38,9 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen }) => {
   );
 };
 
-const FAQ = () => {
+interface FAQProps {}
+
+const FAQ = ({}: FAQProps) => {
   const [openItem, setOpenItem] = useState(0);
 
   const faqItems = [
