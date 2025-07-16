@@ -1,5 +1,6 @@
 // components/Portfolio.tsx
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 interface ProjectCardProps {
   title: string;
@@ -180,12 +181,12 @@ const Portfolio = ({}: PortfolioProps) => {
           <p className="text-dark-gray mb-6 font-inter">
             Interested in seeing how we can bring your project to life?
           </p>
-          <a 
-            href="/contact" 
+          <Link
+            href="/contact"
             className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-deep-blue transition-colors shadow-md font-montserrat"
           >
             Discuss Your Project
-          </a>
+          </Link>
         </div>
       </div>
     </section>
