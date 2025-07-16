@@ -1,10 +1,19 @@
 import React from 'react';
+import Head from 'next/head';
 import Services from '../components/Services';
 import CTA from '../components/CTA';
 
 const ServicesPage = () => {
   return (
-    <main className="pt-20">
+    <>
+      <Head>
+        <title>Phynnex Dev Studio - Services</title>
+        <meta
+          name="description"
+          content="Comprehensive digital solutions tailored to your business needs."
+        />
+      </Head>
+      <main className="pt-20">
       <div className="bg-whisper py-16">
         <div className="container mx-auto max-w-7xl px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-creole">Our Services</h1>
@@ -16,6 +25,7 @@ const ServicesPage = () => {
       <Services />
       <CTA />
     </main>
+    </>
   );
 };
 

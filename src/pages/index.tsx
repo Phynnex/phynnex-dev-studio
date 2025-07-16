@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Process from "../components/Process";
@@ -12,8 +13,16 @@ import Faq from "../components/FAQ";
 
 const HomePage = () => {
   return (
-    <main>
-      <Hero />
+    <>
+      <Head>
+        <title>Phynnex Dev Studio - Home</title>
+        <meta
+          name="description"
+          content="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
+        />
+      </Head>
+      <main>
+        <Hero />
       <Services />
       <Process />
       <Technologies />
@@ -22,8 +31,9 @@ const HomePage = () => {
       <Team/>
       <Faq />
       <CTA />
-      <Contact />
-    </main>
+        <Contact />
+      </main>
+    </>
   );
 };
 

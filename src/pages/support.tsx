@@ -1,8 +1,17 @@
 import React from 'react';
+import Head from 'next/head';
 
 const SupportPage = () => {
   return (
-    <main className="pt-20">
+    <>
+      <Head>
+        <title>Phynnex Dev Studio - Support</title>
+        <meta
+          name="description"
+          content="Need help? Reach out to the Phynnex Dev Studio support center."
+        />
+      </Head>
+      <main className="pt-20">
       <div className="bg-whisper py-16">
         <div className="container mx-auto max-w-7xl px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-creole">Support Center</h1>
@@ -12,6 +21,7 @@ const SupportPage = () => {
         </div>
       </div>
     </main>
+    </>
   );
 };
 
