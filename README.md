@@ -22,6 +22,12 @@ npm run dev
 npm run lint
 ```
 
+4. Run tests
+
+```bash
+npm test
+```
+
 ## Building for production
 
 ```bash
