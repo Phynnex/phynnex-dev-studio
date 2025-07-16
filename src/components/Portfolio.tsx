@@ -1,6 +1,7 @@
 // components/Portfolio.tsx
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProjectCardProps {
   title: string;
@@ -13,10 +14,12 @@ const ProjectCard = ({ title, category, description, image, tags }: ProjectCardP
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
       <div className="h-56 bg-light-purple bg-opacity-20 relative">
-        <img 
-          src={image || "/api/placeholder/400/300"} 
-          alt={title} 
+        <Image
+          src={image || "/api/placeholder/400/300"}
+          alt={title}
           className="w-full h-full object-cover"
+          width={400}
+          height={300}
         />
       </div>
       <div className="p-6">

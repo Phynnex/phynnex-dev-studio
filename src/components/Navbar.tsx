@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Full from '../assets/images/New.png';
 
 interface NavbarProps {}
@@ -14,7 +15,7 @@ const Navbar = ({}: NavbarProps) => {
           <div className='w-2/5 flex items-center justify-between'>
             {/* Logo */}
             <Link href="/" className="text-2xl font-bold italic text-deep-blue">
-              <img src={Full} alt="Logo" className='w-20 h-14' />
+              <Image src={Full} alt="Logo" className='w-20 h-14' width={80} height={56} />
             </Link>
             
             {/* Navigation Links - Desktop */}

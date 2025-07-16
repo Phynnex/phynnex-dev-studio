@@ -1,5 +1,6 @@
 // components/Team.tsx
 import React from 'react';
+import Image from 'next/image';
 
 interface SocialLink {
   platform: string;
@@ -18,10 +19,12 @@ const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) =>
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
       <div className="h-64 bg-light-purple bg-opacity-10 relative">
-        <img 
-          src={image || "/api/placeholder/400/400"} 
-          alt={name} 
+        <Image
+          src={image || "/api/placeholder/400/400"}
+          alt={name}
           className="w-full h-full object-cover"
+          width={400}
+          height={400}
         />
       </div>
       <div className="p-6">
