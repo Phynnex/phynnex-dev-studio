@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Full from '../assets/images/New.png';
 
-const Navbar = () => {
+interface NavbarProps {}
+
+const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

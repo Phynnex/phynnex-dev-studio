@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Benefits = () => {
+interface BenefitsProps {}
+
+const Benefits = ({}: BenefitsProps) => {
   return (
     <section className="py-20 bg-off-white">
       <div className="container mx-auto max-w-7xl px-4">

@@ -1,7 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 
-const ProcessStep = ({ number, title, description }) => {
+interface ProcessStepProps {
+  number: string;
+  title: string;
+  description: string;
+}
+const ProcessStep = ({ number, title, description }: ProcessStepProps) => {
   return (
     <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
       <div className="w-16 h-16 bg-gradient-to-r from-primary-purple to-deep-blue text-white rounded-full flex items-center justify-center mx-auto mb-5 font-bold text-xl">
@@ -13,7 +18,9 @@ const ProcessStep = ({ number, title, description }) => {
   );
 };
 
-const Process = () => {
+interface ProcessProps {}
+
+const Process = ({}: ProcessProps) => {
   return (
     <section id="process" className="py-20 bg-off-white">
       <div className="container mx-auto max-w-7xl px-4">

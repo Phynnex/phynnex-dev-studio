@@ -2,7 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Footer = () => {
+interface FooterProps {}
+const Footer = ({}: FooterProps) => {
   return (
     <footer className="bg-off-white py-10 border-t border-gray-100">
       <div className="container mx-auto max-w-7xl px-4">
