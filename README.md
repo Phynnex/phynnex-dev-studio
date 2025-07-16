@@ -43,3 +43,7 @@ EMAIL_TO=
 ```
 
 These values depend on your mail provider.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
