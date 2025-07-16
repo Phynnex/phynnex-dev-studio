@@ -1,4 +1,4 @@
-// components/FAQ.jsx
+// components/FAQ.tsx
 import React, { useState } from 'react';
 
 interface FAQItemProps {

@@ -1,4 +1,4 @@
-// components/Portfolio.jsx
+// components/Portfolio.tsx
 import React, { useState } from 'react';
 
 interface ProjectCardProps {

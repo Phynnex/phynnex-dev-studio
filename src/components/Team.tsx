@@ -1,4 +1,4 @@
-// components/Team.jsx
+// components/Team.tsx
 import React from 'react';
 
 interface SocialLink {
