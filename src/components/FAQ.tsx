@@ -41,7 +41,7 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen }: FAQItemProps) => {
 interface FAQProps {}
 
 const FAQ = ({}: FAQProps) => {
-  const [openItem, setOpenItem] = useState(0);
+  const [openItem, setOpenItem] = useState<number | null>(null);
 
   const faqItems = [
     {
@@ -78,7 +78,7 @@ const FAQ = ({}: FAQProps) => {
     }
   ];
 
-  const toggleItem = (index) => {
+  const toggleItem = (index: number) => {
     setOpenItem(openItem === index ? null : index);
   };
 
