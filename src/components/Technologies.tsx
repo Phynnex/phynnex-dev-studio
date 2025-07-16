@@ -1,4 +1,4 @@
-// components/Technologies.jsx
+// components/Technologies.tsx
 import React from 'react';
 
 const TechnologyItem = ({ name }) => {

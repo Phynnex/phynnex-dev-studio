@@ -1,4 +1,4 @@
-// components/Contact.jsx
+// components/Contact.tsx
 import React, { useState } from 'react';
 
 const ContactMethod = ({ icon, title, text }) => {

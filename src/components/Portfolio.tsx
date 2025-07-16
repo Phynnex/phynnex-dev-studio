@@ -1,4 +1,4 @@
-// components/Portfolio.jsx
+// components/Portfolio.tsx
 import React, { useState } from 'react';
 
 const ProjectCard = ({ title, category, description, image, tags }) => {
