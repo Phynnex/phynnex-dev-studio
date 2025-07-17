@@ -28,6 +28,11 @@ npm run lint
 npm test
 ```
 
+## Automated checks
+
+GitHub Actions run `npm run lint` and `npm test` on every push to the `master`
+branch and on all pull requests.
+
 ## Building for production
 
 ```bash
