@@ -15,6 +15,10 @@ interface TeamMemberProps {
   image?: string;
   socialLinks?: SocialLink[];
 }
+
+interface TeamMember extends TeamMemberProps {
+  id: number;
+}
 const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
@@ -56,13 +60,14 @@ const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) =>
 interface TeamProps {}
 
 const Team = ({}: TeamProps) => {
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     {
       id: 1,
       name: "Alex Johnson",
       role: "Founder & Lead Developer",
       bio: "With over 8 years of experience in web and mobile development, Alex founded Phynnex to create impactful digital solutions for businesses of all sizes.",
       image: "/api/placeholder/400/400",
+      socialLinks: [],
     },
     {
       id: 2,
@@ -70,6 +75,7 @@ const Team = ({}: TeamProps) => {
       role: "UI/UX Design Lead",
       bio: "Sarah brings 6+ years of design expertise, crafting intuitive and beautiful interfaces that balance aesthetics with functionality.",
       image: "/api/placeholder/400/400",
+      socialLinks: [],
     },
     {
       id: 3,
@@ -77,6 +83,7 @@ const Team = ({}: TeamProps) => {
       role: "Backend Developer",
       bio: "Michael specializes in scalable backend systems and database architecture with expertise in Node.js, Python, and cloud infrastructure.",
       image: "/api/placeholder/400/400",
+      socialLinks: [],
     },
     {
       id: 4,
@@ -84,6 +91,7 @@ const Team = ({}: TeamProps) => {
       role: "Mobile App Developer",
       bio: "Tasha excels in creating responsive and feature-rich mobile applications for both iOS and Android platforms using React Native.",
       image: "/api/placeholder/400/400",
+      socialLinks: [],
     }
   ];
 
