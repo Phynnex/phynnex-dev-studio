@@ -127,7 +127,7 @@ const Team = ({}: TeamProps) => {
             We&apos;re always looking for talented individuals who are passionate about creating amazing digital experiences.
           </p>
           <a 
-            href="/careers" 
+            href="#" 
             className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-deep-blue transition-colors shadow-md font-montserrat"
           >
             View Open Positions
