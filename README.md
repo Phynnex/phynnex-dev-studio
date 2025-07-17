@@ -1,6 +1,6 @@
 # Phynnex Dev Studio
 
-This project uses **Next.js** with TypeScript and Tailwind CSS. It includes a simple contact form that sends email via an API route.
+Phynnex Dev Studio offers professional development services and a training school for aspiring developers. This website is built with **Next.js**, TypeScript and Tailwind CSS. It features a contact form so potential clients or students can get in touch. The form sends email via the `/api/contact` route once the mail settings are configured as described in the **Email configuration** section.
 
 ## Development
 
