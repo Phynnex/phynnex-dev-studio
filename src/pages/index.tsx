@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Process from "../components/Process";
@@ -22,6 +23,7 @@ const HomePage = () => {
         />
       </Head>
       <main>
+        <Navbar/>
         <Hero />
       <Services />
       <Process />

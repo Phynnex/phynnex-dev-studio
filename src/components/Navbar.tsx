@@ -15,8 +15,8 @@ const Navbar = ({}: NavbarProps) => {
           <div className='w-2/5 flex items-center justify-between'>
             {/* Logo */}
             <Link href="/" className="text-2xl font-bold italic text-deep-blue">
-{/*               <Image src={Full} alt="Logo" className='w-20 h-14' width={80} height={56} /> */}
-              <Image src="/api/placeholder/500/300" alt="Digital Solutions" className="rounded-lg" width={500} height={300} />
+              <Image src={Full} alt="Logo" className='w-20 h-14' width={80} height={56} />
+              {/* <Image src="/api/placeholder/500/300" alt="Digital Solutions" className="rounded-lg" width={500} height={300} /> */}
             </Link>
             
             {/* Navigation Links - Desktop */}
