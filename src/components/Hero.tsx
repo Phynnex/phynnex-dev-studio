@@ -6,17 +6,17 @@ interface HeroProps {}
 const Hero = ({}: HeroProps) => {
   return (
     <section className="bg-off-white pt-20 pb-20 ">
-      <div className="px-12">
-        <div className="flex flex-col md:flex-row items-center">
+      <div className="px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="md:w-1/2 md:pr-10 mb-10 md:mb-0 text-center md:text-left">
             <h1 className="heading-1 text-4xl md:text-6xl font-bold leading-tight mb-6 text-deep-blue">
               Transform Your Ideas into Powerful Digital Solutions
             </h1>
-            <p className="text-lg text-dark-gray mb-8 font-inter">
+            <p className="text-base sm:text-lg text-dark-gray mb-8 font-inter">
               We help businesses grow by leveraging cutting-edge technology and creative strategies. 
               Our team of experts will bring your vision to life.
             </p>
-            <Link href="/contact" className="btn-primary inline-block">
+            <Link href="/contact" className="btn-primary inline-block text-base sm:text-lg">
               Get Started
             </Link>
           </div>
