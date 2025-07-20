@@ -11,7 +11,6 @@ const LearnPage = () => {
           content="Discover resources and articles from Phynnex Dev Studio."
         />
       </Head>
-      <main className="pt-20">
       <div className="bg-whisper py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-creole">Learn</h1>
@@ -20,7 +19,6 @@ const LearnPage = () => {
           </p>
         </div>
       </div>
-    </main>
     </>
   );
 };

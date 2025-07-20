@@ -12,7 +12,6 @@ const ProcessPage = () => {
           content="Learn about the proven methodology we use at Phynnex Dev Studio."
         />
       </Head>
-      <main className="pt-20">
       <div className="bg-whisper py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-creole">Our Process</h1>
@@ -22,7 +21,6 @@ const ProcessPage = () => {
         </div>
       </div>
       <Process />
-    </main>
     </>
   );
 };

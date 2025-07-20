@@ -11,6 +11,7 @@ const TermsPage = () => {
           content="Understand the terms of service for using Phynnex Dev Studio."
         />
       </Head>
+
       <main className="pt-20">
         <div className="bg-whisper py-16">
           <div className="container-custom">
@@ -19,7 +20,7 @@ const TermsPage = () => {
               This page is under construction.
             </p>
           </div>
-        </div>
+
       </main>
     </>
   );

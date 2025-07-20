@@ -11,6 +11,7 @@ const CookiesPage = () => {
           content="Information about how Phynnex Dev Studio uses cookies."
         />
       </Head>
+
       <main className="pt-20">
         <div className="bg-whisper py-16">
           <div className="container-custom">
@@ -19,6 +20,7 @@ const CookiesPage = () => {
               This page is under construction.
             </p>
           </div>
+
         </div>
       </main>
     </>
