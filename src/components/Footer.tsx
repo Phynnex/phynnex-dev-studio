@@ -6,7 +6,7 @@ interface FooterProps {}
 const Footer = ({}: FooterProps) => {
   return (
     <footer className="bg-off-white py-10 border-t border-gray-100">
-      <div className="container mx-auto max-w-7xl px-4">
+      <div className="container-custom">
         <div className="flex flex-col items-center mb-10">
           {/* Logo */}
           <div className="mb-8">

@@ -6,7 +6,7 @@ interface CTAProps {}
 const CTA = ({}: CTAProps) => {
   return (
     <section className="py-20 bg-deep-blue text-white">
-      <div className="container mx-auto max-w-7xl px-4 text-center">
+      <div className="container-custom text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">
           Start Your Project Today
         </h2>
