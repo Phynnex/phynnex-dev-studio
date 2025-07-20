@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Process from "../components/Process";
@@ -22,9 +21,7 @@ const HomePage = () => {
           content="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
         />
       </Head>
-      <main>
-        <Navbar/>
-        <Hero />
+      <Hero />
       <Services />
       <Process />
       <Technologies />
@@ -33,8 +30,7 @@ const HomePage = () => {
       <Team/>
       <Faq />
       <CTA />
-        <Contact />
-      </main>
+      <Contact />
     </>
   );
 };
