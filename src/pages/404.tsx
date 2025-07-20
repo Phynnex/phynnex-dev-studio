@@ -7,12 +7,12 @@ export default function Custom404() {
       <Head>
         <title>Page Not Found</title>
       </Head>
-      <main className="min-h-screen flex flex-col items-center justify-center text-center">
+      <div className="min-h-screen flex flex-col items-center justify-center text-center">
         <h1 className="text-2xl font-semibold mb-4">404 - Page Not Found</h1>
         <Link href="/" className="text-primary-purple underline">
           Return home
         </Link>
-      </main>
+      </div>
     </>
   );
 }
