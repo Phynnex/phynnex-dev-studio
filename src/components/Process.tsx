@@ -23,7 +23,7 @@ interface ProcessProps {}
 const Process = ({}: ProcessProps) => {
   return (
     <section id="process" className="py-20 bg-off-white">
-      <div className="container mx-auto max-w-7xl px-4">
+      <div className="container-custom">
         <div className="text-center mb-16">
           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">How We Work</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-deep-blue font-montserrat">

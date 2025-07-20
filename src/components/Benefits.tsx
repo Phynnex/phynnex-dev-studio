@@ -7,7 +7,7 @@ interface BenefitsProps {}
 const Benefits = ({}: BenefitsProps) => {
   return (
     <section className="py-20 bg-off-white">
-      <div className="container mx-auto max-w-7xl px-4">
+      <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-deep-blue font-montserrat">
