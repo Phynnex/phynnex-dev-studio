@@ -1,15 +1,15 @@
-import React from "react";
-import Head from "next/head";
-import Hero from "../components/Hero";
-import Services from "../components/Services";
-import Process from "../components/Process";
-import Benefits from "../components/Benefits";
-import Team from "../components/Team";
-import CTA from "../components/CTA";
-import Portfolio from "../components/Portfolio";
-import Contact from "../components/Contact";
-import Technologies from "../components/Technologies";
-import Faq from "../components/FAQ";
+import React from 'react';
+import Head from 'next/head';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import Process from '../components/Process';
+import Benefits from '../components/Benefits';
+import Team from '../components/Team';
+import CTA from '../components/CTA';
+import Portfolio from '../components/Portfolio';
+import Contact from '../components/Contact';
+import Technologies from '../components/Technologies';
+import Faq from '../components/FAQ';
 
 const HomePage = () => {
   return (
@@ -27,7 +27,7 @@ const HomePage = () => {
       <Technologies />
       <Portfolio />
       <Benefits />
-      <Team/>
+      <Team />
       <Faq />
       <CTA />
       <Contact />

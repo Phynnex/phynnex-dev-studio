@@ -1,10 +1,8 @@
-
-import React from 'react'
-import Navbar from './Navbar'
+import React from 'react';
+import Navbar from './Navbar';
 
 interface LayoutProps {
-  children: React.ReactNode
-
+  children: React.ReactNode;
 }
 
 const Layout = ({ children }: LayoutProps) => {
@@ -12,12 +10,9 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <Navbar />
 
-      <main className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 mt-20">
-        {children}
-      </main>
-
+      <main className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 mt-20">{children}</main>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

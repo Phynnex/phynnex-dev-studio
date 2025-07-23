@@ -11,13 +11,10 @@ const CTA = ({}: CTAProps) => {
           Start Your Project Today
         </h2>
         <p className="text-lg max-w-3xl mx-auto mb-8 font-inter">
-          Ready to transform your business with powerful digital solutions? 
-          Get in touch with our team to discuss your project.
+          Ready to transform your business with powerful digital solutions? Get in touch with our
+          team to discuss your project.
         </p>
-        <Link 
-          href="/contact" 
-          className="inline-block btn-primary"
-        >
+        <Link href="/contact" className="inline-block btn-primary">
           Contact Us Now
         </Link>
       </div>

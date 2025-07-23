@@ -13,7 +13,7 @@ const Hero = ({}: HeroProps) => {
               Transform Your Ideas into Powerful Digital Solutions
             </h1>
             <p className="text-base sm:text-lg text-dark-gray mb-8 font-inter">
-              We help businesses grow by leveraging cutting-edge technology and creative strategies. 
+              We help businesses grow by leveraging cutting-edge technology and creative strategies.
               Our team of experts will bring your vision to life.
             </p>
             <Link href="/contact" className="btn-primary inline-block text-base sm:text-lg">
@@ -22,7 +22,13 @@ const Hero = ({}: HeroProps) => {
           </div>
           <div className="md:w-1/2">
             <div className="bg-light-purple bg-opacity-20 rounded-lg w-full h-64 md:h-[28rem] flex items-center justify-center">
-              <Image src="/api/placeholder/500/300" alt="Digital Solutions" className="rounded-lg" width={500} height={300} />
+              <Image
+                src="/api/placeholder/500/300"
+                alt="Digital Solutions"
+                className="rounded-lg"
+                width={500}
+                height={300}
+              />
             </div>
           </div>
         </div>

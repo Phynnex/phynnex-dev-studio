@@ -26,17 +26,15 @@ const Contact = ({}: ContactProps) => {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -46,7 +44,7 @@ const Contact = ({}: ContactProps) => {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
       if (res.ok) {
         setStatus('success');
@@ -63,47 +61,90 @@ const Contact = ({}: ContactProps) => {
     <section id="contact" className="py-20 bg-whisper">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-creole">
-            Get in Touch
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-creole">Get in Touch</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind? Reach out to us to discuss how we can help bring your ideas to life.
+            Have a project in mind? Reach out to us to discuss how we can help bring your ideas to
+            life.
           </p>
         </div>
-        
+
         <div className="flex flex-col md:flex-row justify-between mb-16 gap-8">
-          <ContactMethod 
+          <ContactMethod
             title="Phone"
             text="(123) 456-7890"
             icon={
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-purple"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
               </svg>
             }
           />
-          
-          <ContactMethod 
+
+          <ContactMethod
             title="Email"
             text="info@digitalsolutions.com"
             icon={
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-purple"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
               </svg>
             }
           />
-          
-          <ContactMethod 
+
+          <ContactMethod
             title="Address"
-            text={<>123 Business Ave, Suite 100<br />San Francisco, CA 94107</>}
+            text={
+              <>
+                123 Business Ave, Suite 100
+                <br />
+                San Francisco, CA 94107
+              </>
+            }
             icon={
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-purple"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
               </svg>
             }
           />
         </div>
-        
+
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
           <form onSubmit={handleSubmit}>
             <div className="mb-6">
@@ -120,7 +161,7 @@ const Contact = ({}: ContactProps) => {
                 required
               />
             </div>
-            
+
             <div className="mb-6">
               <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
                 Email
@@ -135,7 +176,7 @@ const Contact = ({}: ContactProps) => {
                 required
               />
             </div>
-            
+
             <div className="mb-6">
               <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
                 Phone
@@ -149,7 +190,7 @@ const Contact = ({}: ContactProps) => {
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple focus:border-transparent"
               />
             </div>
-            
+
             <div className="mb-6">
               <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
                 Message
@@ -164,7 +205,7 @@ const Contact = ({}: ContactProps) => {
                 required
               ></textarea>
             </div>
-            
+
             <div className="text-center">
               <button
                 type="submit"
@@ -175,9 +216,7 @@ const Contact = ({}: ContactProps) => {
               {status === 'success' && (
                 <p className="mt-4 text-green-600">Message sent successfully.</p>
               )}
-              {status === 'error' && (
-                <p className="mt-4 text-red-600">Failed to send message.</p>
-              )}
+              {status === 'error' && <p className="mt-4 text-red-600">Failed to send message.</p>}
             </div>
           </form>
         </div>

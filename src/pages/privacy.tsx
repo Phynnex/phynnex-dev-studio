@@ -6,10 +6,7 @@ const PrivacyPage = () => {
     <>
       <Head>
         <title>Phynnex Dev Studio - Privacy Policy</title>
-        <meta
-          name="description"
-          content="Read about Phynnex Dev Studio's privacy practices."
-        />
+        <meta name="description" content="Read about Phynnex Dev Studio's privacy practices." />
       </Head>
 
       <div className="bg-whisper py-16">
@@ -18,7 +15,6 @@ const PrivacyPage = () => {
           <p className="text-center text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
             This page is under construction.
           </p>
-
         </div>
       </div>
     </>

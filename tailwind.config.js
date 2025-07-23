@@ -1,10 +1,10 @@
 // tailwind.config.js
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}", // for Next.js 13+ app directory
-    "./pages/**/*.{js,ts,jsx,tsx}", // for Next.js 12 pages directory
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './app/**/*.{js,ts,jsx,tsx}', // for Next.js 13+ app directory
+    './pages/**/*.{js,ts,jsx,tsx}', // for Next.js 12 pages directory
+    './components/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {

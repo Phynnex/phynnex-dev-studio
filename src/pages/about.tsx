@@ -6,10 +6,7 @@ const AboutPage = () => {
     <>
       <Head>
         <title>Phynnex Dev Studio - About</title>
-        <meta
-          name="description"
-          content="Learn more about Phynnex Dev Studio and our mission."
-        />
+        <meta name="description" content="Learn more about Phynnex Dev Studio and our mission." />
       </Head>
       <div className="bg-whisper py-16">
         <div className="container-custom">

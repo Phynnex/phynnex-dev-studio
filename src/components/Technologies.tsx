@@ -34,54 +34,57 @@ interface TechnologiesProps {}
 
 const Technologies = ({}: TechnologiesProps) => {
   const frontendTechnologies = [
-    "React", 
-    "JavaScript", 
-    "HTML5", 
-    "CSS3", 
-    "Tailwind CSS",
-    "Next.js",
-    "React Native",
-    "Redux",
-    "TypeScript",
-    "Bootstrap"
+    'React',
+    'JavaScript',
+    'HTML5',
+    'CSS3',
+    'Tailwind CSS',
+    'Next.js',
+    'React Native',
+    'Redux',
+    'TypeScript',
+    'Bootstrap',
   ];
 
   const backendTechnologies = [
-    "Node.js", 
-    "Express", 
-    "MongoDB", 
-    "PostgreSQL", 
-    "Firebase",
-    "Python",
-    "Django",
-    "GraphQL",
-    "REST API",
-    "AWS"
+    'Node.js',
+    'Express',
+    'MongoDB',
+    'PostgreSQL',
+    'Firebase',
+    'Python',
+    'Django',
+    'GraphQL',
+    'REST API',
+    'AWS',
   ];
 
   const tools = [
-    "Git",
-    "GitHub",
-    "VS Code",
-    "Figma",
-    "Adobe XD",
-    "Postman",
-    "Docker",
-    "Webpack",
-    "Jest",
-    "CI/CD"
+    'Git',
+    'GitHub',
+    'VS Code',
+    'Figma',
+    'Adobe XD',
+    'Postman',
+    'Docker',
+    'Webpack',
+    'Jest',
+    'CI/CD',
   ];
 
   return (
     <section className="py-20 bg-off-white">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">Our Expertise</span>
+          <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">
+            Our Expertise
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-deep-blue font-montserrat">
             Technologies We Master
           </h2>
           <p className="text-lg text-dark-gray max-w-3xl mx-auto font-inter">
-            We leverage cutting-edge technologies to build powerful, scalable, and beautiful digital solutions.
+            We leverage cutting-edge technologies to build powerful, scalable, and beautiful digital
+            solutions.
           </p>
         </div>
 
