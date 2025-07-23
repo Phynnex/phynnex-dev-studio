@@ -52,7 +52,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Deploy to Vercel
         if: github.ref == 'refs/heads/master'
         uses: amondnet/vercel-action@v25
