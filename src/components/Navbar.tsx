@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Full from '../assets/images/New.png';
 
-interface NavbarProps {}
+type NavbarProps = object
 
 const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);

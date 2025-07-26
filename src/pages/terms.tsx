@@ -28,7 +28,7 @@ const TermsPage = () => {
             to compromise its security.
           </p>
           <p className="text-center text-lg text-gray-600 mt-2 max-w-3xl mx-auto">
-            Our website and services are provided "as is" without warranties of
+            Our website and services are provided &rsquo;as is&rsquo; without warranties of
             any kind. Phynnex Dev Studio is not liable for damages arising from
             your use or inability to use the site.
           </p>

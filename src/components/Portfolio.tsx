@@ -45,7 +45,7 @@ const ProjectCard = ({ title, category, description, image, tags }: ProjectCardP
   );
 };
 
-interface PortfolioProps {}
+type PortfolioProps = object
 
 const Portfolio = ({}: PortfolioProps) => {
   const [filter, setFilter] = useState('all');

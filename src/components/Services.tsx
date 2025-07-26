@@ -17,7 +17,7 @@ const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
   );
 };
 
-interface ServicesProps {}
+type ServicesProps = object;
 
 const Services = ({}: ServicesProps) => {
   return (

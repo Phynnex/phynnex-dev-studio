@@ -18,7 +18,7 @@ const ProcessStep = ({ number, title, description }: ProcessStepProps) => {
   );
 };
 
-interface ProcessProps {}
+type ProcessProps = object;
 
 const Process = ({}: ProcessProps) => {
   return (

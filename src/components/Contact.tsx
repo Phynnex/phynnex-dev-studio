@@ -20,7 +20,7 @@ const ContactMethod = ({ icon, title, text }: ContactMethodProps) => {
   );
 };
 
-interface ContactProps {}
+type ContactProps = object
 
 const Contact = ({}: ContactProps) => {
   const [formData, setFormData] = useState({
@@ -43,10 +43,14 @@ const Contact = ({}: ContactProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      if (!(window as any).grecaptcha || !siteKey) {
+      interface Grecaptcha {
+        execute(siteKey: string, options: { action: string }): Promise<string>;
+      }
+      const w = window as Window & { grecaptcha?: Grecaptcha };
+      if (!w.grecaptcha || !siteKey) {
         throw new Error('reCAPTCHA not loaded');
       }
-      const token = await (window as any).grecaptcha.execute(siteKey, { action: 'submit' });
+      const token = await w.grecaptcha.execute(siteKey, { action: 'submit' });
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -58,7 +62,7 @@ const Contact = ({}: ContactProps) => {
       } else {
         setStatus('error');
       }
-    } catch (err) {
+    } catch {
       setStatus('error');
     }
   };

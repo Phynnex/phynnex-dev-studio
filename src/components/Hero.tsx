@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-interface HeroProps {}
+type HeroProps = object
 const Hero = ({}: HeroProps) => {
   return (
     <section className="bg-off-white pt-20 pb-20 ">

@@ -57,7 +57,7 @@ const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) =>
   );
 };
 
-interface TeamProps {}
+type TeamProps = object;
 
 const Team = ({}: TeamProps) => {
   const teamMembers: TeamMember[] = [

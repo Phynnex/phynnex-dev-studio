@@ -4,14 +4,17 @@ import nodemailer from 'nodemailer';
 
 jest.mock('nodemailer');
 
-function createMocks(method: string, body: any = {}): { req: Partial<NextApiRequest>; res: any } {
+function createMocks(
+  method: string,
+  body: Record<string, unknown> = {}
+): { req: Partial<NextApiRequest>; res: jest.Mocked<NextApiResponse> } {
   const req = { method, body } as Partial<NextApiRequest>;
   const res = {
     status: jest.fn().mockReturnThis(),
     json: jest.fn().mockReturnThis(),
     setHeader: jest.fn(),
     end: jest.fn(),
-  } as any;
+  } as unknown as jest.Mocked<NextApiResponse>;
   return { req, res };
 }
 

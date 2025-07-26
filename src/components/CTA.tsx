@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-interface CTAProps {}
+type CTAProps = object
 const CTA = ({}: CTAProps) => {
   return (
     <section className="py-20 bg-deep-blue text-white">

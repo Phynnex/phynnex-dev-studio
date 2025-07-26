@@ -30,7 +30,7 @@ const TechnologyCategory = ({ title, technologies }: TechnologyCategoryProps) =>
   );
 };
 
-interface TechnologiesProps {}
+type TechnologiesProps = object;
 
 const Technologies = ({}: TechnologiesProps) => {
   const frontendTechnologies = [
