@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop')
     steps:
-      E- name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Deploy to Vercel
