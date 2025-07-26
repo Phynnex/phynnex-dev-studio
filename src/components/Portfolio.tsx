@@ -45,7 +45,7 @@ const ProjectCard = ({ title, category, description, image, tags }: ProjectCardP
   );
 };
 
-type PortfolioProps = object
+type PortfolioProps = object;
 
 const Portfolio = ({}: PortfolioProps) => {
   const [filter, setFilter] = useState('all');

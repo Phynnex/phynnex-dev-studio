@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-type BenefitsProps = object
+type BenefitsProps = object;
 
 const Benefits = ({}: BenefitsProps) => {
   return (

@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-type FooterProps = object
+type FooterProps = object;
 const Footer = ({}: FooterProps) => {
   return (
     <footer className="bg-off-white py-10 border-t border-gray-100">

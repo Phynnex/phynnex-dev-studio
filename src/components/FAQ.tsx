@@ -41,7 +41,7 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen }: FAQItemProps) => {
   );
 };
 
-type FAQProps = object
+type FAQProps = object;
 
 const FAQ = ({}: FAQProps) => {
   const [openItem, setOpenItem] = useState<number | null>(null);
