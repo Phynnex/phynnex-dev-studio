@@ -15,7 +15,7 @@ const ProjectCard = ({ title, category, description, image, tags }: ProjectCardP
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
       <div className="h-56 bg-light-purple bg-opacity-20 relative">
         <Image
-          src={image || '/api/placeholder/400/300'}
+          src={image || 'https://picsum.photos/seed/portfolio-default/400/300'}
           alt={title}
           className="w-full h-full object-cover"
           width={400}
@@ -57,7 +57,7 @@ const Portfolio = ({}: PortfolioProps) => {
       category: 'Web Development',
       description:
         'A modern e-commerce solution with integrated payment processing and inventory management.',
-      image: '/api/placeholder/400/300',
+      image: 'https://picsum.photos/seed/project1/400/300',
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       type: 'web',
     },
@@ -67,7 +67,7 @@ const Portfolio = ({}: PortfolioProps) => {
       category: 'Mobile Development',
       description:
         'Patient-centric mobile application for scheduling appointments and accessing medical records.',
-      image: '/api/placeholder/400/300',
+      image: 'https://picsum.photos/seed/project2/400/300',
       tags: ['React Native', 'Firebase', 'Redux', 'API Integration'],
       type: 'mobile',
     },
@@ -77,7 +77,7 @@ const Portfolio = ({}: PortfolioProps) => {
       category: 'UI/UX Design',
       description:
         'Complete redesign of a corporate website focusing on user experience and conversion optimization.',
-      image: '/api/placeholder/400/300',
+      image: 'https://picsum.photos/seed/project3/400/300',
       tags: ['UI/UX', 'Figma', 'HTML/CSS', 'JavaScript'],
       type: 'design',
     },
@@ -87,7 +87,7 @@ const Portfolio = ({}: PortfolioProps) => {
       category: 'Web Development',
       description:
         'Custom inventory tracking solution with real-time analytics and reporting capabilities.',
-      image: '/api/placeholder/400/300',
+      image: 'https://picsum.photos/seed/project4/400/300',
       tags: ['React', 'Node.js', 'PostgreSQL', 'Charts.js'],
       type: 'web',
     },
@@ -97,7 +97,7 @@ const Portfolio = ({}: PortfolioProps) => {
       category: 'Mobile Development',
       description:
         'Mobile application for tracking workouts, nutrition, and personal fitness goals.',
-      image: '/api/placeholder/400/300',
+      image: 'https://picsum.photos/seed/project5/400/300',
       tags: ['React Native', 'TypeScript', 'Firebase', 'Health API'],
       type: 'mobile',
     },
@@ -107,7 +107,7 @@ const Portfolio = ({}: PortfolioProps) => {
       category: 'UI/UX Design',
       description:
         'Intuitive dashboard design for a SaaS platform, focusing on data visualization and usability.',
-      image: '/api/placeholder/400/300',
+      image: 'https://picsum.photos/seed/project6/400/300',
       tags: ['UI/UX', 'Adobe XD', 'Design System', 'Prototyping'],
       type: 'design',
     },
