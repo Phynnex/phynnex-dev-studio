@@ -24,7 +24,7 @@ const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) =>
     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
       <div className="h-64 bg-light-purple bg-opacity-10 relative">
         <Image
-          src={image || '/api/placeholder/400/400'}
+          src={image || 'https://picsum.photos/seed/team-default/400/400'}
           alt={name}
           className="w-full h-full object-cover"
           width={400}
@@ -66,7 +66,7 @@ const Team = ({}: TeamProps) => {
       name: 'Alex Johnson',
       role: 'Founder & Lead Developer',
       bio: 'With over 8 years of experience in web and mobile development, Alex founded Phynnex to create impactful digital solutions for businesses of all sizes.',
-      image: '/api/placeholder/400/400',
+      image: 'https://picsum.photos/seed/team1/400/400',
       socialLinks: [],
     },
     {
@@ -74,7 +74,7 @@ const Team = ({}: TeamProps) => {
       name: 'Sarah Chen',
       role: 'UI/UX Design Lead',
       bio: 'Sarah brings 6+ years of design expertise, crafting intuitive and beautiful interfaces that balance aesthetics with functionality.',
-      image: '/api/placeholder/400/400',
+      image: 'https://picsum.photos/seed/team2/400/400',
       socialLinks: [],
     },
     {
@@ -82,7 +82,7 @@ const Team = ({}: TeamProps) => {
       name: 'Michael Rodriguez',
       role: 'Backend Developer',
       bio: 'Michael specializes in scalable backend systems and database architecture with expertise in Node.js, Python, and cloud infrastructure.',
-      image: '/api/placeholder/400/400',
+      image: 'https://picsum.photos/seed/team3/400/400',
       socialLinks: [],
     },
     {
@@ -90,7 +90,7 @@ const Team = ({}: TeamProps) => {
       name: 'Tasha Williams',
       role: 'Mobile App Developer',
       bio: 'Tasha excels in creating responsive and feature-rich mobile applications for both iOS and Android platforms using React Native.',
-      image: '/api/placeholder/400/400',
+      image: 'https://picsum.photos/seed/team4/400/400',
       socialLinks: [],
     },
   ];

@@ -23,7 +23,7 @@ const Hero = ({}: HeroProps) => {
           <div className="md:w-1/2">
             <div className="bg-light-purple bg-opacity-20 rounded-lg w-full h-64 md:h-[28rem] flex items-center justify-center">
               <Image
-                src="/api/placeholder/500/300"
+                src="https://picsum.photos/seed/hero/500/300"
                 alt="Digital Solutions"
                 className="rounded-lg"
                 width={500}
