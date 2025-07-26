@@ -7,12 +7,32 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { name, email, phone, message } = req.body;
-  if (!name || !email || !message) {
+  const { name, email, phone, message, token } = req.body;
+  if (!name || !email || !message || !token) {
     return res.status(400).json({ success: false, error: 'Missing fields' });
   }
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ success: false, error: 'Invalid email' });
+  }
+
   try {
+    const secret = process.env.RECAPTCHA_SECRET;
+    if (!secret) {
+      throw new Error('reCAPTCHA secret not configured');
+    }
+
+    const verifyRes = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${encodeURIComponent(secret)}&response=${encodeURIComponent(token)}`,
+    });
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) {
+      return res.status(400).json({ success: false, error: 'reCAPTCHA failed' });
+    }
+
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: Number(process.env.EMAIL_PORT || 587),

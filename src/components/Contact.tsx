@@ -1,5 +1,6 @@
 // components/Contact.tsx
 import React, { useState } from 'react';
+import Script from 'next/script';
 
 interface ContactMethodProps {
   icon: React.ReactNode;
@@ -29,6 +30,7 @@ const Contact = ({}: ContactProps) => {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -41,10 +43,14 @@ const Contact = ({}: ContactProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      if (!(window as any).grecaptcha || !siteKey) {
+        throw new Error('reCAPTCHA not loaded');
+      }
+      const token = await (window as any).grecaptcha.execute(siteKey, { action: 'submit' });
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, token }),
       });
       if (res.ok) {
         setStatus('success');
@@ -58,7 +64,9 @@ const Contact = ({}: ContactProps) => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-whisper">
+    <>
+      <Script src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`} />
+      <section id="contact" className="py-20 bg-whisper">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-creole">Get in Touch</h2>
@@ -222,6 +230,7 @@ const Contact = ({}: ContactProps) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
