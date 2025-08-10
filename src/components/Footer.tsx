@@ -5,7 +5,7 @@ import Link from 'next/link';
 type FooterProps = object;
 const Footer = ({}: FooterProps) => {
   return (
-    <footer className="bg-off-white py-10 border-t border-gray-100">
+    <footer className="bg-black/50 backdrop-blur py-10 border-t border-white/10 text-off-white">
       <div className="container-custom">
         <div className="flex flex-col items-center mb-10">
           {/* Logo */}
@@ -63,7 +63,7 @@ const Footer = ({}: FooterProps) => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-5 border-t border-gray-100 text-xs text-dark-gray">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-5 border-t border-white/10 text-xs text-dark-gray">
           <div className="mb-4 md:mb-0 font-inter">
             &copy; 2025 Phynnex Dev Studio. All rights reserved.
           </div>

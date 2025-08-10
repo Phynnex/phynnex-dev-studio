@@ -6,7 +6,7 @@ interface TechnologyItemProps {
 }
 const TechnologyItem = ({ name }: TechnologyItemProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm p-4 flex items-center justify-center hover:shadow-md transition-all duration-300 border border-light-purple border-opacity-20">
+    <div className="surface shadow-sm p-4 flex items-center justify-center hover:shadow-md transition-all duration-300">
       <span className="text-dark-gray font-medium font-inter">{name}</span>
     </div>
   );
@@ -20,7 +20,7 @@ interface TechnologyCategoryProps {
 const TechnologyCategory = ({ title, technologies }: TechnologyCategoryProps) => {
   return (
     <div className="mb-10">
-      <h3 className="text-xl font-semibold mb-6 text-deep-blue font-montserrat">{title}</h3>
+      <h3 className="text-xl font-semibold mb-6 text-off-white font-montserrat">{title}</h3>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {technologies.map((tech, index) => (
           <TechnologyItem key={index} name={tech} />
@@ -73,13 +73,13 @@ const Technologies = ({}: TechnologiesProps) => {
   ];
 
   return (
-    <section className="py-20 bg-off-white">
+    <section className="py-20">
       <div className="container-custom">
         <div className="text-center mb-16">
           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">
             Our Expertise
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-deep-blue font-montserrat">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-off-white font-montserrat">
             Technologies We Master
           </h2>
           <p className="text-lg text-dark-gray max-w-3xl mx-auto font-inter">

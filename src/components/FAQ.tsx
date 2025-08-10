@@ -10,12 +10,12 @@ interface FAQItemProps {
 }
 const FAQItem = ({ question, answer, isOpen, toggleOpen }: FAQItemProps) => {
   return (
-    <div className="mb-4 border border-light-purple border-opacity-20 rounded-lg overflow-hidden">
+    <div className="mb-4 surface overflow-hidden">
       <button
-        className="w-full flex items-center justify-between p-5 text-left bg-white focus:outline-none"
+        className="w-full flex items-center justify-between p-5 text-left bg-transparent focus:outline-none"
         onClick={toggleOpen}
       >
-        <h3 className="text-lg font-medium text-deep-blue font-montserrat">{question}</h3>
+        <h3 className="text-lg font-medium text-off-white font-montserrat">{question}</h3>
         <span
           className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         >
@@ -32,7 +32,7 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen }: FAQItemProps) => {
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-96 p-5 bg-off-white' : 'max-h-0'
+          isOpen ? 'max-h-96 p-5 bg-transparent' : 'max-h-0'
         }`}
       >
         <p className="text-dark-gray font-inter">{answer}</p>
@@ -94,13 +94,13 @@ const FAQ = ({}: FAQProps) => {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto max-w-4xl px-4">
+    <section className="py-20">
+      <div className="container mx-auto max-w-4xl px-4 surface p-8 md:p-10">
         <div className="text-center mb-16">
           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">
             FAQ
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-deep-blue font-montserrat">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-off-white font-montserrat">
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-dark-gray max-w-3xl mx-auto font-inter">
@@ -126,7 +126,7 @@ const FAQ = ({}: FAQProps) => {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-deep-blue transition-colors shadow-md font-montserrat"
+            className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-secondary-magenta transition-colors shadow-md font-montserrat"
           >
             Contact Us
           </Link>

@@ -5,8 +5,9 @@ import Link from 'next/link';
 type CTAProps = object;
 const CTA = ({}: CTAProps) => {
   return (
-    <section className="py-20 bg-deep-blue text-white">
-      <div className="container-custom text-center">
+    <section className="py-20">
+      <div className="container-custom">
+        <div className="surface text-center p-8 md:p-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">
           Start Your Project Today
         </h2>
@@ -14,9 +15,10 @@ const CTA = ({}: CTAProps) => {
           Ready to transform your business with powerful digital solutions? Get in touch with our
           team to discuss your project.
         </p>
-        <Link href="/contact" className="inline-block btn-primary">
-          Contact Us Now
-        </Link>
+          <Link href="/contact" className="inline-block btn-primary">
+            Contact Us Now
+          </Link>
+        </div>
       </div>
     </section>
   );

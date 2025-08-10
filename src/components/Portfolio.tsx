@@ -12,7 +12,7 @@ interface ProjectCardProps {
 }
 const ProjectCard = ({ title, category, description, image, tags }: ProjectCardProps) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+    <div className="surface overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
       <div className="h-56 bg-light-purple bg-opacity-20 relative">
         <Image
           src={image || 'https://picsum.photos/seed/portfolio-default/400/300'}
@@ -24,7 +24,7 @@ const ProjectCard = ({ title, category, description, image, tags }: ProjectCardP
       </div>
       <div className="p-6">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl font-semibold text-deep-blue font-montserrat">{title}</h3>
+          <h3 className="text-xl font-semibold text-off-white font-montserrat">{title}</h3>
           <span className="text-xs font-medium bg-primary-purple bg-opacity-10 text-primary-purple px-2 py-1 rounded-full">
             {category}
           </span>
@@ -34,7 +34,7 @@ const ProjectCard = ({ title, category, description, image, tags }: ProjectCardP
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="text-xs font-medium bg-off-white px-2 py-1 rounded-full text-dark-gray"
+              className="text-xs font-medium bg-white/5 px-2 py-1 rounded-full text-dark-gray border border-white/10"
             >
               {tag}
             </span>
@@ -117,13 +117,13 @@ const Portfolio = ({}: PortfolioProps) => {
     filter === 'all' ? projects : projects.filter((project) => project.type === filter);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20">
       <div className="container-custom">
         <div className="text-center mb-16">
           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">
             Our Work
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-deep-blue font-montserrat">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-off-white font-montserrat">
             Featured Projects
           </h2>
           <p className="text-lg text-dark-gray max-w-3xl mx-auto mb-8 font-inter">
@@ -131,7 +131,7 @@ const Portfolio = ({}: PortfolioProps) => {
             capabilities and expertise.
           </p>
 
-          <div className="inline-flex flex-wrap justify-center gap-2 bg-off-white p-1 rounded-full mb-8">
+          <div className="inline-flex flex-wrap justify-center gap-2 surface p-1 mb-8">
             <button
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors font-montserrat ${
@@ -194,7 +194,7 @@ const Portfolio = ({}: PortfolioProps) => {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-deep-blue transition-colors shadow-md font-montserrat"
+            className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-secondary-magenta transition-colors shadow-md font-montserrat"
           >
             Discuss Your Project
           </Link>

@@ -7,11 +7,11 @@ interface ServiceCardProps {
 }
 const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
   return (
-    <div className="bg-white p-8 rounded-lg text-center transform transition-transform hover:-translate-y-2 hover:shadow-xl">
+    <div className="surface p-8 text-center transform transition-transform hover:-translate-y-2 hover:shadow-xl">
       <div className="w-16 h-16 bg-light-purple bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
         {icon}
       </div>
-      <h3 className="text-xl font-montserrat font-semibold mb-4 text-deep-blue">{title}</h3>
+      <h3 className="text-xl font-montserrat font-semibold mb-4 text-off-white">{title}</h3>
       <p className="text-dark-gray font-inter">{description}</p>
     </div>
   );
@@ -21,7 +21,7 @@ type ServicesProps = object;
 
 const Services = ({}: ServicesProps) => {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="section-title">Expert Digital Solutions for Your Business</h2>

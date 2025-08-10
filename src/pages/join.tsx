@@ -11,10 +11,10 @@ const JoinPage = () => {
           content="Join Phynnex Dev Studio to receive the latest updates and opportunities."
         />
       </Head>
-      <div className="bg-whisper py-16">
+      <div className="py-16">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-creole">Join Us</h1>
-          <p className="text-center text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Join Us</h1>
+          <p className="text-center text-lg text-dark-gray mt-4 max-w-3xl mx-auto">
             Sign up to get the latest updates and opportunities.
           </p>
         </div>

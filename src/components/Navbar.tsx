@@ -9,12 +9,12 @@ const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-off-white py-4 px-12 shadow-sm sticky top-0 z-50">
+    <header className="bg-black/50 backdrop-blur py-4 px-12 shadow-sm sticky top-0 z-50">
       <div className="container mx-auto">
         <div className="w-full flex items-center justify-between">
           <div className="w-2/5 flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="text-2xl font-bold italic text-deep-blue">
+            <Link href="/" className="text-2xl font-bold italic text-off-white">
               <Image src={Full} alt="Logo" className="w-20 h-14" width={80} height={56} />
               {/* <Image src="/api/placeholder/500/300" alt="Digital Solutions" className="rounded-lg" width={500} height={300} /> */}
             </Link>
@@ -23,25 +23,25 @@ const Navbar = ({}: NavbarProps) => {
             <nav className="hidden md:flex items-center space-x-8">
               <Link
                 href="/"
-                className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                className="font-inter text-off-white hover:text-primary-purple transition-colors"
               >
                 Home Page
               </Link>
               <Link
                 href="/about"
-                className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                className="font-inter text-off-white hover:text-primary-purple transition-colors"
               >
                 About Us
               </Link>
               <Link
                 href="/services"
-                className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                className="font-inter text-off-white hover:text-primary-purple transition-colors"
               >
                 Services
               </Link>
               <div className="relative group">
                 <button
-                  className="font-inter text-deep-blue hover:text-primary-purple transition-colors flex items-center"
+                  className="font-inter text-off-white hover:text-primary-purple transition-colors flex items-center"
                   onClick={() => setIsOpen(!isOpen)}
                 >
                   More Links
@@ -62,24 +62,24 @@ const Navbar = ({}: NavbarProps) => {
                 </button>
                 {/* Dropdown Menu */}
                 {isOpen && (
-                  <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-10">
+                  <div className="absolute left-0 mt-2 w-48 bg-black/80 backdrop-blur shadow-lg rounded-md py-1 z-10">
                     <Link
                       href="/portfolio"
-                      className="block px-4 py-2 text-deep-blue hover:bg-off-white hover:text-primary-purple"
+                      className="block px-4 py-2 text-off-white hover:bg-primary-purple hover:text-white"
                       onClick={() => setIsOpen(false)}
                     >
                       Portfolio
                     </Link>
                     <Link
                       href="/process"
-                      className="block px-4 py-2 text-deep-blue hover:bg-off-white hover:text-primary-purple"
+                      className="block px-4 py-2 text-off-white hover:bg-primary-purple hover:text-white"
                       onClick={() => setIsOpen(false)}
                     >
                       Our Process
                     </Link>
                     <Link
                       href="/contact"
-                      className="block px-4 py-2 text-deep-blue hover:bg-off-white hover:text-primary-purple"
+                      className="block px-4 py-2 text-off-white hover:bg-primary-purple hover:text-white"
                       onClick={() => setIsOpen(false)}
                     >
                       Contact
@@ -95,7 +95,7 @@ const Navbar = ({}: NavbarProps) => {
             <div className="hidden md:flex items-center space-x-4">
               <Link
                 href="/join"
-                className="px-4 py-2 border border-primary-purple text-deep-blue hover:bg-off-white transition-colors font-inter rounded-md"
+                className="px-4 py-2 border border-primary-purple text-off-white hover:bg-primary-purple hover:text-white transition-colors font-inter rounded-md"
               >
                 Join
               </Link>
@@ -112,7 +112,7 @@ const Navbar = ({}: NavbarProps) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-deep-blue focus:outline-none"
+              className="text-off-white focus:outline-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -134,31 +134,31 @@ const Navbar = ({}: NavbarProps) => {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden pt-4 pb-2 border-t mt-4">
+          <div className="md:hidden pt-4 pb-2 border-t border-primary-purple mt-4">
             <nav className="flex flex-col space-y-3">
               <Link
                 href="/"
-                className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                className="font-inter text-off-white hover:text-primary-purple transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Home Page
               </Link>
               <Link
                 href="/about"
-                className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                className="font-inter text-off-white hover:text-primary-purple transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 About Us
               </Link>
               <Link
                 href="/services"
-                className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                className="font-inter text-off-white hover:text-primary-purple transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Services
               </Link>
               <button
-                className="text-left font-inter text-deep-blue hover:text-primary-purple transition-colors flex items-center"
+                className="text-left font-inter text-off-white hover:text-primary-purple transition-colors flex items-center"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 More Links
@@ -180,21 +180,21 @@ const Navbar = ({}: NavbarProps) => {
               <div className="pl-4 flex flex-col space-y-2">
                 <Link
                   href="/portfolio"
-                  className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                  className="font-inter text-off-white hover:text-primary-purple transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Portfolio
                 </Link>
                 <Link
                   href="/process"
-                  className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                  className="font-inter text-off-white hover:text-primary-purple transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Our Process
                 </Link>
                 <Link
                   href="/contact"
-                  className="font-inter text-deep-blue hover:text-primary-purple transition-colors"
+                  className="font-inter text-off-white hover:text-primary-purple transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact
@@ -205,7 +205,7 @@ const Navbar = ({}: NavbarProps) => {
               <div className="flex space-x-4 pt-2">
                 <Link
                   href="/join"
-                  className="px-4 py-2 border border-primary-purple text-deep-blue hover:bg-off-white transition-colors text-center font-inter"
+                  className="px-4 py-2 border border-primary-purple text-off-white hover:bg-primary-purple hover:text-white transition-colors text-center font-inter"
                   onClick={() => setIsOpen(false)}
                 >
                   Join
