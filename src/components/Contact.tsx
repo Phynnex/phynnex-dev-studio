@@ -1,6 +1,12 @@
 // components/Contact.tsx
 import React, { useState } from 'react';
 import Script from 'next/script';
+import {
+  CONTACT_PHONE,
+  CONTACT_EMAIL,
+  CONTACT_ADDRESS_LINE1,
+  CONTACT_ADDRESS_LINE2,
+} from '../config/contact';
 
 interface ContactMethodProps {
   icon: React.ReactNode;
@@ -14,8 +20,8 @@ const ContactMethod = ({ icon, title, text }: ContactMethodProps) => {
       <div className="w-14 h-14 bg-perfume bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600">{text}</p>
+      <h3 className="text-xl font-semibold mb-2 text-off-white">{title}</h3>
+      <p className="text-dark-gray">{text}</p>
     </div>
   );
 };
@@ -29,7 +35,7 @@ const Contact = ({}: ContactProps) => {
     phone: '',
     message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,6 +49,7 @@ const Contact = ({}: ContactProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      setStatus('loading');
       interface Grecaptcha {
         execute(siteKey: string, options: { action: string }): Promise<string>;
       }
@@ -70,11 +77,11 @@ const Contact = ({}: ContactProps) => {
   return (
     <>
       <Script src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`} />
-      <section id="contact" className="py-20 bg-whisper">
+      <section id="contact" className="py-20 bg-black">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-creole">Get in Touch</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-off-white">Get in Touch</h2>
+            <p className="text-lg text-dark-gray max-w-3xl mx-auto">
               Have a project in mind? Reach out to us to discuss how we can help bring your ideas to
               life.
             </p>
@@ -83,7 +90,7 @@ const Contact = ({}: ContactProps) => {
           <div className="flex flex-col md:flex-row justify-between mb-16 gap-8">
             <ContactMethod
               title="Phone"
-              text="(123) 456-7890"
+              text={CONTACT_PHONE}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +111,7 @@ const Contact = ({}: ContactProps) => {
 
             <ContactMethod
               title="Email"
-              text="info@digitalsolutions.com"
+              text={CONTACT_EMAIL}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -127,9 +134,9 @@ const Contact = ({}: ContactProps) => {
               title="Address"
               text={
                 <>
-                  123 Business Ave, Suite 100
+                  {CONTACT_ADDRESS_LINE1}
                   <br />
-                  San Francisco, CA 94107
+                  {CONTACT_ADDRESS_LINE2}
                 </>
               }
               icon={
@@ -157,10 +164,10 @@ const Contact = ({}: ContactProps) => {
             />
           </div>
 
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
+          <div className="max-w-3xl mx-auto bg-black rounded-lg shadow-md p-8 border border-primary-purple">
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="name" className="block text-off-white font-medium mb-2">
                   Name
                 </label>
                 <input
@@ -175,7 +182,7 @@ const Contact = ({}: ContactProps) => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="email" className="block text-off-white font-medium mb-2">
                   Email
                 </label>
                 <input
@@ -190,7 +197,7 @@ const Contact = ({}: ContactProps) => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="phone" className="block text-off-white font-medium mb-2">
                   Phone
                 </label>
                 <input
@@ -204,7 +211,7 @@ const Contact = ({}: ContactProps) => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="message" className="block text-off-white font-medium mb-2">
                   Message
                 </label>
                 <textarea
@@ -221,14 +228,15 @@ const Contact = ({}: ContactProps) => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="inline-block bg-purple text-white py-3 px-8 rounded-md font-medium hover:bg-opacity-90 transition-colors"
+                  disabled={status === 'loading'}
+                  className="inline-block bg-purple text-white py-3 px-8 rounded-md font-medium hover:bg-opacity-90 transition-colors disabled:opacity-50"
                 >
-                  Send Message
+                  {status === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
-                {status === 'success' && (
-                  <p className="mt-4 text-green-600">Message sent successfully.</p>
-                )}
-                {status === 'error' && <p className="mt-4 text-red-600">Failed to send message.</p>}
+                <p className="mt-4" aria-live="polite">
+                  {status === 'success' && <span className="text-green-600">Message sent successfully.</span>}
+                  {status === 'error' && <span className="text-red-600">Failed to send message.</span>}
+                </p>
               </div>
             </form>
           </div>
