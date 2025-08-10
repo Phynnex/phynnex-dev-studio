@@ -8,8 +8,10 @@
 
 /* Base styles */
 body {
+
   @apply font-inter antialiased text-off-white;
   background-color: #1f2937;
+
 }
 
 /* Custom utility classes */
@@ -54,4 +56,7 @@ body {
     @apply bg-white/5 border border-white/10 rounded-2xl;
     backdrop-filter: blur(4px);
   }
+
+
 }
+
