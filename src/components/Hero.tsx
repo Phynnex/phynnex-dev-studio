@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 type HeroProps = object;
 const Hero = ({}: HeroProps) => {
   return (
+
     <section className="bg-black pt-20 pb-20">
       <div className="px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -15,6 +16,7 @@ const Hero = ({}: HeroProps) => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
+
             <h1 className="heading-1 text-4xl md:text-6xl font-bold leading-tight mb-6">
               Transform Your Ideas into Powerful Digital Solutions
             </h1>
@@ -32,6 +34,7 @@ const Hero = ({}: HeroProps) => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
+
             <div className="bg-light-purple bg-opacity-20 rounded-lg w-full h-64 md:h-[28rem] flex items-center justify-center">
               <Image
                 src="https://picsum.photos/seed/hero/500/300"
