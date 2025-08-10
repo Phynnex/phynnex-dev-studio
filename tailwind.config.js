@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Add your color palette here
+      
         'primary-purple': '#5E209B',
         'secondary-magenta': '#B93FBB',
         'accent-violet': '#8D2FAB',

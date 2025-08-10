@@ -7,9 +7,10 @@ type HeroProps = object;
 const Hero = ({}: HeroProps) => {
   return (
 
-    <section className="bg-black pt-20 pb-20">
-      <div className="px-6 ">
-        <div className="flex">
+    <section className="bg-black pt-8 pb-8">
+      <div className="px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center md:flex">
+
           <motion.div
             className="md:w-1/2 md:pr-10 mb-10 md:mb-0 text-center md:text-left"
             initial={{ x: -50, opacity: 0 }}
@@ -17,7 +18,7 @@ const Hero = ({}: HeroProps) => {
             transition={{ duration: 0.8 }}
           >
 
-            <h1 className="heading-1 text-4xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="heading-1 text-4xl md:text-4xl font-bold leading-tight mb-6">
               Transform Your Ideas into Powerful Digital Solutions
             </h1>
             <p className="text-base sm:text-lg text-dark-gray mb-8 font-inter">
