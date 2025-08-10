@@ -4,7 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="bg-radial-deep bg-noise bg-grid-vignette">
+
+      <body>
+
         <Main />
         <NextScript />
       </body>
