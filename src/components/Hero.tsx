@@ -5,11 +5,11 @@ import Image from 'next/image';
 type HeroProps = object;
 const Hero = ({}: HeroProps) => {
   return (
-    <section className="bg-off-white pt-20 pb-20 ">
+    <section className="bg-navy-blue pt-20 pb-20">
       <div className="px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="md:w-1/2 md:pr-10 mb-10 md:mb-0 text-center md:text-left">
-            <h1 className="heading-1 text-4xl md:text-6xl font-bold leading-tight mb-6 text-deep-blue">
+          <div className="md:w-1/2 md:pr-10 mb-10 md:mb-0 text-center md:text-left animate-fade-in-up">
+            <h1 className="heading-1 text-4xl md:text-6xl font-bold leading-tight mb-6">
               Transform Your Ideas into Powerful Digital Solutions
             </h1>
             <p className="text-base sm:text-lg text-dark-gray mb-8 font-inter">
@@ -20,7 +20,7 @@ const Hero = ({}: HeroProps) => {
               Get Started
             </Link>
           </div>
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 animate-fade-in-up">
             <div className="bg-light-purple bg-opacity-20 rounded-lg w-full h-64 md:h-[28rem] flex items-center justify-center">
               <Image
                 src="https://picsum.photos/seed/hero/500/300"
