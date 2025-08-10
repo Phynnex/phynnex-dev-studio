@@ -6,11 +6,11 @@ type BenefitsProps = object;
 
 const Benefits = ({}: BenefitsProps) => {
   return (
-    <section className="py-20 bg-off-white">
+    <section className="py-20 bg-black">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-deep-blue font-montserrat">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-off-white font-montserrat">
               Discover the Benefits of Partnering with Our Expert Team
             </h2>
             <p className="text-dark-gray mb-4 font-inter">

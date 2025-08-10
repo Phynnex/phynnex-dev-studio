@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import type { GetStaticProps } from 'next';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Process from '../components/Process';
@@ -11,7 +12,18 @@ import Contact from '../components/Contact';
 import Technologies from '../components/Technologies';
 import Faq from '../components/FAQ';
 
-const HomePage = () => {
+type HomePageProps = {
+  siteUrl: string;
+};
+
+const HomePage = ({ siteUrl }: HomePageProps) => {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Phynnex Dev Studio',
+    url: siteUrl,
+  };
+
   return (
     <>
       <Head>
@@ -19,6 +31,19 @@ const HomePage = () => {
         <meta
           name="description"
           content="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
+        />
+        <link rel="canonical" href={siteUrl} />
+        <meta property="og:title" content="Phynnex Dev Studio" />
+        <meta
+          property="og:description"
+          content="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:image" content="https://picsum.photos/seed/hero/1200/630" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>
       <Hero />
@@ -36,3 +61,10 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.phynnex.dev';
+  return {
+    props: { siteUrl },
+  };
+};

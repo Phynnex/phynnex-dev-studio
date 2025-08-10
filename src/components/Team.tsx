@@ -21,7 +21,7 @@ interface TeamMember extends TeamMemberProps {
 }
 const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+    <div className="bg-black rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-primary-purple">
       <div className="h-64 bg-light-purple bg-opacity-10 relative">
         <Image
           src={image || 'https://picsum.photos/seed/team-default/400/400'}
@@ -32,7 +32,7 @@ const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) =>
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-deep-blue font-montserrat">{name}</h3>
+        <h3 className="text-xl font-semibold text-off-white font-montserrat">{name}</h3>
         <p className="text-primary-purple font-medium mb-3 font-inter">{role}</p>
         <p className="text-dark-gray mb-4 font-inter">{bio}</p>
 
@@ -44,7 +44,7 @@ const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) =>
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-deep-blue hover:text-primary-purple transition-colors"
+                className="text-off-white hover:text-primary-purple transition-colors"
                 aria-label={link.platform}
               >
                 {link.icon}
@@ -96,13 +96,13 @@ const Team = ({}: TeamProps) => {
   ];
 
   return (
-    <section className="py-20 bg-off-white">
+    <section className="py-20 bg-black">
       <div className="container-custom">
         <div className="text-center mb-16">
           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">
             Our Team
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-deep-blue font-montserrat">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-off-white font-montserrat">
             Meet the Experts Behind Phynnex
           </h2>
           <p className="text-lg text-dark-gray max-w-3xl mx-auto font-inter">
@@ -124,8 +124,8 @@ const Team = ({}: TeamProps) => {
           ))}
         </div>
 
-        <div className="mt-16 text-center bg-white p-8 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold text-deep-blue mb-4 font-montserrat">
+        <div className="mt-16 text-center bg-black p-8 rounded-lg shadow-md border border-primary-purple">
+          <h3 className="text-xl font-semibold text-off-white mb-4 font-montserrat">
             Join Our Team
           </h3>
           <p className="text-dark-gray mb-6 font-inter">
@@ -134,7 +134,7 @@ const Team = ({}: TeamProps) => {
           </p>
           <a
             href="#"
-            className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-deep-blue transition-colors shadow-md font-montserrat"
+            className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-secondary-magenta transition-colors shadow-md font-montserrat"
           >
             View Open Positions
           </a>
