@@ -94,7 +94,7 @@ const FAQ = ({}: FAQProps) => {
   };
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20">
       <div className="container mx-auto max-w-4xl px-4">
         <div className="text-center mb-16">
           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">

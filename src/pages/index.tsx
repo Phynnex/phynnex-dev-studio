@@ -19,6 +19,18 @@ type HomePageProps = {
 
 const HomePage = ({ siteUrl }: HomePageProps) => {
 
+  const sections = [
+    Services,
+    Process,
+    Technologies,
+    Portfolio,
+    Benefits,
+    Team,
+    Faq,
+    CTA,
+    Contact,
+  ];
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -49,15 +61,14 @@ const HomePage = ({ siteUrl }: HomePageProps) => {
         />
       </Head>
       <Hero />
-      <Services />
-      <Process />
-      <Technologies />
-      <Portfolio />
-      <Benefits />
-      <Team />
-      <Faq />
-      <CTA />
-      <Contact />
+      {sections.map((Section, idx) => (
+        <div
+          key={idx}
+          className={idx % 2 === 0 ? 'gradient-band' : 'gradient-band-alt'}
+        >
+          <Section />
+        </div>
+      ))}
     </>
   );
 };
