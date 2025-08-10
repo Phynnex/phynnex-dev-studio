@@ -12,10 +12,10 @@ const ProcessPage = () => {
           content="Learn about the proven methodology we use at Phynnex Dev Studio."
         />
       </Head>
-      <div className="bg-whisper py-16">
+      <div className="bg-black py-16">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-creole">Our Process</h1>
-          <p className="text-center text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Our Process</h1>
+          <p className="text-center text-lg text-dark-gray mt-4 max-w-3xl mx-auto">
             Learn about our proven methodology to deliver successful digital projects
           </p>
         </div>

@@ -7,6 +7,9 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',
+  moduleNameMapper: {
+    '^framer-motion$': '<rootDir>/__mocks__/framer-motion.js',
+  },
 };
 
 export default createJestConfig(customJestConfig);

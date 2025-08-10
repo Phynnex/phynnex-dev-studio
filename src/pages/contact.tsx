@@ -12,10 +12,10 @@ const ContactPage = () => {
           content="Get in touch with Phynnex Dev Studio to discuss your project."
         />
       </Head>
-      <div className="bg-whisper py-16">
+      <div className="bg-black py-16">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-creole">Contact Us</h1>
-          <p className="text-center text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Contact Us</h1>
+          <p className="text-center text-lg text-dark-gray mt-4 max-w-3xl mx-auto">
             Get in touch with our team to discuss your project
           </p>
         </div>
