@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import type { GetStaticProps } from 'next';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Process from '../components/Process';
@@ -11,9 +12,13 @@ import Contact from '../components/Contact';
 import Technologies from '../components/Technologies';
 import Faq from '../components/FAQ';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.phynnex.dev';
 
-const HomePage = () => {
+type HomePageProps = {
+  siteUrl: string;
+};
+
+const HomePage = ({ siteUrl }: HomePageProps) => {
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -58,3 +63,10 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.phynnex.dev';
+  return {
+    props: { siteUrl },
+  };
+};
