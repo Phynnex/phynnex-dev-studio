@@ -20,8 +20,8 @@ const ContactMethod = ({ icon, title, text }: ContactMethodProps) => {
       <div className="w-14 h-14 bg-perfume bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600">{text}</p>
+      <h3 className="text-xl font-semibold mb-2 text-off-white">{title}</h3>
+      <p className="text-dark-gray">{text}</p>
     </div>
   );
 };
@@ -77,11 +77,11 @@ const Contact = ({}: ContactProps) => {
   return (
     <>
       <Script src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`} />
-      <section id="contact" className="py-20 bg-whisper">
+      <section id="contact" className="py-20 bg-black">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-creole">Get in Touch</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-off-white">Get in Touch</h2>
+            <p className="text-lg text-dark-gray max-w-3xl mx-auto">
               Have a project in mind? Reach out to us to discuss how we can help bring your ideas to
               life.
             </p>
@@ -164,10 +164,10 @@ const Contact = ({}: ContactProps) => {
             />
           </div>
 
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
+          <div className="max-w-3xl mx-auto bg-black rounded-lg shadow-md p-8 border border-primary-purple">
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="name" className="block text-off-white font-medium mb-2">
                   Name
                 </label>
                 <input
@@ -182,7 +182,7 @@ const Contact = ({}: ContactProps) => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="email" className="block text-off-white font-medium mb-2">
                   Email
                 </label>
                 <input
@@ -197,7 +197,7 @@ const Contact = ({}: ContactProps) => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="phone" className="block text-off-white font-medium mb-2">
                   Phone
                 </label>
                 <input
@@ -211,7 +211,7 @@ const Contact = ({}: ContactProps) => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="message" className="block text-off-white font-medium mb-2">
                   Message
                 </label>
                 <textarea

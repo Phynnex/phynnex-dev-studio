@@ -8,7 +8,9 @@
 
 /* Base styles */
 body {
-  @apply font-inter antialiased text-off-white bg-navy-blue;
+
+  @apply font-inter antialiased text-off-white bg-black;
+
 }
 
 /* Custom utility classes */
