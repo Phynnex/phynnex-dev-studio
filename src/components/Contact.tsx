@@ -1,6 +1,12 @@
 // components/Contact.tsx
 import React, { useState } from 'react';
 import Script from 'next/script';
+import {
+  CONTACT_PHONE,
+  CONTACT_EMAIL,
+  CONTACT_ADDRESS_LINE1,
+  CONTACT_ADDRESS_LINE2,
+} from '../config/contact';
 
 interface ContactMethodProps {
   icon: React.ReactNode;
@@ -29,7 +35,7 @@ const Contact = ({}: ContactProps) => {
     phone: '',
     message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,6 +49,7 @@ const Contact = ({}: ContactProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      setStatus('loading');
       interface Grecaptcha {
         execute(siteKey: string, options: { action: string }): Promise<string>;
       }
@@ -83,7 +90,7 @@ const Contact = ({}: ContactProps) => {
           <div className="flex flex-col md:flex-row justify-between mb-16 gap-8">
             <ContactMethod
               title="Phone"
-              text="(123) 456-7890"
+              text={CONTACT_PHONE}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +111,7 @@ const Contact = ({}: ContactProps) => {
 
             <ContactMethod
               title="Email"
-              text="info@digitalsolutions.com"
+              text={CONTACT_EMAIL}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -127,9 +134,9 @@ const Contact = ({}: ContactProps) => {
               title="Address"
               text={
                 <>
-                  123 Business Ave, Suite 100
+                  {CONTACT_ADDRESS_LINE1}
                   <br />
-                  San Francisco, CA 94107
+                  {CONTACT_ADDRESS_LINE2}
                 </>
               }
               icon={
@@ -221,14 +228,15 @@ const Contact = ({}: ContactProps) => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="inline-block bg-purple text-white py-3 px-8 rounded-md font-medium hover:bg-opacity-90 transition-colors"
+                  disabled={status === 'loading'}
+                  className="inline-block bg-purple text-white py-3 px-8 rounded-md font-medium hover:bg-opacity-90 transition-colors disabled:opacity-50"
                 >
-                  Send Message
+                  {status === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
-                {status === 'success' && (
-                  <p className="mt-4 text-green-600">Message sent successfully.</p>
-                )}
-                {status === 'error' && <p className="mt-4 text-red-600">Failed to send message.</p>}
+                <p className="mt-4" aria-live="polite">
+                  {status === 'success' && <span className="text-green-600">Message sent successfully.</span>}
+                  {status === 'error' && <span className="text-red-600">Failed to send message.</span>}
+                </p>
               </div>
             </form>
           </div>

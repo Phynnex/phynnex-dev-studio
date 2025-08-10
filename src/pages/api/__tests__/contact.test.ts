@@ -37,7 +37,16 @@ describe('contact api route', () => {
     const sendMail = jest.fn().mockRejectedValue(new Error('fail'));
     (nodemailer.createTransport as jest.Mock).mockReturnValue({ sendMail });
 
-    const { req, res } = createMocks('POST', { name: 'a', email: 'b', message: 'c' });
+    global.fetch = jest.fn().mockResolvedValue({
+      json: () => Promise.resolve({ success: true }),
+    }) as unknown as typeof fetch;
+
+    const { req, res } = createMocks('POST', {
+      name: 'a',
+      email: 'test@example.com',
+      message: 'c',
+      token: 't',
+    });
     await handler(req as NextApiRequest, res as NextApiResponse);
 
     expect(res.status).toHaveBeenCalledWith(500);
