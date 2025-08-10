@@ -12,11 +12,13 @@ import Contact from '../components/Contact';
 import Technologies from '../components/Technologies';
 import Faq from '../components/FAQ';
 
+
 type HomePageProps = {
   siteUrl: string;
 };
 
 const HomePage = ({ siteUrl }: HomePageProps) => {
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',

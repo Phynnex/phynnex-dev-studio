@@ -9,7 +9,9 @@ const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+
     <header className="bg-black py-4 px-12 shadow-sm sticky top-0 z-50">
+
       <div className="container mx-auto">
         <div className="w-full flex items-center justify-between">
           <div className="w-2/5 flex items-center justify-between">
@@ -62,7 +64,9 @@ const Navbar = ({}: NavbarProps) => {
                 </button>
                 {/* Dropdown Menu */}
                 {isOpen && (
+
                   <div className="absolute left-0 mt-2 w-48 bg-black shadow-lg rounded-md py-1 z-10">
+
                     <Link
                       href="/portfolio"
                       className="block px-4 py-2 text-off-white hover:bg-primary-purple hover:text-white"
