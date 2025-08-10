@@ -8,10 +8,8 @@
 
 /* Base styles */
 body {
-
-  @apply font-inter antialiased text-off-white bg-black;
-
-
+  @apply font-inter antialiased text-off-white;
+  background-color: #1f2937;
 }
 
 /* Custom utility classes */
@@ -50,5 +48,10 @@ body {
 
   .container-custom {
     @apply container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .surface {
+    @apply bg-white/5 border border-white/10 rounded-2xl;
+    backdrop-filter: blur(4px);
   }
 }
