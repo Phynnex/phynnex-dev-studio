@@ -18,7 +18,7 @@ module.exports = {
         'navy-blue': '#26137E',
         'off-white': '#F7F7FA',
         'dark-gray': '#B1B1C4',
-        // Adjust/add as needed
+       
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
