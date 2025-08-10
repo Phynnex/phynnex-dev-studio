@@ -21,7 +21,7 @@ type ServicesProps = object;
 
 const Services = ({}: ServicesProps) => {
   return (
-    <section id="services" className="py-20 bg-black">
+    <section id="services" className="py-20">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="section-title">Expert Digital Solutions for Your Business</h2>

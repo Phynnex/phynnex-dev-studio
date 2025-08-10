@@ -22,7 +22,7 @@ type ProcessProps = object;
 
 const Process = ({}: ProcessProps) => {
   return (
-    <section id="process" className="py-20 bg-black">
+    <section id="process" className="py-20">
       <div className="container-custom">
         <div className="text-center mb-16">
           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">

@@ -73,7 +73,7 @@ const Technologies = ({}: TechnologiesProps) => {
   ];
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20">
       <div className="container-custom">
         <div className="text-center mb-16">
           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">

@@ -6,7 +6,7 @@ type BenefitsProps = object;
 
 const Benefits = ({}: BenefitsProps) => {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-center md:text-left">
