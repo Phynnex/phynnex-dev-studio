@@ -64,7 +64,7 @@ const HomePage = ({ siteUrl }: HomePageProps) => {
       {sections.map((Section, idx) => (
         <div
           key={idx}
-          className={idx % 2 === 0 ? 'gradient-band' : 'gradient-band-alt'}
+         
         >
           <Section />
         </div>

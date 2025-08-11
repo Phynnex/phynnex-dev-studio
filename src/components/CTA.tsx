@@ -5,7 +5,7 @@ import Link from 'next/link';
 type CTAProps = object;
 const CTA = ({}: CTAProps) => {
   return (
-    <section className="py-20 text-off-white">
+    <section className="py-20 text-primary-purple bg-secondary-magenta">
       <div className="container-custom text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">
           Start Your Project Today

@@ -10,7 +10,7 @@
 body {
 
   @apply font-inter antialiased text-off-white;
-  background-color: #1f2937;
+  background-color: white;
 
 }
 
@@ -81,5 +81,22 @@ body {
 
   .gradient-band-alt {
     background-image: linear-gradient(-45deg, #B93FBB, #8D2FAB, #5E209B, #B93FBB);
+  }
+
+  .parallax {
+    will-change: transform;
+    transform: translate3d(0, var(--y, 0px), 0);
+  }
+
+  /* Crisp, subtle grain using SVG fractal noise (no extra asset needed) */
+  .noise-overlay {
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'>\
+<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/></filter>\
+<rect width='100%%' height='100%%' filter='url(#n)' opacity='0.06'/>\
+</svg>");
+    background-size: 300px 300px;
+    mix-blend-mode: overlay; /* gives it that film-like texture over gradients */
   }
 }

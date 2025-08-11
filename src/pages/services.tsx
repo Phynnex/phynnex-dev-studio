@@ -13,6 +13,7 @@ const ServicesPage = () => {
           content="Comprehensive digital solutions tailored to your business needs."
         />
       </Head>
+      
       <div className="bg-black py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Our Services</h1>
@@ -22,7 +23,7 @@ const ServicesPage = () => {
         </div>
       </div>
       <Services />
-      <CTA />
+      
     </>
   );
 };
