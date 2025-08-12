@@ -5,7 +5,7 @@ describe('Hero component', () => {
   it('renders heading', () => {
     render(<Hero />);
     expect(
-      screen.getByRole('heading', { name: /transform your ideas into powerful digital solutions/i })
+      screen.getByRole('heading', { name: /from vision to impact we build what's next/i })
     ).toBeInTheDocument();
   });
 });
