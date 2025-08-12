@@ -21,8 +21,8 @@ const ProcessStep = ({ number, title, description, delay, isEven }: ProcessStepP
         hover:-translate-y-4 hover:shadow-2xl hover:shadow-primary-purple/25
         animate-fade-in-up overflow-hidden
         ${isEven ? 'lg:translate-y-8' : ''}
+        [animation-delay:${delay}]
       `}
-      style={{ animationDelay: delay }}
     >
       {/* Gradient overlay on hover */}
       <div
@@ -95,11 +95,7 @@ const ProcessStep = ({ number, title, description, delay, isEven }: ProcessStepP
         "
         >
           <div
-            className="h-full bg-gradient-to-r from-primary-purple to-secondary-magenta rounded-full transition-all duration-1000 ease-out"
-            style={{
-              width: '0%',
-              animation: `fillProgress 2s ease-out ${delay} forwards`,
-            }}
+            className={`h-full bg-gradient-to-r from-primary-purple to-secondary-magenta rounded-full transition-all duration-1000 ease-out [width:0%] [animation:fillProgress_2s_ease-out_${delay}_forwards]`}
           />
         </div>
       </div>
@@ -185,17 +181,16 @@ const Process = ({}: ProcessProps) => {
         {/* Section header */}
         <div className="text-center mb-16 lg:mb-20">
           {/* Overline */}
-          <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="mb-6 animate-fade-in-up [animation-delay:0.1s]">
             <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
               How We Work
             </span>
           </div>
 
           {/* Main title */}
-          <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white *:mb-6 animate-fade-in-up"
-            style={{ animationDelay: '0.2s' }}
-          >
+            <h2
+              className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white *:mb-6 animate-fade-in-up [animation-delay:0.2s]"
+            >
             <span className="block">Our Seamless Development</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
               Process Explained
@@ -204,8 +199,7 @@ const Process = ({}: ProcessProps) => {
 
           {/* Subtitle */}
           <p
-            className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
-            style={{ animationDelay: '0.3s' }}
+            className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90 [animation-delay:0.3s]"
           >
             We follow a structured, proven methodology to ensure every project is delivered on time,
             within budget, and exceeds your expectations.
@@ -227,7 +221,7 @@ const Process = ({}: ProcessProps) => {
         </div>
 
         {/* Timeline visualization */}
-        <div className="mb-16 lg:mb-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+          <div className="mb-16 lg:mb-20 animate-fade-in-up [animation-delay:1s]">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-center text-xl lg:text-2xl font-montserrat font-bold text-white mb-8">
               Project Timeline Overview
@@ -251,7 +245,7 @@ const Process = ({}: ProcessProps) => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center animate-fade-in-up" style={{ animationDelay: '1.1s' }}>
+          <div className="text-center animate-fade-in-up [animation-delay:1.1s]">
           <div
             className="max-w-2xl mx-auto p-8 rounded-2xl bg-gradient-to-br from-gray-900/60 via-gray-800/40 to-black/50 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500"
           >

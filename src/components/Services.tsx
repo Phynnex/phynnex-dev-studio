@@ -10,16 +10,16 @@ interface ServiceCardProps {
 const ServiceCard = ({ title, description, icon, delay }: ServiceCardProps) => {
   return (
     <div 
-      className="
-        group relative p-8 rounded-2xl text-center 
-        bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
-        backdrop-blur-sm border border-white/10
-        hover:border-primary-purple/50 hover:bg-gradient-to-br hover:from-gray-800/60 hover:via-gray-700/40 hover:to-black/50
-        transform transition-all duration-500 ease-out
-        hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-purple/20
-        animate-fade-in-up overflow-hidden
-      "
-      style={{ animationDelay: delay }}
+        className={`
+          group relative p-8 rounded-2xl text-center
+          bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
+          backdrop-blur-sm border border-white/10
+          hover:border-primary-purple/50 hover:bg-gradient-to-br hover:from-gray-800/60 hover:via-gray-700/40 hover:to-black/50
+          transform transition-all duration-500 ease-out
+          hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-purple/20
+          animate-fade-in-up overflow-hidden
+          [animation-delay:${delay}]
+        `}
     >
       {/* Gradient overlay on hover */}
       <div className="
@@ -101,7 +101,7 @@ const Services = ({}: ServicesProps) => {
         {/* Section header */}
         <div className="text-center mb-16 lg:mb-20">
           {/* Overline */}
-          <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <div className="mb-6 animate-fade-in-up [animation-delay:0.1s]">
             <span className="
               inline-block px-4 py-2 rounded-full
               bg-white/5 backdrop-blur-sm border border-white/20
@@ -113,10 +113,10 @@ const Services = ({}: ServicesProps) => {
           </div>
 
           {/* Main title */}
-          <h2 className="
-            text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6
-            animate-fade-in-up
-          " style={{ animationDelay: '0.2s' }}>
+            <h2 className="
+              text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6
+              animate-fade-in-up [animation-delay:0.2s]
+            ">
             <span className="block">Expert Digital Solutions</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
               for Your Business
@@ -124,10 +124,10 @@ const Services = ({}: ServicesProps) => {
           </h2>
 
           {/* Subtitle */}
-          <p className="
-            mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed
-            animate-fade-in-up opacity-90
-          " style={{ animationDelay: '0.3s' }}>
+            <p className="
+              mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed
+              animate-fade-in-up opacity-90 [animation-delay:0.3s]
+            ">
             We offer specialized services to help transform your ideas into powerful digital
             realities that drive growth and innovation.
           </p>
@@ -271,7 +271,7 @@ const Services = ({}: ServicesProps) => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16 lg:mt-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+        <div className="text-center mt-16 lg:mt-20 animate-fade-in-up [animation-delay:1s]">
           <p className="text-gray-400 font-inter mb-6">
             Ready to transform your business with cutting-edge digital solutions?
           </p>
