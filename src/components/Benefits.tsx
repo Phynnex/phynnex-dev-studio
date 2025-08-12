@@ -9,30 +9,34 @@ const Benefits = ({}: BenefitsProps) => {
     {
       icon: '🚀',
       title: 'Strategic Partnership',
-      description: 'Not just a service provider – we become your strategic digital partner committed to your long-term success.'
+      description:
+        'Not just a service provider – we become your strategic digital partner committed to your long-term success.',
     },
     {
       icon: '💡',
       title: 'Industry Expertise',
-      description: 'Our experienced professionals bring deep knowledge across various industries and cutting-edge technologies.'
+      description:
+        'Our experienced professionals bring deep knowledge across various industries and cutting-edge technologies.',
     },
     {
       icon: '⚡',
       title: 'On-Time Delivery',
-      description: 'We pride ourselves on delivering projects on time and within budget without compromising on quality.'
+      description:
+        'We pride ourselves on delivering projects on time and within budget without compromising on quality.',
     },
     {
       icon: '🔄',
       title: 'Transparent Process',
-      description: 'Clear communication and transparency throughout every phase of your project development.'
-    }
+      description:
+        'Clear communication and transparency throughout every phase of your project development.',
+    },
   ];
 
   return (
     <section id="benefits" className="relative py-20 lg:py-32 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black" />
-      
+
       {/* Floating background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-10 w-40 h-40 bg-primary-purple/3 rounded-full blur-3xl animate-drift-slow" />
@@ -52,22 +56,29 @@ const Benefits = ({}: BenefitsProps) => {
                 </span>
               </div>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <h2
+                className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up"
+                style={{ animationDelay: '0.2s' }}
+              >
                 <span className="block">Discover the Benefits</span>
                 <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
                   of Expert Partnership
                 </span>
               </h2>
 
-              <p className="text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-8 animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
-                When you choose our agency, you&apos;re gaining a strategic partner committed to delivering exceptional results that exceed expectations.
+              <p
+                className="text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-8 animate-fade-in-up opacity-90"
+                style={{ animationDelay: '0.3s' }}
+              >
+                When you choose our agency, you&apos;re gaining a strategic partner committed to
+                delivering exceptional results that exceed expectations.
               </p>
             </div>
 
             {/* Benefits list */}
             <div className="space-y-6 mb-10">
               {benefitsList.map((benefit, index) => (
-                <div 
+                <div
                   key={index}
                   className="group flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-white/5 to-transparent backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 animate-fade-in-up"
                   style={{ animationDelay: `${0.4 + index * 0.1}s` }}
@@ -89,13 +100,23 @@ const Benefits = ({}: BenefitsProps) => {
 
             {/* CTA Button */}
             <div className="animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-              <Link 
-                href="/services" 
+              <Link
+                href="/services"
                 className="group inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base bg-gradient-to-r from-primary-purple to-secondary-magenta text-white shadow-lg transition-all duration-300 ease-out hover:shadow-xl hover:shadow-primary-purple/40 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-purple/50 relative overflow-hidden"
               >
                 <span className="relative z-10">Explore Our Services</span>
-                <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg
+                  className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-magenta to-primary-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
@@ -119,7 +140,7 @@ const Benefits = ({}: BenefitsProps) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-purple/20 via-transparent to-transparent rounded-xl" />
                 </div>
 
-               {/* Floating elements */}
+                {/* Floating elements */}
                 <div className="absolute top-4 right-4 w-16 h-16 bg-primary-purple/10 rounded-full blur-2xl animate-drift-slow pointer-events-none" />
                 <div className="absolute bottom-8 left-8 w-10 h-10 bg-secondary-magenta/20 rounded-full blur-lg animate-drift-slower pointer-events-none" />
                 <div className="absolute -bottom-6 right-1/2 w-14 h-14 bg-primary-purple/15 rounded-full blur-xl animate-drift-slowest pointer-events-none" />

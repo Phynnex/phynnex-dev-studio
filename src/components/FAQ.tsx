@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  Plus, 
-  Minus, 
-  HelpCircle,
-  Clock,
-  Shield,
-  Zap,
-  Users,
-  MessageCircle
-} from 'lucide-react';
+import { Plus, Minus, HelpCircle, Clock, Shield, Zap, Users, MessageCircle } from 'lucide-react';
 
 interface FAQItemProps {
   question: string;
@@ -21,7 +12,7 @@ interface FAQItemProps {
 
 const FAQItem = ({ question, answer, icon, delay, isOpen, onToggle }: FAQItemProps) => {
   return (
-    <div 
+    <div
       className="
         group relative overflow-hidden rounded-2xl
         bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
@@ -34,7 +25,7 @@ const FAQItem = ({ question, answer, icon, delay, isOpen, onToggle }: FAQItemPro
     >
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-5 bg-gradient-to-br from-primary-purple via-secondary-magenta to-primary-purple transition-opacity duration-500 rounded-2xl" />
-      
+
       {/* Question Header */}
       <button
         onClick={onToggle}
@@ -60,16 +51,14 @@ const FAQItem = ({ question, answer, icon, delay, isOpen, onToggle }: FAQItemPro
       </button>
 
       {/* Answer Content */}
-      <div 
+      <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
           isOpen ? 'max-h-96 pb-6' : 'max-h-0'
         }`}
       >
         <div className="px-6 relative z-10">
           <div className="pl-12 border-l-2 border-primary-purple/20 ml-2">
-            <p className="text-gray-300 font-inter leading-relaxed">
-              {answer}
-            </p>
+            <p className="text-gray-300 font-inter leading-relaxed">{answer}</p>
           </div>
         </div>
       </div>
@@ -86,51 +75,55 @@ const FAQ = ({}: FAQProps) => {
   const [openItems, setOpenItems] = useState<number[]>([0]); // First item open by default
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
+    setOpenItems((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
   };
 
   const faqData = [
     {
-      question: "How long does it take to complete a project?",
-      answer: "Project timelines vary based on complexity and scope. Simple websites typically take 2-4 weeks, while complex web applications can take 8-16 weeks. We provide detailed timelines during our initial consultation and keep you updated throughout the development process.",
-      icon: <Clock size={24} />
+      question: 'How long does it take to complete a project?',
+      answer:
+        'Project timelines vary based on complexity and scope. Simple websites typically take 2-4 weeks, while complex web applications can take 8-16 weeks. We provide detailed timelines during our initial consultation and keep you updated throughout the development process.',
+      icon: <Clock size={24} />,
     },
     {
-      question: "What technologies do you specialize in?",
-      answer: "We specialize in modern web technologies including React, Next.js, Node.js, TypeScript, and Python. Our team also has expertise in cloud platforms like AWS, database management, and mobile app development with React Native.",
-      icon: <Zap size={24} />
+      question: 'What technologies do you specialize in?',
+      answer:
+        'We specialize in modern web technologies including React, Next.js, Node.js, TypeScript, and Python. Our team also has expertise in cloud platforms like AWS, database management, and mobile app development with React Native.',
+      icon: <Zap size={24} />,
     },
     {
-      question: "Do you provide ongoing support and maintenance?",
-      answer: "Yes! We offer comprehensive support packages including regular updates, security monitoring, performance optimization, and feature enhancements. Our support plans are tailored to your specific needs and budget.",
-      icon: <Shield size={24} />
+      question: 'Do you provide ongoing support and maintenance?',
+      answer:
+        'Yes! We offer comprehensive support packages including regular updates, security monitoring, performance optimization, and feature enhancements. Our support plans are tailored to your specific needs and budget.',
+      icon: <Shield size={24} />,
     },
     {
-      question: "How do you handle project communication?",
-      answer: "We maintain transparent communication through regular check-ins, progress reports, and dedicated project management tools. You'll have direct access to our team via Slack, email, or scheduled calls based on your preference.",
-      icon: <MessageCircle size={24} />
+      question: 'How do you handle project communication?',
+      answer:
+        "We maintain transparent communication through regular check-ins, progress reports, and dedicated project management tools. You'll have direct access to our team via Slack, email, or scheduled calls based on your preference.",
+      icon: <MessageCircle size={24} />,
     },
     {
-      question: "Can you work with our existing team?",
-      answer: "Absolutely! We're experienced in collaborating with in-house teams, other agencies, and stakeholders. We can integrate seamlessly into your existing workflow or lead the project as your primary development partner.",
-      icon: <Users size={24} />
+      question: 'Can you work with our existing team?',
+      answer:
+        "Absolutely! We're experienced in collaborating with in-house teams, other agencies, and stakeholders. We can integrate seamlessly into your existing workflow or lead the project as your primary development partner.",
+      icon: <Users size={24} />,
     },
     {
       question: "What's included in your development process?",
-      answer: "Our process includes discovery and planning, UI/UX design, development, testing, deployment, and post-launch support. We also provide documentation, training, and knowledge transfer to ensure your team can maintain the solution effectively.",
-      icon: <HelpCircle size={24} />
-    }
+      answer:
+        'Our process includes discovery and planning, UI/UX design, development, testing, deployment, and post-launch support. We also provide documentation, training, and knowledge transfer to ensure your team can maintain the solution effectively.',
+      icon: <HelpCircle size={24} />,
+    },
   ];
 
   return (
     <section id="faq" className="relative py-20 lg:py-32 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black" />
-      
+
       {/* Floating background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-10 w-36 h-36 bg-primary-purple/3 rounded-full blur-3xl animate-drift-slow" />
@@ -150,7 +143,10 @@ const FAQ = ({}: FAQProps) => {
             </div>
 
             {/* Main title */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <h2
+              className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up"
+              style={{ animationDelay: '0.2s' }}
+            >
               <span className="block">Frequently Asked</span>
               <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
                 Questions
@@ -158,8 +154,12 @@ const FAQ = ({}: FAQProps) => {
             </h2>
 
             {/* Subtitle */}
-            <p className="text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-8 animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
-              Find answers to common questions about our development process, technologies, and services. Can't find what you're looking for?
+            <p
+              className="text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-8 animate-fade-in-up opacity-90"
+              style={{ animationDelay: '0.3s' }}
+            >
+              Find answers to common questions about our development process, technologies, and
+              services. Can't find what you're looking for?
             </p>
 
             {/* CTA Button */}
@@ -167,18 +167,24 @@ const FAQ = ({}: FAQProps) => {
               <button className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary-purple to-secondary-magenta p-0.5 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary-purple/25">
                 <div className="rounded-2xl bg-black px-8 py-4 group-hover:bg-transparent transition-colors duration-300">
                   <div className="flex items-center space-x-3">
-                    <MessageCircle size={20} className="text-primary-purple group-hover:text-white transition-colors duration-300" />
-                    <span className="font-montserrat font-semibold text-white">
-                      Ask a Question
-                    </span>
+                    <MessageCircle
+                      size={20}
+                      className="text-primary-purple group-hover:text-white transition-colors duration-300"
+                    />
+                    <span className="font-montserrat font-semibold text-white">Ask a Question</span>
                   </div>
                 </div>
               </button>
             </div>
 
             {/* Contact Info */}
-            <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <h3 className="text-white font-montserrat font-semibold mb-2">Still have questions?</h3>
+            <div
+              className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 animate-fade-in-up"
+              style={{ animationDelay: '0.5s' }}
+            >
+              <h3 className="text-white font-montserrat font-semibold mb-2">
+                Still have questions?
+              </h3>
               <p className="text-gray-300 font-inter text-sm mb-4">
                 Our team is here to help you find the perfect solution for your project.
               </p>
@@ -211,9 +217,12 @@ const FAQ = ({}: FAQProps) => {
             {[
               { number: '24/7', label: 'Support Available', icon: <Shield size={20} /> },
               { number: '<4hrs', label: 'Average Response Time', icon: <Clock size={20} /> },
-              { number: '99%', label: 'Client Satisfaction', icon: <Users size={20} /> }
+              { number: '99%', label: 'Client Satisfaction', icon: <Users size={20} /> },
             ].map((stat, index) => (
-              <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 group">
+              <div
+                key={index}
+                className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 group"
+              >
                 <div className="flex items-center justify-center mb-3">
                   <div className="text-primary-purple/70 group-hover:text-primary-purple transition-colors duration-300">
                     {stat.icon}

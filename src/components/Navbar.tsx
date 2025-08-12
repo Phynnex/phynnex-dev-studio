@@ -63,29 +63,29 @@ const Navbar = ({}: NavbarProps) => {
   ];
 
   return (
-    <header 
+    <header
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out
-        ${isScrolled 
-          ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-white/10' 
-          : 'bg-black/90 backdrop-blur-sm'
+        ${
+          isScrolled
+            ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-white/10'
+            : 'bg-black/90 backdrop-blur-sm'
         }
       `}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
-          
           {/* Logo */}
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="flex-shrink-0 group transition-transform duration-200 hover:scale-105"
           >
             <div className="flex items-center space-x-3">
-              <Image 
-                src={Full} 
-                alt="Phynnex Dev Studio Logo" 
-                className="w-auto h-10 lg:h-12 object-contain filter brightness-200" 
-                width={120} 
+              <Image
+                src={Full}
+                alt="Phynnex Dev Studio Logo"
+                className="w-auto h-10 lg:h-12 object-contain filter brightness-200"
+                width={120}
                 height={48}
                 priority
               />
@@ -101,9 +101,10 @@ const Navbar = ({}: NavbarProps) => {
                 className={`
                   relative font-inter font-medium transition-all duration-200
                   hover:text-primary-purple
-                  ${isActiveRoute(link.href) 
-                    ? 'text-primary-purple' 
-                    : 'text-white/90 hover:text-white'
+                  ${
+                    isActiveRoute(link.href)
+                      ? 'text-primary-purple'
+                      : 'text-white/90 hover:text-white'
                   }
                   after:absolute after:bottom-0 after:left-0 after:h-0.5 
                   after:w-0 after:bg-primary-purple after:transition-all after:duration-200
@@ -150,9 +151,10 @@ const Navbar = ({}: NavbarProps) => {
                   bg-gray-900/95 backdrop-blur-md border border-white/10
                   rounded-lg shadow-xl overflow-hidden
                   transition-all duration-200 origin-top
-                  ${isDropdownOpen 
-                    ? 'opacity-100 scale-y-100 visible' 
-                    : 'opacity-0 scale-y-95 invisible'
+                  ${
+                    isDropdownOpen
+                      ? 'opacity-100 scale-y-100 visible'
+                      : 'opacity-0 scale-y-95 invisible'
                   }
                 `}
               >
@@ -164,9 +166,10 @@ const Navbar = ({}: NavbarProps) => {
                       block px-4 py-3 text-sm font-inter font-medium
                       transition-all duration-150
                       hover:bg-primary-purple/20 hover:text-primary-purple
-                      ${isActiveRoute(link.href) 
-                        ? 'text-primary-purple bg-primary-purple/10' 
-                        : 'text-white/80 hover:text-white'
+                      ${
+                        isActiveRoute(link.href)
+                          ? 'text-primary-purple bg-primary-purple/10'
+                          : 'text-white/80 hover:text-white'
                       }
                       ${index !== dropdownLinks.length - 1 ? 'border-b border-white/5' : ''}
                     `}
@@ -187,12 +190,7 @@ const Navbar = ({}: NavbarProps) => {
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -201,12 +199,7 @@ const Navbar = ({}: NavbarProps) => {
                   />
                 </svg>
               ) : (
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -252,12 +245,7 @@ const Navbar = ({}: NavbarProps) => {
               className="lg:hidden p-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200"
               aria-label="Toggle mobile menu"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -285,9 +273,10 @@ const Navbar = ({}: NavbarProps) => {
                   className={`
                     px-4 py-3 rounded-lg font-inter font-medium transition-all duration-150
                     hover:bg-white/5
-                    ${isActiveRoute(link.href) 
-                      ? 'text-primary-purple bg-primary-purple/10' 
-                      : 'text-white/90 hover:text-white'
+                    ${
+                      isActiveRoute(link.href)
+                        ? 'text-primary-purple bg-primary-purple/10'
+                        : 'text-white/90 hover:text-white'
                     }
                   `}
                   onClick={() => setIsOpen(false)}
@@ -308,9 +297,10 @@ const Navbar = ({}: NavbarProps) => {
                     className={`
                       px-6 py-3 rounded-lg font-inter font-medium transition-all duration-150
                       hover:bg-white/5
-                      ${isActiveRoute(link.href) 
-                        ? 'text-primary-purple bg-primary-purple/10' 
-                        : 'text-white/80 hover:text-white'
+                      ${
+                        isActiveRoute(link.href)
+                          ? 'text-primary-purple bg-primary-purple/10'
+                          : 'text-white/80 hover:text-white'
                       }
                     `}
                     onClick={() => setIsOpen(false)}

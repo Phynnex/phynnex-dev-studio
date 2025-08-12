@@ -4,7 +4,10 @@ import SEO from '../components/SEO';
 const CookiesPage = () => {
   return (
     <>
-      <SEO title="Phynnex Dev Studio - Cookies Settings" description="Information about how Phynnex Dev Studio uses cookies." />
+      <SEO
+        title="Phynnex Dev Studio - Cookies Settings"
+        description="Information about how Phynnex Dev Studio uses cookies."
+      />
 
       <div className="bg-black py-16">
         <div className="container mx-auto max-w-7xl px-4">

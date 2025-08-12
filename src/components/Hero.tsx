@@ -32,13 +32,7 @@ const Hero = () => {
     <section className="relative w-full min-h-screen overflow-hidden pb-12 pt-28">
       {/* Background */}
       <div ref={bgRef} className="absolute inset-0 parallax -z-10">
-        <Image
-          src={heroBg}
-          alt=""
-          aria-hidden="true"
-          fill
-          className="object-cover"
-        />
+        <Image src={heroBg} alt="" aria-hidden="true" fill className="object-cover" />
       </div>
       {/* Gradient */}
       <div
@@ -50,40 +44,50 @@ const Hero = () => {
 
       {/* Main content */}
       <div className="relative z-20 w-full px-6 sm:px-8 lg:px-16 xl:px-24 flex flex-col items-center justify-center min-h-[78vh] text-center">
-        <div className="mb-12 md:mb-16 max-w-5xl animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <div
+          className="mb-12 md:mb-16 max-w-5xl animate-fade-in-up"
+          style={{ animationDelay: '0.1s' }}
+        >
           {/* Overline/Tagline - New addition for better hierarchy */}
           <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
-            <span className="
+            <span
+              className="
               inline-block px-4 py-2 rounded-full
               bg-white/10 backdrop-blur-sm border border-white/20
               text-white/90 font-medium text-sm tracking-wide uppercase
               font-inter
-            ">
+            "
+            >
               Digital Innovation Studio
             </span>
           </div>
 
-          <h1 className="
+          <h1
+            className="
             font-montserrat font-black tracking-tight text-white
             leading-[1.1] md:leading-[1.08]
             text-[clamp(2.25rem,5.5vw,4.5rem)]
             mb-2
-          ">
+          "
+          >
             <span className="block">From Vision to Impact</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
               We Build What&apos;s Next
             </span>
           </h1>
 
-          <p className="
+          <p
+            className="
             mx-auto mt-8 md:mt-10 max-w-2xl
             text-gray-200 font-inter font-normal
             text-[clamp(1.125rem,1.5vw,1.375rem)]
             leading-[1.65] md:leading-[1.7]
             opacity-90
-          ">
-            We craft digital products that solve real problems and inspire growth. By combining advanced
-            technology with creative thinking, we turn bold ideas into market-ready solutions.
+          "
+          >
+            We craft digital products that solve real problems and inspire growth. By combining
+            advanced technology with creative thinking, we turn bold ideas into market-ready
+            solutions.
           </p>
         </div>
 
@@ -125,8 +129,18 @@ const Hero = () => {
               "
             >
               Explore Our Work
-              <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </Link>
           </div>

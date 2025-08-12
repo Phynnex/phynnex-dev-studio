@@ -6,7 +6,6 @@ type FooterProps = object;
 const Footer = ({}: FooterProps) => {
   return (
     <footer className="bg-black py-10 border-t border-primary-purple text-off-white">
-
       <div className="container-custom">
         <div className="flex flex-col items-center mb-10">
           {/* Logo */}

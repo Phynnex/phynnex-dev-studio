@@ -4,7 +4,10 @@ import SEO from '../components/SEO';
 const TermsPage = () => {
   return (
     <>
-      <SEO title="Phynnex Dev Studio - Terms of Service" description="Understand the terms of service for using Phynnex Dev Studio." />
+      <SEO
+        title="Phynnex Dev Studio - Terms of Service"
+        description="Understand the terms of service for using Phynnex Dev Studio."
+      />
 
       <div className="bg-black py-16">
         <div className="container mx-auto max-w-7xl px-4">

@@ -4,11 +4,16 @@ import SEO from '../components/SEO';
 const PrivacyPage = () => {
   return (
     <>
-      <SEO title="Phynnex Dev Studio - Privacy Policy" description="Read about Phynnex Dev Studio's privacy practices." />
+      <SEO
+        title="Phynnex Dev Studio - Privacy Policy"
+        description="Read about Phynnex Dev Studio's privacy practices."
+      />
 
       <div className="bg-black py-16">
         <div className="container mx-auto max-w-7xl px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Privacy Policy</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">
+            Privacy Policy
+          </h1>
           <p className="text-center text-lg text-dark-gray mt-4 max-w-3xl mx-auto">
             Phynnex Dev Studio respects your privacy and is committed to protecting your personal
             information. This policy explains how we collect, use, and safeguard the data you

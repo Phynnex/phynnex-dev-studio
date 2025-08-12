@@ -17,17 +17,7 @@ type HomePageProps = {
 };
 
 const HomePage = ({ siteUrl }: HomePageProps) => {
-  const sections = [
-    Services,
-    Process,
-    Technologies,
-    Portfolio,
-    Benefits,
-    Team,
-    Faq,
-    CTA,
-    Contact,
-  ];
+  const sections = [Services, Process, Technologies, Portfolio, Benefits, Team, Faq, CTA, Contact];
 
   const structuredData = {
     '@context': 'https://schema.org',

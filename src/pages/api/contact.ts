@@ -68,7 +68,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     log('info', 'recaptcha_verify', { verifyData }); // helpful in dev
 
     // With v3, also check action and score if provided
-    if (!verifyData.success || (verifyData.action && verifyData.action !== 'submit') || (typeof verifyData.score === 'number' && verifyData.score < 0.5)) {
+    if (
+      !verifyData.success ||
+      (verifyData.action && verifyData.action !== 'submit') ||
+      (typeof verifyData.score === 'number' && verifyData.score < 0.5)
+    ) {
       return res.status(400).json({ success: false, error: 'reCAPTCHA failed' });
     }
 
@@ -115,9 +119,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(200).json({ success: true });
   } catch (error) {
     log('error', 'contact_form_error', { error });
-    const msg = process.env.NODE_ENV === 'development'
-      ? (error as Error).message
-      : 'Failed to send email';
+    const msg =
+      process.env.NODE_ENV === 'development' ? (error as Error).message : 'Failed to send email';
     return res.status(500).json({ success: false, error: msg });
   }
 }

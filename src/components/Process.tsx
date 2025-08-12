@@ -181,16 +181,14 @@ const Process = ({}: ProcessProps) => {
         {/* Section header */}
         <div className="text-center mb-16 lg:mb-20">
           {/* Overline */}
-            <div className="mb-6 animate-fade-in-up [animation-delay:0.1s]">
+          <div className="mb-6 animate-fade-in-up [animation-delay:0.1s]">
             <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
               How We Work
             </span>
           </div>
 
           {/* Main title */}
-            <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white *:mb-6 animate-fade-in-up [animation-delay:0.2s]"
-            >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white *:mb-6 animate-fade-in-up [animation-delay:0.2s]">
             <span className="block">Our Seamless Development</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
               Process Explained
@@ -198,9 +196,7 @@ const Process = ({}: ProcessProps) => {
           </h2>
 
           {/* Subtitle */}
-          <p
-            className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90 [animation-delay:0.3s]"
-          >
+          <p className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90 [animation-delay:0.3s]">
             We follow a structured, proven methodology to ensure every project is delivered on time,
             within budget, and exceeds your expectations.
           </p>
@@ -221,7 +217,7 @@ const Process = ({}: ProcessProps) => {
         </div>
 
         {/* Timeline visualization */}
-          <div className="mb-16 lg:mb-20 animate-fade-in-up [animation-delay:1s]">
+        <div className="mb-16 lg:mb-20 animate-fade-in-up [animation-delay:1s]">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-center text-xl lg:text-2xl font-montserrat font-bold text-white mb-8">
               Project Timeline Overview
@@ -245,10 +241,8 @@ const Process = ({}: ProcessProps) => {
         </div>
 
         {/* CTA Section */}
-          <div className="text-center animate-fade-in-up [animation-delay:1.1s]">
-          <div
-            className="max-w-2xl mx-auto p-8 rounded-2xl bg-gradient-to-br from-gray-900/60 via-gray-800/40 to-black/50 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500"
-          >
+        <div className="text-center animate-fade-in-up [animation-delay:1.1s]">
+          <div className="max-w-2xl mx-auto p-8 rounded-2xl bg-gradient-to-br from-gray-900/60 via-gray-800/40 to-black/50 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500">
             <h3 className="text-2xl lg:text-3xl font-montserrat font-bold text-white mb-4">
               Ready to Start Your
               <span className="bg-gradient-to-r from-primary-purple to-secondary-magenta bg-clip-text text-transparent">

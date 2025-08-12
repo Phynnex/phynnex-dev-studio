@@ -11,7 +11,8 @@ interface SEOProps {
 }
 
 const defaultTitle = 'Phynnex Dev Studio';
-const defaultDescription = 'Welcome to Phynnex Dev Studio, your partner for custom digital solutions.';
+const defaultDescription =
+  'Welcome to Phynnex Dev Studio, your partner for custom digital solutions.';
 const defaultImage = 'https://picsum.photos/seed/hero/1200/630';
 
 const SEO = ({

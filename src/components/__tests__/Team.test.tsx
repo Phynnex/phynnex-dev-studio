@@ -8,6 +8,5 @@ describe('Team component', () => {
     expect(
       screen.getByRole('heading', { name: /meet the brilliant minds behind innovation/i })
     ).toBeInTheDocument();
-
   });
 });

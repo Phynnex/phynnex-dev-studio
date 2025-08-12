@@ -8,6 +8,5 @@ describe('Hero component', () => {
     expect(
       screen.getByRole('heading', { name: /from vision to impact we build what's next/i })
     ).toBeInTheDocument();
-
   });
 });

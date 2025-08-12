@@ -10,7 +10,7 @@ import {
   CheckCircle,
   AlertCircle,
   User,
-  Smartphone
+  Smartphone,
 } from 'lucide-react';
 import {
   CONTACT_PHONE,
@@ -28,7 +28,7 @@ interface ContactMethodProps {
 
 const ContactMethod = ({ icon, title, text, delay }: ContactMethodProps) => {
   return (
-    <div 
+    <div
       className="
         group relative overflow-hidden rounded-2xl p-8 text-center
         bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
@@ -42,10 +42,10 @@ const ContactMethod = ({ icon, title, text, delay }: ContactMethodProps) => {
     >
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-5 bg-gradient-to-br from-primary-purple via-secondary-magenta to-primary-purple transition-opacity duration-500 rounded-2xl" />
-      
+
       {/* Floating background shapes */}
       <div className="absolute top-4 right-4 w-8 h-8 bg-primary-purple/5 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
+
       <div className="relative z-10">
         {/* Icon */}
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-purple/20 to-secondary-magenta/20 backdrop-blur-sm border border-white/10 mb-6 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-primary-purple/30 group-hover:to-secondary-magenta/30 transition-all duration-300">
@@ -60,9 +60,7 @@ const ContactMethod = ({ icon, title, text, delay }: ContactMethodProps) => {
         </h3>
 
         {/* Content */}
-        <div className="text-gray-300 font-inter">
-          {text}
-        </div>
+        <div className="text-gray-300 font-inter">{text}</div>
       </div>
     </div>
   );
@@ -89,43 +87,42 @@ const Contact = ({}: ContactProps) => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  try {
-    setStatus('loading');
+    e.preventDefault();
+    try {
+      setStatus('loading');
 
-    interface Grecaptcha {
-      ready(cb: () => void): void;
-      execute(siteKey: string, options: { action: string }): Promise<string>;
+      interface Grecaptcha {
+        ready(cb: () => void): void;
+        execute(siteKey: string, options: { action: string }): Promise<string>;
+      }
+      const w = window as Window & { grecaptcha?: Grecaptcha };
+
+      if (!w.grecaptcha || !siteKey) {
+        throw new Error('reCAPTCHA not loaded');
+      }
+
+      // Ensure API is ready
+      await new Promise<void>((resolve) => w.grecaptcha!.ready(() => resolve()));
+      const token = await w.grecaptcha!.execute(siteKey, { action: 'submit' });
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, token }),
+      });
+
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(body?.error || `HTTP ${res.status}`);
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
     }
-    const w = window as Window & { grecaptcha?: Grecaptcha };
-
-    if (!w.grecaptcha || !siteKey) {
-      throw new Error('reCAPTCHA not loaded');
-    }
-
-    // Ensure API is ready
-    await new Promise<void>((resolve) => w.grecaptcha!.ready(() => resolve()));
-    const token = await w.grecaptcha!.execute(siteKey, { action: 'submit' });
-
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...formData, token }),
-    });
-
-    const body = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      throw new Error(body?.error || `HTTP ${res.status}`);
-    }
-
-    setStatus('success');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  } catch (err) {
-    console.error(err);
-    setStatus('error');
-  }
-};
-
+  };
 
   return (
     <>
@@ -133,7 +130,7 @@ const Contact = ({}: ContactProps) => {
       <section id="contact" className="relative py-20 lg:py-32 overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black" />
-        
+
         {/* Floating background shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 right-10 w-40 h-40 bg-primary-purple/3 rounded-full blur-3xl animate-drift-slow" />
@@ -152,7 +149,10 @@ const Contact = ({}: ContactProps) => {
             </div>
 
             {/* Main title */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <h2
+              className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up"
+              style={{ animationDelay: '0.2s' }}
+            >
               <span className="block">Get in Touch</span>
               <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
                 & Start Building
@@ -160,8 +160,12 @@ const Contact = ({}: ContactProps) => {
             </h2>
 
             {/* Subtitle */}
-            <p className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
-              Have a project in mind? We'd love to hear about your vision and discuss how we can help bring your ideas to life with cutting-edge technology.
+            <p
+              className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
+              style={{ animationDelay: '0.3s' }}
+            >
+              Have a project in mind? We'd love to hear about your vision and discuss how we can
+              help bring your ideas to life with cutting-edge technology.
             </p>
           </div>
 
@@ -198,11 +202,11 @@ const Contact = ({}: ContactProps) => {
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900/60 via-gray-800/40 to-black/60 backdrop-blur-xl border border-white/10 p-8 lg:p-12">
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-purple/3 via-secondary-magenta/2 to-primary-purple/3 rounded-3xl" />
-              
+
               {/* Floating accent shapes */}
               <div className="absolute top-8 right-8 w-16 h-16 bg-primary-purple/5 rounded-full blur-xl opacity-60" />
               <div className="absolute bottom-8 left-8 w-12 h-12 bg-secondary-magenta/5 rounded-full blur-lg opacity-40" />
-              
+
               <div className="relative z-10">
                 {/* Form Header */}
                 <div className="text-center mb-8">
@@ -221,7 +225,10 @@ const Contact = ({}: ContactProps) => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Name Field */}
                     <div className="group">
-                      <label htmlFor="name" className="block text-white font-montserrat font-semibold mb-3 flex items-center space-x-2">
+                      <label
+                        htmlFor="name"
+                        className="block text-white font-montserrat font-semibold mb-3 flex items-center space-x-2"
+                      >
                         <User size={18} className="text-primary-purple" />
                         <span>Name</span>
                       </label>
@@ -239,7 +246,10 @@ const Contact = ({}: ContactProps) => {
 
                     {/* Email Field */}
                     <div className="group">
-                      <label htmlFor="email" className="block text-white font-montserrat font-semibold mb-3 flex items-center space-x-2">
+                      <label
+                        htmlFor="email"
+                        className="block text-white font-montserrat font-semibold mb-3 flex items-center space-x-2"
+                      >
                         <Mail size={18} className="text-primary-purple" />
                         <span>Email</span>
                       </label>
@@ -258,7 +268,10 @@ const Contact = ({}: ContactProps) => {
 
                   {/* Phone Field */}
                   <div className="group">
-                    <label htmlFor="phone" className="block text-white font-montserrat font-semibold mb-3 flex items-center space-x-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-white font-montserrat font-semibold mb-3 flex items-center space-x-2"
+                    >
                       <Smartphone size={18} className="text-primary-purple" />
                       <span>Phone (Optional)</span>
                     </label>
@@ -275,7 +288,10 @@ const Contact = ({}: ContactProps) => {
 
                   {/* Message Field */}
                   <div className="group">
-                    <label htmlFor="message" className="block text-white font-montserrat font-semibold mb-3 flex items-center space-x-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-white font-montserrat font-semibold mb-3 flex items-center space-x-2"
+                    >
                       <MessageCircle size={18} className="text-primary-purple" />
                       <span>Message</span>
                     </label>
@@ -302,14 +318,20 @@ const Contact = ({}: ContactProps) => {
                         <div className="flex items-center space-x-3">
                           {status === 'loading' ? (
                             <>
-                              <Clock size={20} className="text-primary-purple group-hover:text-white animate-spin" />
+                              <Clock
+                                size={20}
+                                className="text-primary-purple group-hover:text-white animate-spin"
+                              />
                               <span className="font-montserrat font-bold text-lg text-white">
                                 Sending...
                               </span>
                             </>
                           ) : (
                             <>
-                              <Send size={20} className="text-primary-purple group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+                              <Send
+                                size={20}
+                                className="text-primary-purple group-hover:text-white group-hover:translate-x-1 transition-all duration-300"
+                              />
                               <span className="font-montserrat font-bold text-lg text-white">
                                 Send Message
                               </span>

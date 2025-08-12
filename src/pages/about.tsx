@@ -4,7 +4,10 @@ import SEO from '../components/SEO';
 const AboutPage = () => {
   return (
     <>
-      <SEO title="Phynnex Dev Studio - About" description="Learn more about Phynnex Dev Studio and our mission." />
+      <SEO
+        title="Phynnex Dev Studio - About"
+        description="Learn more about Phynnex Dev Studio and our mission."
+      />
       <div className="bg-black py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">About Us</h1>

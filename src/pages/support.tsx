@@ -4,10 +4,15 @@ import SEO from '../components/SEO';
 const SupportPage = () => {
   return (
     <>
-      <SEO title="Phynnex Dev Studio - Support" description="Need help? Reach out to the Phynnex Dev Studio support center." />
+      <SEO
+        title="Phynnex Dev Studio - Support"
+        description="Need help? Reach out to the Phynnex Dev Studio support center."
+      />
       <div className="bg-black py-16">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Support Center</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">
+            Support Center
+          </h1>
           <p className="text-center text-lg text-dark-gray mt-4 max-w-3xl mx-auto">
             Welcome to the Phynnex Dev Studio Support Center. We’re dedicated to providing prompt
             assistance for any issues or questions you may have.

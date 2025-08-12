@@ -1,25 +1,25 @@
 import React from 'react';
-import { 
-  Code, 
-  Database, 
-  Globe, 
-  Layers, 
-  Smartphone, 
-  Server, 
-  Cloud, 
-  Container, 
-  GitBranch, 
-  Github, 
-  FileText, 
-  Palette, 
-  Zap, 
-  Settings, 
-  Package, 
+import {
+  Code,
+  Database,
+  Globe,
+  Layers,
+  Smartphone,
+  Server,
+  Cloud,
+  Container,
+  GitBranch,
+  Github,
+  FileText,
+  Palette,
+  Zap,
+  Settings,
+  Package,
   TestTube,
   Monitor,
   Cpu,
   Box,
-  Workflow
+  Workflow,
 } from 'lucide-react';
 
 interface TechnologyItemProps {
@@ -30,8 +30,8 @@ interface TechnologyItemProps {
 
 const TechnologyItem = ({ name, delay, icon }: TechnologyItemProps) => {
   return (
-      <div
-        className={`
+    <div
+      className={`
           group relative overflow-hidden rounded-2xl p-4
           bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
           backdrop-blur-sm border border-white/10
@@ -41,26 +41,26 @@ const TechnologyItem = ({ name, delay, icon }: TechnologyItemProps) => {
           animate-fade-in-up
           [animation-delay:${delay}]
         `}
-      >
+    >
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-primary-purple via-secondary-magenta to-primary-purple transition-opacity duration-500 rounded-2xl" />
-      
+
       {/* Floating background shapes */}
       <div className="absolute top-2 right-2 w-8 h-8 bg-primary-purple/5 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="absolute bottom-1 left-2 w-6 h-6 bg-secondary-magenta/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-      
+
       <div className="relative z-10 flex  items-center justify-center gap-5">
         {/* Icon */}
         <div className="text-primary-purple/70 group-hover:text-primary-purple group-hover:scale-110 transition-all duration-300">
           {icon}
         </div>
-        
+
         {/* Technology name */}
         <span className="text-white font-medium font-inter text-xs text-center group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary-purple group-hover:to-secondary-magenta group-hover:bg-clip-text transition-all duration-300">
           {name}
         </span>
       </div>
-      
+
       {/* Tech icon indicator */}
       <div className="absolute top-2 left-2 w-2 h-2 bg-primary-purple/30 rounded-full group-hover:bg-primary-purple group-hover:scale-150 transition-all duration-300" />
     </div>
@@ -84,8 +84,8 @@ const TechnologyCategory = ({ title, technologies, delay }: TechnologyCategoryPr
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         {technologies.map((tech, index) => (
-          <TechnologyItem 
-            key={index} 
+          <TechnologyItem
+            key={index}
             name={tech.name}
             icon={tech.icon}
             delay={`${parseFloat(delay.replace('s', '')) + index * 0.05}s`}
@@ -111,7 +111,7 @@ const Technologies = ({}: TechnologiesProps) => {
     { name: 'TypeScript', icon: <Code size={24} /> },
     { name: 'Bootstrap', icon: <Box size={24} /> },
     { name: 'Vue.js', icon: <Code size={24} /> },
-    { name: 'Angular', icon: <Code size={24} /> }
+    { name: 'Angular', icon: <Code size={24} /> },
   ];
 
   const backendTechnologies = [
@@ -126,7 +126,7 @@ const Technologies = ({}: TechnologiesProps) => {
     { name: 'REST API', icon: <Globe size={24} /> },
     { name: 'AWS', icon: <Cloud size={24} /> },
     { name: 'Docker', icon: <Container size={24} /> },
-    { name: 'Kubernetes', icon: <Settings size={24} /> }
+    { name: 'Kubernetes', icon: <Settings size={24} /> },
   ];
 
   const tools = [
@@ -141,14 +141,14 @@ const Technologies = ({}: TechnologiesProps) => {
     { name: 'Jest', icon: <TestTube size={24} /> },
     { name: 'CI/CD', icon: <Workflow size={24} /> },
     { name: 'Vercel', icon: <Cloud size={24} /> },
-    { name: 'Netlify', icon: <Cloud size={24} /> }
+    { name: 'Netlify', icon: <Cloud size={24} /> },
   ];
 
   return (
     <section id="technologies" className="relative py-20 lg:py-32 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black" />
-      
+
       {/* Floating background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-10 w-32 h-32 bg-primary-purple/3 rounded-full blur-3xl animate-drift-slow" />
@@ -159,14 +159,14 @@ const Technologies = ({}: TechnologiesProps) => {
       <div className="relative z-10 container-custom">
         <div className="text-center mb-16 lg:mb-20">
           {/* Overline */}
-            <div className="mb-6 animate-fade-in-up [animation-delay:0.1s]">
+          <div className="mb-6 animate-fade-in-up [animation-delay:0.1s]">
             <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
               Our Expertise
             </span>
           </div>
 
           {/* Main title */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up [animation-delay:0.2s]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up [animation-delay:0.2s]">
             <span className="block">Technologies We</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
               Master & Perfect
@@ -174,37 +174,37 @@ const Technologies = ({}: TechnologiesProps) => {
           </h2>
 
           {/* Subtitle */}
-            <p className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90 [animation-delay:0.3s]">
-            We leverage cutting-edge technologies to build powerful, scalable, and beautiful digital solutions that drive results.
+          <p className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90 [animation-delay:0.3s]">
+            We leverage cutting-edge technologies to build powerful, scalable, and beautiful digital
+            solutions that drive results.
           </p>
         </div>
 
-        <TechnologyCategory 
-          title="Frontend Development" 
-          technologies={frontendTechnologies} 
+        <TechnologyCategory
+          title="Frontend Development"
+          technologies={frontendTechnologies}
           delay="0.4s"
         />
-        <TechnologyCategory 
-          title="Backend Development" 
-          technologies={backendTechnologies} 
+        <TechnologyCategory
+          title="Backend Development"
+          technologies={backendTechnologies}
           delay="0.6s"
         />
-        <TechnologyCategory 
-          title="Tools & Platforms" 
-          technologies={tools} 
-          delay="0.8s"
-        />
+        <TechnologyCategory title="Tools & Platforms" technologies={tools} delay="0.8s" />
 
         {/* Stats section */}
-          <div className="mt-20 animate-fade-in-up [animation-delay:1s]">
+        <div className="mt-20 animate-fade-in-up [animation-delay:1s]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { number: '50+', label: 'Technologies', icon: <Cpu size={20} /> },
               { number: '100+', label: 'Projects', icon: <Box size={20} /> },
               { number: '99%', label: 'Success Rate', icon: <Zap size={20} /> },
-              { number: '24/7', label: 'Support', icon: <Settings size={20} /> }
+              { number: '24/7', label: 'Support', icon: <Settings size={20} /> },
             ].map((stat, index) => (
-              <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 group">
+              <div
+                key={index}
+                className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 group"
+              >
                 <div className="flex items-center justify-center mb-3">
                   <div className="text-primary-purple/70 group-hover:text-primary-purple transition-colors duration-300">
                     {stat.icon}

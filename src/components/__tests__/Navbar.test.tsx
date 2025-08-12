@@ -30,17 +30,12 @@ describe('Navbar component', () => {
   it('renders navigation links', () => {
     render(<Navbar />);
 
-    expect(
-      screen.getByRole('link', { name: /phynnex dev studio logo/i })
-    ).toBeInTheDocument();
-
+    expect(screen.getByRole('link', { name: /phynnex dev studio logo/i })).toBeInTheDocument();
   });
 
   it('shows theme toggle button', () => {
     render(<Navbar />);
 
-    expect(
-      screen.getByRole('button', { name: /toggle theme/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /toggle theme/i })).toBeInTheDocument();
   });
 });
