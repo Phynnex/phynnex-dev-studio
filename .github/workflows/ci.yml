@@ -64,11 +64,24 @@ jobs:
           vercel-args: '--prod'
 
       - name: Deploy to AWS Amplify
-        if: github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/master'
         run: echo "Configure AWS Amplify CLI deployment here"
         # For true AWS Amplify CI/CD, you'd push to the develop branch and let Amplify auto-deploy.
         # Or use aws-actions/configure-aws-credentials and amplify CLI for full control.
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: github-actions
+
+      - name: Deploy to Amplify Hosting
+        uses: aws-amplify/amplify-hosting-deploy@v3
+        with:
+          app-id: ${{ secrets.AMPLIFY_APP_ID }}
+          branch: ${{ secrets.AMPLIFY_BRANCH }}
+- run: aws sts get-caller-identity
   # --- Slack/Discord notification on failure ---
   notify-on-failure:
     needs: [build-and-test, deploy]
