@@ -211,9 +211,11 @@ const Portfolio = ({}: PortfolioProps) => {
 
           {/* Filter buttons */}
 
-          <div className="inline-flex flex-wrap justify-center gap-2 p-2 rounded-2xl bg-gradient-to-r from-gray-900/60 via-gray-800/40 to-gray-900/60 backdrop-blur-sm border border-white/10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div
+            className="inline-flex flex-wrap justify-center gap-2 p-2 rounded-2xl bg-gradient-to-r from-gray-900/60 via-gray-800/40 to-gray-900/60 backdrop-blur-sm border border-white/10 animate-fade-in-up"
+            style={{ animationDelay: '0.4s' }}
+          >
             {filterButtons.map((button, _index) => (
-
               <button
                 key={button.key}
                 onClick={() => setFilter(button.key)}

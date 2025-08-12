@@ -1,17 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-  MapPin,
-  Star,
-  Award,
-  Users,
-  Coffee
-} from 'lucide-react';
-
+import { Github, Linkedin, Twitter, Mail, MapPin, Star, Award, Users, Coffee } from 'lucide-react';
 
 interface TeamMemberProps {
   name: string;
@@ -65,9 +54,7 @@ const TeamMember = ({
         {/* Profile Image */}
         <div className="relative mb-6 mx-auto w-32 h-32">
           <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary-purple/20 to-secondary-magenta/20 p-1">
-
             <Image
-
               src={image}
               alt={name}
               width={128}
