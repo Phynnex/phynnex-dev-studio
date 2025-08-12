@@ -1,19 +1,12 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 import Services from '../components/Services';
-import CTA from '../components/CTA';
 
 const ServicesPage = () => {
   return (
     <>
-      <Head>
-        <title>Phynnex Dev Studio - Services</title>
-        <meta
-          name="description"
-          content="Comprehensive digital solutions tailored to your business needs."
-        />
-      </Head>
-      
+      <SEO title="Phynnex Dev Studio - Services" description="Comprehensive digital solutions tailored to your business needs." />
+
       <div className="bg-black py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Our Services</h1>
@@ -23,7 +16,6 @@ const ServicesPage = () => {
         </div>
       </div>
       <Services />
-      
     </>
   );
 };

@@ -1,13 +1,10 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 
 const AboutPage = () => {
   return (
     <>
-      <Head>
-        <title>Phynnex Dev Studio - About</title>
-        <meta name="description" content="Learn more about Phynnex Dev Studio and our mission." />
-      </Head>
+      <SEO title="Phynnex Dev Studio - About" description="Learn more about Phynnex Dev Studio and our mission." />
       <div className="bg-black py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">About Us</h1>

@@ -4,8 +4,6 @@ import Hero from '../Hero';
 describe('Hero component', () => {
   it('renders heading', () => {
     render(<Hero />);
-    expect(
-      screen.getByRole('heading', { name: /transform your ideas into powerful digital solutions/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /we build what's next/i })).toBeInTheDocument();
   });
 });

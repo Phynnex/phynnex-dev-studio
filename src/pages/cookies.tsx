@@ -1,13 +1,10 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 
 const CookiesPage = () => {
   return (
     <>
-      <Head>
-        <title>Phynnex Dev Studio - Cookies Settings</title>
-        <meta name="description" content="Information about how Phynnex Dev Studio uses cookies." />
-      </Head>
+      <SEO title="Phynnex Dev Studio - Cookies Settings" description="Information about how Phynnex Dev Studio uses cookies." />
 
       <div className="bg-black py-16">
         <div className="container mx-auto max-w-7xl px-4">

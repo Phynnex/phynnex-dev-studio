@@ -1,17 +1,11 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 import Contact from '../components/Contact';
 
 const ContactPage = () => {
   return (
     <>
-      <Head>
-        <title>Phynnex Dev Studio - Contact</title>
-        <meta
-          name="description"
-          content="Get in touch with Phynnex Dev Studio to discuss your project."
-        />
-      </Head>
+      <SEO title="Phynnex Dev Studio - Contact" description="Get in touch with Phynnex Dev Studio to discuss your project." />
       <div className="bg-black py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Contact Us</h1>

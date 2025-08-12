@@ -1,13 +1,10 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 
 const PrivacyPage = () => {
   return (
     <>
-      <Head>
-        <title>Phynnex Dev Studio - Privacy Policy</title>
-        <meta name="description" content="Read about Phynnex Dev Studio's privacy practices." />
-      </Head>
+      <SEO title="Phynnex Dev Studio - Privacy Policy" description="Read about Phynnex Dev Studio's privacy practices." />
 
       <div className="bg-black py-16">
         <div className="container mx-auto max-w-7xl px-4">
