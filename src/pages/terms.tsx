@@ -1,16 +1,10 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 
 const TermsPage = () => {
   return (
     <>
-      <Head>
-        <title>Phynnex Dev Studio - Terms of Service</title>
-        <meta
-          name="description"
-          content="Understand the terms of service for using Phynnex Dev Studio."
-        />
-      </Head>
+      <SEO title="Phynnex Dev Studio - Terms of Service" description="Understand the terms of service for using Phynnex Dev Studio." />
 
       <div className="bg-black py-16">
         <div className="container mx-auto max-w-7xl px-4">
