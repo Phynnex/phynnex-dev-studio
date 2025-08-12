@@ -1,114 +1,34 @@
-// // components/Technologies.tsx
-// import React from 'react';
-
-// interface TechnologyItemProps {
-//   name: string;
-// }
-// const TechnologyItem = ({ name }: TechnologyItemProps) => {
-//   return (
-//     <div className="bg-black rounded-lg shadow-sm p-4 flex items-center justify-center hover:shadow-md transition-all duration-300 border border-primary-purple">
-//       <span className="text-dark-gray font-medium font-inter">{name}</span>
-//     </div>
-//   );
-// };
-
-// interface TechnologyCategoryProps {
-//   title: string;
-//   technologies: string[];
-// }
-
-// const TechnologyCategory = ({ title, technologies }: TechnologyCategoryProps) => {
-//   return (
-//     <div className="mb-10">
-//       <h3 className="text-xl font-semibold mb-6 text-off-white font-montserrat">{title}</h3>
-//       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-//         {technologies.map((tech, index) => (
-//           <TechnologyItem key={index} name={tech} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// type TechnologiesProps = object;
-
-// const Technologies = ({}: TechnologiesProps) => {
-//   const frontendTechnologies = [
-//     'React',
-//     'JavaScript',
-//     'HTML5',
-//     'CSS3',
-//     'Tailwind CSS',
-//     'Next.js',
-//     'React Native',
-//     'Redux',
-//     'TypeScript',
-//     'Bootstrap',
-//   ];
-
-//   const backendTechnologies = [
-//     'Node.js',
-//     'Express',
-//     'MongoDB',
-//     'PostgreSQL',
-//     'Firebase',
-//     'Python',
-//     'Django',
-//     'GraphQL',
-//     'REST API',
-//     'AWS',
-//   ];
-
-//   const tools = [
-//     'Git',
-//     'GitHub',
-//     'VS Code',
-//     'Figma',
-//     'Adobe XD',
-//     'Postman',
-//     'Docker',
-//     'Webpack',
-//     'Jest',
-//     'CI/CD',
-//   ];
-
-//   return (
-//     <section className="py-20">
-//       <div className="container-custom">
-//         <div className="text-center mb-16">
-//           <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">
-//             Our Expertise
-//           </span>
-//           <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-off-white font-montserrat">
-//             Technologies We Master
-//           </h2>
-//           <p className="text-lg text-dark-gray max-w-3xl mx-auto font-inter">
-//             We leverage cutting-edge technologies to build powerful, scalable, and beautiful digital
-//             solutions.
-//           </p>
-//         </div>
-
-//         <TechnologyCategory title="Frontend Development" technologies={frontendTechnologies} />
-//         <TechnologyCategory title="Backend Development" technologies={backendTechnologies} />
-//         <TechnologyCategory title="Tools & Platforms" technologies={tools} />
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Technologies;
-
-
-
-// components/Technologies.tsx
 import React from 'react';
+import { 
+  Code, 
+  Database, 
+  Globe, 
+  Layers, 
+  Smartphone, 
+  Server, 
+  Cloud, 
+  Container, 
+  GitBranch, 
+  Github, 
+  FileText, 
+  Palette, 
+  Zap, 
+  Settings, 
+  Package, 
+  TestTube,
+  Monitor,
+  Cpu,
+  Box,
+  Workflow
+} from 'lucide-react';
 
 interface TechnologyItemProps {
   name: string;
   delay: string;
+  icon: React.ReactNode;
 }
 
-const TechnologyItem = ({ name, delay }: TechnologyItemProps) => {
+const TechnologyItem = ({ name, delay, icon }: TechnologyItemProps) => {
   return (
     <div 
       className="
@@ -129,8 +49,14 @@ const TechnologyItem = ({ name, delay }: TechnologyItemProps) => {
       <div className="absolute top-2 right-2 w-8 h-8 bg-primary-purple/5 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="absolute bottom-1 left-2 w-6 h-6 bg-secondary-magenta/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       
-      <div className="relative z-10 flex items-center justify-center h-12">
-        <span className="text-white font-medium font-inter text-sm group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary-purple group-hover:to-secondary-magenta group-hover:bg-clip-text transition-all duration-300">
+      <div className="relative z-10 flex  items-center justify-center gap-5">
+        {/* Icon */}
+        <div className="text-primary-purple/70 group-hover:text-primary-purple group-hover:scale-110 transition-all duration-300">
+          {icon}
+        </div>
+        
+        {/* Technology name */}
+        <span className="text-white font-medium font-inter text-xs text-center group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary-purple group-hover:to-secondary-magenta group-hover:bg-clip-text transition-all duration-300">
           {name}
         </span>
       </div>
@@ -143,7 +69,7 @@ const TechnologyItem = ({ name, delay }: TechnologyItemProps) => {
 
 interface TechnologyCategoryProps {
   title: string;
-  technologies: string[];
+  technologies: { name: string; icon: React.ReactNode }[];
   delay: string;
 }
 
@@ -160,7 +86,8 @@ const TechnologyCategory = ({ title, technologies, delay }: TechnologyCategoryPr
         {technologies.map((tech, index) => (
           <TechnologyItem 
             key={index} 
-            name={tech} 
+            name={tech.name}
+            icon={tech.icon}
             delay={`${parseFloat(delay.replace('s', '')) + index * 0.05}s`}
           />
         ))}
@@ -173,48 +100,48 @@ type TechnologiesProps = object;
 
 const Technologies = ({}: TechnologiesProps) => {
   const frontendTechnologies = [
-    'React',
-    'JavaScript',
-    'HTML5',
-    'CSS3',
-    'Tailwind CSS',
-    'Next.js',
-    'React Native',
-    'Redux',
-    'TypeScript',
-    'Bootstrap',
-    'Vue.js',
-    'Angular'
+    { name: 'React', icon: <Code size={24} /> },
+    { name: 'JavaScript', icon: <FileText size={24} /> },
+    { name: 'HTML5', icon: <Globe size={24} /> },
+    { name: 'CSS3', icon: <Palette size={24} /> },
+    { name: 'Tailwind CSS', icon: <Palette size={24} /> },
+    { name: 'Next.js', icon: <Zap size={24} /> },
+    { name: 'React Native', icon: <Smartphone size={24} /> },
+    { name: 'Redux', icon: <Layers size={24} /> },
+    { name: 'TypeScript', icon: <Code size={24} /> },
+    { name: 'Bootstrap', icon: <Box size={24} /> },
+    { name: 'Vue.js', icon: <Code size={24} /> },
+    { name: 'Angular', icon: <Code size={24} /> }
   ];
 
   const backendTechnologies = [
-    'Node.js',
-    'Express',
-    'MongoDB',
-    'PostgreSQL',
-    'Firebase',
-    'Python',
-    'Django',
-    'GraphQL',
-    'REST API',
-    'AWS',
-    'Docker',
-    'Kubernetes'
+    { name: 'Node.js', icon: <Server size={24} /> },
+    { name: 'Express', icon: <Zap size={24} /> },
+    { name: 'MongoDB', icon: <Database size={24} /> },
+    { name: 'PostgreSQL', icon: <Database size={24} /> },
+    { name: 'Firebase', icon: <Cloud size={24} /> },
+    { name: 'Python', icon: <Code size={24} /> },
+    { name: 'Django', icon: <Server size={24} /> },
+    { name: 'GraphQL', icon: <Workflow size={24} /> },
+    { name: 'REST API', icon: <Globe size={24} /> },
+    { name: 'AWS', icon: <Cloud size={24} /> },
+    { name: 'Docker', icon: <Container size={24} /> },
+    { name: 'Kubernetes', icon: <Settings size={24} /> }
   ];
 
   const tools = [
-    'Git',
-    'GitHub',
-    'VS Code',
-    'Figma',
-    'Adobe XD',
-    'Postman',
-    'Docker',
-    'Webpack',
-    'Jest',
-    'CI/CD',
-    'Vercel',
-    'Netlify'
+    { name: 'Git', icon: <GitBranch size={24} /> },
+    { name: 'GitHub', icon: <Github size={24} /> },
+    { name: 'VS Code', icon: <Monitor size={24} /> },
+    { name: 'Figma', icon: <Palette size={24} /> },
+    { name: 'Adobe XD', icon: <Palette size={24} /> },
+    { name: 'Postman', icon: <Zap size={24} /> },
+    { name: 'Docker', icon: <Container size={24} /> },
+    { name: 'Webpack', icon: <Package size={24} /> },
+    { name: 'Jest', icon: <TestTube size={24} /> },
+    { name: 'CI/CD', icon: <Workflow size={24} /> },
+    { name: 'Vercel', icon: <Cloud size={24} /> },
+    { name: 'Netlify', icon: <Cloud size={24} /> }
   ];
 
   return (
@@ -272,12 +199,17 @@ const Technologies = ({}: TechnologiesProps) => {
         <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '50+', label: 'Technologies' },
-              { number: '100+', label: 'Projects' },
-              { number: '99%', label: 'Success Rate' },
-              { number: '24/7', label: 'Support' }
+              { number: '50+', label: 'Technologies', icon: <Cpu size={20} /> },
+              { number: '100+', label: 'Projects', icon: <Box size={20} /> },
+              { number: '99%', label: 'Success Rate', icon: <Zap size={20} /> },
+              { number: '24/7', label: 'Support', icon: <Settings size={20} /> }
             ].map((stat, index) => (
-              <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500">
+              <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 group">
+                <div className="flex items-center justify-center mb-3">
+                  <div className="text-primary-purple/70 group-hover:text-primary-purple transition-colors duration-300">
+                    {stat.icon}
+                  </div>
+                </div>
                 <div className="text-3xl lg:text-4xl font-black font-montserrat bg-gradient-to-r from-primary-purple to-secondary-magenta bg-clip-text text-transparent mb-2">
                   {stat.number}
                 </div>

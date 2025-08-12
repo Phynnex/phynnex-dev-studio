@@ -1,58 +1,156 @@
-// components/Team.tsx
 import React from 'react';
-import Image from 'next/image';
-
-interface SocialLink {
-  platform: string;
-  url: string;
-  icon: React.ReactNode;
-}
+import { 
+  Github, 
+  Linkedin, 
+  Twitter, 
+  Mail, 
+  MapPin, 
+  Star,
+  Award,
+  Users,
+  Coffee
+} from 'lucide-react';
 
 interface TeamMemberProps {
   name: string;
   role: string;
   bio: string;
-  image?: string;
-  socialLinks?: SocialLink[];
+  image: string;
+  location: string;
+  experience: string;
+  specialties: string[];
+  social: {
+    github?: string;
+    linkedin?: string;
+    twitter?: string;
+    email?: string;
+  };
+  delay: string;
 }
 
-interface TeamMember extends TeamMemberProps {
-  id: number;
-}
-const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) => {
+const TeamMember = ({ name, role, bio, image, location, experience, specialties, social, delay }: TeamMemberProps) => {
   return (
-    <div className="bg-black rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-primary-purple">
-      <div className="h-64 bg-light-purple bg-opacity-10 relative">
-        <Image
-          src={image || 'https://picsum.photos/seed/team-default/400/400'}
-          alt={name}
-          className="w-full h-full object-cover"
-          width={400}
-          height={400}
-        />
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-off-white font-montserrat">{name}</h3>
-        <p className="text-primary-purple font-medium mb-3 font-inter">{role}</p>
-        <p className="text-dark-gray mb-4 font-inter">{bio}</p>
+    <div 
+      className="
+        group relative overflow-hidden rounded-3xl p-8 
+        bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
+        backdrop-blur-sm border border-white/10
+        hover:border-primary-purple/50 hover:bg-gradient-to-br hover:from-gray-800/60 hover:via-gray-700/40 hover:to-black/50
+        transform transition-all duration-700 ease-out
+        hover:-translate-y-4 hover:shadow-2xl hover:shadow-primary-purple/20
+        animate-fade-in-up
+      "
+      style={{ animationDelay: delay }}
+    >
+      {/* Gradient overlay on hover */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-primary-purple via-secondary-magenta to-primary-purple transition-opacity duration-500 rounded-3xl" />
+      
+      {/* Floating background shapes */}
+      <div className="absolute top-4 right-4 w-16 h-16 bg-primary-purple/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-4 left-4 w-12 h-12 bg-secondary-magenta/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      
+      <div className="relative z-10">
+        {/* Profile Image */}
+        <div className="relative mb-6 mx-auto w-32 h-32">
+          <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary-purple/20 to-secondary-magenta/20 p-1">
+            <img 
+              src={image} 
+              alt={name}
+              className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-purple rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <Star size={12} className="text-white fill-white" />
+          </div>
+        </div>
 
-        {socialLinks && (
-          <div className="flex space-x-3">
-            {socialLinks.map((link, index) => (
-              <a
+        {/* Name and Role */}
+        <div className="text-center mb-4">
+          <h3 className="text-xl font-montserrat font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary-purple group-hover:to-secondary-magenta group-hover:bg-clip-text transition-all duration-300">
+            {name}
+          </h3>
+          <p className="text-primary-purple font-inter font-medium text-sm">
+            {role}
+          </p>
+        </div>
+
+        {/* Location and Experience */}
+        <div className="flex items-center justify-center space-x-4 mb-4 text-gray-400 text-sm">
+          <div className="flex items-center space-x-1">
+            <MapPin size={14} />
+            <span>{location}</span>
+          </div>
+          <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
+          <div className="flex items-center space-x-1">
+            <Award size={14} />
+            <span>{experience}</span>
+          </div>
+        </div>
+
+        {/* Bio */}
+        <p className="text-gray-300 font-inter text-sm leading-relaxed mb-6 text-center">
+          {bio}
+        </p>
+
+        {/* Specialties */}
+        <div className="mb-6">
+          <div className="flex flex-wrap justify-center gap-2">
+            {specialties.map((specialty, index) => (
+              <span 
                 key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-off-white hover:text-primary-purple transition-colors"
-                aria-label={link.platform}
+                className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 font-inter group-hover:border-primary-purple/30 group-hover:bg-primary-purple/10 transition-all duration-300"
               >
-                {link.icon}
-              </a>
+                {specialty}
+              </span>
             ))}
           </div>
-        )}
+        </div>
+
+        {/* Social Links */}
+        <div className="flex justify-center space-x-4">
+          {social.github && (
+            <a 
+              href={social.github} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
+            >
+              <Github size={18} />
+            </a>
+          )}
+          {social.linkedin && (
+            <a 
+              href={social.linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
+            >
+              <Linkedin size={18} />
+            </a>
+          )}
+          {social.twitter && (
+            <a 
+              href={social.twitter} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
+            >
+              <Twitter size={18} />
+            </a>
+          )}
+          {social.email && (
+            <a 
+              href={`mailto:${social.email}`}
+              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
+            >
+              <Mail size={18} />
+            </a>
+          )}
+        </div>
       </div>
+
+      {/* Corner accent */}
+      <div className="absolute top-4 left-4 w-2 h-2 bg-primary-purple/40 rounded-full group-hover:bg-primary-purple group-hover:scale-150 transition-all duration-300" />
     </div>
   );
 };
@@ -60,84 +158,121 @@ const TeamMember = ({ name, role, bio, image, socialLinks }: TeamMemberProps) =>
 type TeamProps = object;
 
 const Team = ({}: TeamProps) => {
-  const teamMembers: TeamMember[] = [
+  const teamMembers = [
     {
-      id: 1,
-      name: 'Alex Johnson',
-      role: 'Founder & Lead Developer',
-      bio: 'With over 8 years of experience in web and mobile development, Alex founded Phynnex to create impactful digital solutions for businesses of all sizes.',
-      image: 'https://picsum.photos/seed/team1/400/400',
-      socialLinks: [],
+      name: "Alex Johnson",
+      role: "Lead Full-Stack Developer",
+      bio: "Passionate about creating scalable web applications with modern technologies. 8+ years of experience in React, Node.js, and cloud architecture.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      location: "San Francisco, CA",
+      experience: "8+ years",
+      specialties: ["React", "Node.js", "AWS", "GraphQL"],
+      social: {
+        github: "https://github.com",
+        linkedin: "https://linkedin.com",
+        twitter: "https://twitter.com",
+        email: "alex@company.com"
+      }
     },
     {
-      id: 2,
-      name: 'Sarah Chen',
-      role: 'UI/UX Design Lead',
-      bio: 'Sarah brings 6+ years of design expertise, crafting intuitive and beautiful interfaces that balance aesthetics with functionality.',
-      image: 'https://picsum.photos/seed/team2/400/400',
-      socialLinks: [],
+      name: "Sarah Chen",
+      role: "UI/UX Designer & Frontend Dev",
+      bio: "Design-focused developer who bridges the gap between beautiful interfaces and functional code. Expert in user experience and modern frontend frameworks.",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b60c2c8c?w=300&h=300&fit=crop&crop=face",
+      location: "New York, NY",
+      experience: "6+ years",
+      specialties: ["Figma", "React", "TypeScript", "Design Systems"],
+      social: {
+        github: "https://github.com",
+        linkedin: "https://linkedin.com",
+        email: "sarah@company.com"
+      }
     },
     {
-      id: 3,
-      name: 'Michael Rodriguez',
-      role: 'Backend Developer',
-      bio: 'Michael specializes in scalable backend systems and database architecture with expertise in Node.js, Python, and cloud infrastructure.',
-      image: 'https://picsum.photos/seed/team3/400/400',
-      socialLinks: [],
-    },
-    {
-      id: 4,
-      name: 'Tasha Williams',
-      role: 'Mobile App Developer',
-      bio: 'Tasha excels in creating responsive and feature-rich mobile applications for both iOS and Android platforms using React Native.',
-      image: 'https://picsum.photos/seed/team4/400/400',
-      socialLinks: [],
-    },
+      name: "Michael Rodriguez",
+      role: "DevOps & Backend Engineer",
+      bio: "Infrastructure specialist focused on building robust, scalable systems. Expert in cloud platforms, containerization, and CI/CD pipelines.",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      location: "Austin, TX",
+      experience: "7+ years",
+      specialties: ["Docker", "Kubernetes", "Python", "AWS"],
+      social: {
+        github: "https://github.com",
+        linkedin: "https://linkedin.com",
+        twitter: "https://twitter.com",
+        email: "michael@company.com"
+      }
+    }
   ];
 
   return (
-    <section className="py-20">
-      <div className="container-custom">
-        <div className="text-center mb-16">
-          <span className="text-primary-purple font-semibold tracking-wider uppercase text-sm font-montserrat">
-            Our Team
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2 text-off-white font-montserrat">
-            Meet the Experts Behind Phynnex
+    <section id="team" className="relative py-20 lg:py-32 overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black" />
+      
+      {/* Floating background shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 right-10 w-40 h-40 bg-primary-purple/3 rounded-full blur-3xl animate-drift-slow" />
+        <div className="absolute bottom-1/4 left-20 w-32 h-32 bg-secondary-magenta/4 rounded-full blur-2xl animate-drift-slower" />
+        <div className="absolute top-2/3 right-1/3 w-24 h-24 bg-primary-purple/2 rounded-full blur-xl animate-drift-slowest" />
+      </div>
+
+      <div className="relative z-10 container-custom">
+        <div className="text-center mb-16 lg:mb-20">
+          {/* Overline */}
+          <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
+              Our Team
+            </span>
+          </div>
+
+          {/* Main title */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <span className="block">Meet the Brilliant</span>
+            <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
+              Minds Behind Innovation
+            </span>
           </h2>
-          <p className="text-lg text-dark-gray max-w-3xl mx-auto font-inter">
-            Our talented team brings together diverse skills and experience to deliver exceptional
-            digital solutions for our clients.
+
+          {/* Subtitle */}
+          <p className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
+            Our diverse team of experts combines creativity, technical excellence, and passion to deliver extraordinary digital experiences that drive your success.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member) => (
-            <TeamMember
-              key={member.id}
-              name={member.name}
-              role={member.role}
-              bio={member.bio}
-              image={member.image}
-              socialLinks={member.socialLinks}
+        {/* Team Members Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
+          {teamMembers.map((member, index) => (
+            <TeamMember 
+              key={index} 
+              {...member} 
+              delay={`${0.4 + index * 0.15}s`}
             />
           ))}
         </div>
 
-        <div className="mt-16 text-center bg-black p-8 rounded-lg shadow-md border border-primary-purple">
-          <h3 className="text-xl font-semibold text-off-white mb-4 font-montserrat">
-            Join Our Team
-          </h3>
-          <p className="text-dark-gray mb-6 font-inter">
-            We&apos;re always looking for talented individuals who are passionate about creating
-            amazing digital experiences.
-          </p>
-          <a
-            href="#"
-            className="inline-block bg-primary-purple text-white py-3 px-8 rounded-full font-medium hover:bg-secondary-magenta transition-colors shadow-md font-montserrat"
-          >
-            View Open Positions
-          </a>
+        {/* Team Stats */}
+        <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { icon: <Users size={24} />, number: '15+', label: 'Team Members' },
+              { icon: <Award size={24} />, number: '25+', label: 'Years Combined' },
+              { icon: <Star size={24} />, number: '500+', label: 'Projects Delivered' },
+              { icon: <Coffee size={24} />, number: '∞', label: 'Cups of Coffee' }
+            ].map((stat, index) => (
+              <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 group">
+                <div className="flex items-center justify-center mb-4">
+                  <div className="text-primary-purple/70 group-hover:text-primary-purple transition-colors duration-300">
+                    {stat.icon}
+                  </div>
+                </div>
+                <div className="text-3xl lg:text-4xl font-black font-montserrat bg-gradient-to-r from-primary-purple to-secondary-magenta bg-clip-text text-transparent mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-gray-300 font-inter text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
