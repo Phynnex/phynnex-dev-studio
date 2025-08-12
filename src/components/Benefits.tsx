@@ -60,7 +60,7 @@ const Benefits = ({}: BenefitsProps) => {
               </h2>
 
               <p className="text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-8 animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
-                When you choose our agency, you're gaining a strategic partner committed to delivering exceptional results that exceed expectations.
+                When you choose our agency, you&apos;re gaining a strategic partner committed to delivering exceptional results that exceed expectations.
               </p>
             </div>
 

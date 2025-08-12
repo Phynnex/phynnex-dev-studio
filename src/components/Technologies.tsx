@@ -30,18 +30,18 @@ interface TechnologyItemProps {
 
 const TechnologyItem = ({ name, delay, icon }: TechnologyItemProps) => {
   return (
-    <div 
-      className="
-        group relative overflow-hidden rounded-2xl p-4 
-        bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
-        backdrop-blur-sm border border-white/10
-        hover:border-primary-purple/50 hover:bg-gradient-to-br hover:from-gray-800/60 hover:via-gray-700/40 hover:to-black/50
-        transform transition-all duration-500 ease-out
-        hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-purple/20
-        animate-fade-in-up
-      "
-      style={{ animationDelay: delay }}
-    >
+      <div
+        className={`
+          group relative overflow-hidden rounded-2xl p-4
+          bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
+          backdrop-blur-sm border border-white/10
+          hover:border-primary-purple/50 hover:bg-gradient-to-br hover:from-gray-800/60 hover:via-gray-700/40 hover:to-black/50
+          transform transition-all duration-500 ease-out
+          hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-purple/20
+          animate-fade-in-up
+          [animation-delay:${delay}]
+        `}
+      >
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-primary-purple via-secondary-magenta to-primary-purple transition-opacity duration-500 rounded-2xl" />
       
@@ -75,7 +75,7 @@ interface TechnologyCategoryProps {
 
 const TechnologyCategory = ({ title, technologies, delay }: TechnologyCategoryProps) => {
   return (
-    <div className="mb-16 animate-fade-in-up" style={{ animationDelay: delay }}>
+    <div className="mb-16 animate-fade-in-up [animation-delay:${delay}]">
       <div className="mb-8">
         <h3 className="text-2xl lg:text-3xl font-montserrat font-bold text-white mb-2 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text">
           {title}
@@ -159,14 +159,14 @@ const Technologies = ({}: TechnologiesProps) => {
       <div className="relative z-10 container-custom">
         <div className="text-center mb-16 lg:mb-20">
           {/* Overline */}
-          <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="mb-6 animate-fade-in-up [animation-delay:0.1s]">
             <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
               Our Expertise
             </span>
           </div>
 
           {/* Main title */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up [animation-delay:0.2s]">
             <span className="block">Technologies We</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
               Master & Perfect
@@ -174,7 +174,7 @@ const Technologies = ({}: TechnologiesProps) => {
           </h2>
 
           {/* Subtitle */}
-          <p className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
+            <p className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90 [animation-delay:0.3s]">
             We leverage cutting-edge technologies to build powerful, scalable, and beautiful digital solutions that drive results.
           </p>
         </div>
@@ -196,7 +196,7 @@ const Technologies = ({}: TechnologiesProps) => {
         />
 
         {/* Stats section */}
-        <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+          <div className="mt-20 animate-fade-in-up [animation-delay:1s]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { number: '50+', label: 'Technologies', icon: <Cpu size={20} /> },

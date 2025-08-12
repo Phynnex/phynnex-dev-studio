@@ -121,7 +121,7 @@ const Navbar = ({}: NavbarProps) => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className={`
                   flex items-center font-inter font-medium transition-all duration-200
-                  hover:text-primary-purple text-white/90 hover:text-white
+                  hover:text-primary-purple text-white/90
                   ${isDropdownOpen ? 'text-primary-purple' : ''}
                 `}
               >
