@@ -35,4 +35,12 @@ describe('Navbar component', () => {
     ).toBeInTheDocument();
 
   });
+
+  it('shows theme toggle button', () => {
+    render(<Navbar />);
+
+    expect(
+      screen.getByRole('button', { name: /toggle theme/i })
+    ).toBeInTheDocument();
+  });
 });

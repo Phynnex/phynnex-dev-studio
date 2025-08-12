@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Full from '../assets/images/New.png';
+import useTheme from '../hooks/useTheme';
 
 type NavbarProps = object;
 
@@ -12,6 +13,7 @@ const Navbar = ({}: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const [theme, toggleTheme] = useTheme();
 
   // Handle scroll effect
   useEffect(() => {
@@ -177,55 +179,94 @@ const Navbar = ({}: NavbarProps) => {
             </div>
           </nav>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/join"
-              className="
-                px-5 py-2.5 rounded-lg font-inter font-semibold text-sm
-                border-2 border-primary-purple/60 text-white
-                hover:border-primary-purple hover:bg-primary-purple/10
-                transition-all duration-200
-                focus:outline-none focus:ring-2 focus:ring-primary-purple/50
-              "
+          {/* Right side controls */}
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200"
+              aria-label="Toggle theme"
             >
-              Join
-            </Link>
-            <Link
-              href="/learn"
-              className="
-                px-5 py-2.5 rounded-lg font-inter font-semibold text-sm
-                bg-gradient-to-r from-primary-purple to-secondary-magenta
-                text-white shadow-lg
-                hover:shadow-xl hover:shadow-primary-purple/25
-                transition-all duration-200 transform hover:scale-105
-                focus:outline-none focus:ring-2 focus:ring-primary-purple/50
-              "
-            >
-              Learn
-            </Link>
-          </div>
+              {theme === 'dark' ? (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364l-1.414-1.414M6.05 6.05 4.636 4.636m12.728 0-1.414 1.414M6.05 17.95l-1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+                  />
+                </svg>
+              )}
+            </button>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200"
-            aria-label="Toggle mobile menu"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            {/* Desktop CTA Buttons */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <Link
+                href="/join"
+                className="
+                  px-5 py-2.5 rounded-lg font-inter font-semibold text-sm
+                  border-2 border-primary-purple/60 text-white
+                  hover:border-primary-purple hover:bg-primary-purple/10
+                  transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-primary-purple/50
+                "
+              >
+                Join
+              </Link>
+              <Link
+                href="/learn"
+                className="
+                  px-5 py-2.5 rounded-lg font-inter font-semibold text-sm
+                  bg-gradient-to-r from-primary-purple to-secondary-magenta
+                  text-white shadow-lg
+                  hover:shadow-xl hover:shadow-primary-purple/25
+                  transition-all duration-200 transform hover:scale-105
+                  focus:outline-none focus:ring-2 focus:ring-primary-purple/50
+                "
+              >
+                Learn
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200"
+              aria-label="Toggle mobile menu"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-              />
-            </svg>
-          </button>
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

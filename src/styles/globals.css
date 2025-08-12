@@ -5,11 +5,20 @@
 @tailwind utilities;
 
 /* Base styles */
-body {
-
-  @apply antialiased text-off-white;
-  background-color: white;
-
+@layer base {
+  :root {
+    --color-bg: #ffffff;
+    --color-text: #0f172a;
+  }
+  .dark {
+    --color-bg: #0f172a;
+    --color-text: #F7F7FA;
+  }
+  body {
+    @apply antialiased;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
 }
 
 /* Custom utility classes */
