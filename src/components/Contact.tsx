@@ -122,7 +122,38 @@ const Contact = ({}: ContactProps) => {
       console.error(err);
       setStatus('error');
     }
+<<<<<<< HEAD
   };
+=======
+    const w = window as Window & { grecaptcha?: Grecaptcha };
+
+    if (!w.grecaptcha || !siteKey) {
+      throw new Error('reCAPTCHA not loaded');
+    }
+
+    // Ensure API is ready
+    await new Promise<void>((resolve) => w.grecaptcha!.ready(() => resolve()));
+    const token = await w.grecaptcha!.execute(siteKey, { action: 'submit' });
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...formData, token }),
+    });
+
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(body?.error || `HTTP ${res.status}`);
+    }
+
+    setStatus('success');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+  } catch {
+    setStatus('error');
+  }
+};
+
+>>>>>>> 7f838a0a64a66680955e25ace51944497e54d392
 
   return (
     <>
@@ -144,7 +175,7 @@ const Contact = ({}: ContactProps) => {
             {/* Overline */}
             <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
-                Let's Connect
+                Let&apos;s Connect
               </span>
             </div>
 
@@ -160,12 +191,17 @@ const Contact = ({}: ContactProps) => {
             </h2>
 
             {/* Subtitle */}
+<<<<<<< HEAD
             <p
               className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
               style={{ animationDelay: '0.3s' }}
             >
               Have a project in mind? We'd love to hear about your vision and discuss how we can
               help bring your ideas to life with cutting-edge technology.
+=======
+            <p className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
+              Have a project in mind? We&apos;d love to hear about your vision and discuss how we can help bring your ideas to life with cutting-edge technology.
+>>>>>>> 7f838a0a64a66680955e25ace51944497e54d392
             </p>
           </div>
 
@@ -217,7 +253,7 @@ const Contact = ({}: ContactProps) => {
                     Send us a Message
                   </h3>
                   <p className="text-gray-300 font-inter">
-                    Fill out the form below and we'll get back to you within 24 hours.
+                    Fill out the form below and we&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
 
@@ -346,7 +382,7 @@ const Contact = ({}: ContactProps) => {
                       {status === 'success' && (
                         <div className="flex items-center justify-center space-x-2 text-green-400 font-inter">
                           <CheckCircle size={20} />
-                          <span>Message sent successfully! We'll get back to you soon.</span>
+                          <span>Message sent successfully! We&apos;ll get back to you soon.</span>
                         </div>
                       )}
                       {status === 'error' && (

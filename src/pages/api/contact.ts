@@ -14,6 +14,7 @@ const log = (level: 'info' | 'error', message: string, meta: Record<string, unkn
       safe[k] = v;
     }
   }
+  // eslint-disable-next-line no-console
   console.log(JSON.stringify({ level, message, ...safe }));
 };
 
@@ -38,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const ipHeader = (req.headers['x-forwarded-for'] as string) || '';
+  const ipHeader = (req.headers?.['x-forwarded-for'] as string) || '';
   const ip = ipHeader.split(',')[0]?.trim() || req.socket?.remoteAddress || '';
   if (rateLimited(ip)) {
     return res.status(429).json({ success: false, error: 'Too many requests' });
@@ -109,9 +110,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     log('info', 'contact_form_submission', { ip, messageId: info.messageId });
 
     // If Ethereal, give preview URL in server logs
-    // @ts-ignore
     if (nodemailer.getTestMessageUrl) {
-      // @ts-ignore
       const url = nodemailer.getTestMessageUrl(info);
       if (url) log('info', 'ethereal_preview', { url });
     }

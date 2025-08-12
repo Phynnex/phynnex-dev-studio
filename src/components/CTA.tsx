@@ -71,12 +71,17 @@ const CTA = ({}: CTAProps) => {
               </h2>
 
               {/* Description */}
+<<<<<<< HEAD
               <p
                 className="text-xl lg:text-2xl text-gray-300 font-inter leading-relaxed max-w-3xl mx-auto mb-10 animate-fade-in-up opacity-90"
                 style={{ animationDelay: '0.4s' }}
               >
                 Ready to transform your business with powerful digital solutions? Let's discuss your
                 vision and bring your ideas to life with cutting-edge technology.
+=======
+              <p className="text-xl lg:text-2xl text-gray-300 font-inter leading-relaxed max-w-3xl mx-auto mb-10 animate-fade-in-up opacity-90" style={{ animationDelay: '0.4s' }}>
+                Ready to transform your business with powerful digital solutions? Let&apos;s discuss your vision and bring your ideas to life with cutting-edge technology.
+>>>>>>> 7f838a0a64a66680955e25ace51944497e54d392
               </p>
 
               {/* CTA Buttons */}

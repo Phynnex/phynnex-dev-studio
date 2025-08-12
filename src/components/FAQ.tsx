@@ -154,12 +154,17 @@ const FAQ = ({}: FAQProps) => {
             </h2>
 
             {/* Subtitle */}
+<<<<<<< HEAD
             <p
               className="text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-8 animate-fade-in-up opacity-90"
               style={{ animationDelay: '0.3s' }}
             >
               Find answers to common questions about our development process, technologies, and
               services. Can't find what you're looking for?
+=======
+            <p className="text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-8 animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
+              Find answers to common questions about our development process, technologies, and services. Can&apos;t find what you&apos;re looking for?
+>>>>>>> 7f838a0a64a66680955e25ace51944497e54d392
             </p>
 
             {/* CTA Button */}
