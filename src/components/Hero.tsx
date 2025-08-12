@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import heroBg from '../assets/images/hero_bg.png';
 
 const Hero = () => {
@@ -31,11 +31,15 @@ const Hero = () => {
   return (
     <section className="relative w-full min-h-screen overflow-hidden pb-12 pt-28">
       {/* Background */}
-      <div
-        ref={bgRef}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat parallax -z-10"
-        style={{ backgroundImage: `url(${(heroBg as StaticImageData).src})` }}
-      />
+      <div ref={bgRef} className="absolute inset-0 parallax -z-10">
+        <Image
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          fill
+          className="object-cover"
+        />
+      </div>
       {/* Gradient */}
       <div
         ref={gradRef}
