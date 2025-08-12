@@ -64,7 +64,7 @@ jobs:
           vercel-args: '--prod'
 
       - name: Deploy to AWS Amplify
-        if: github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/master'
         run: echo "Configure AWS Amplify CLI deployment here"
         # For true AWS Amplify CI/CD, you'd push to the develop branch and let Amplify auto-deploy.
         # Or use aws-actions/configure-aws-credentials and amplify CLI for full control.
