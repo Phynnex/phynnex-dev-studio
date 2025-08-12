@@ -14,8 +14,6 @@
 
 // export default createJestConfig(customJestConfig);
 
-
-
 // jest.config.cjs
 const nextJest = require('next/jest');
 
