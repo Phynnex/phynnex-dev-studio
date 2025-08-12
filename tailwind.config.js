@@ -20,8 +20,8 @@ module.exports = {
        
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        montserrat: ['Montserrat', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
       },
       keyframes: {
         'fade-in-up': {
