@@ -120,8 +120,7 @@ const Contact = ({}: ContactProps) => {
 
     setStatus('success');
     setFormData({ name: '', email: '', phone: '', message: '' });
-  } catch (err) {
-    console.error(err);
+  } catch {
     setStatus('error');
   }
 };
@@ -147,7 +146,7 @@ const Contact = ({}: ContactProps) => {
             {/* Overline */}
             <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
-                Let's Connect
+                Let&apos;s Connect
               </span>
             </div>
 
@@ -161,7 +160,7 @@ const Contact = ({}: ContactProps) => {
 
             {/* Subtitle */}
             <p className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
-              Have a project in mind? We'd love to hear about your vision and discuss how we can help bring your ideas to life with cutting-edge technology.
+              Have a project in mind? We&apos;d love to hear about your vision and discuss how we can help bring your ideas to life with cutting-edge technology.
             </p>
           </div>
 
@@ -213,7 +212,7 @@ const Contact = ({}: ContactProps) => {
                     Send us a Message
                   </h3>
                   <p className="text-gray-300 font-inter">
-                    Fill out the form below and we'll get back to you within 24 hours.
+                    Fill out the form below and we&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
 
@@ -324,7 +323,7 @@ const Contact = ({}: ContactProps) => {
                       {status === 'success' && (
                         <div className="flex items-center justify-center space-x-2 text-green-400 font-inter">
                           <CheckCircle size={20} />
-                          <span>Message sent successfully! We'll get back to you soon.</span>
+                          <span>Message sent successfully! We&apos;ll get back to you soon.</span>
                         </div>
                       )}
                       {status === 'error' && (

@@ -1,10 +1,11 @@
 import React from 'react';
-import { 
-  Github, 
-  Linkedin, 
-  Twitter, 
-  Mail, 
-  MapPin, 
+import Image from 'next/image';
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  MapPin,
   Star,
   Award,
   Users,
@@ -53,9 +54,11 @@ const TeamMember = ({ name, role, bio, image, location, experience, specialties,
         {/* Profile Image */}
         <div className="relative mb-6 mx-auto w-32 h-32">
           <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary-purple/20 to-secondary-magenta/20 p-1">
-            <img 
-              src={image} 
+            <Image
+              src={image}
               alt={name}
+              width={128}
+              height={128}
               className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
             />
           </div>
