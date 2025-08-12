@@ -122,9 +122,7 @@ const Contact = ({}: ContactProps) => {
       console.error(err);
       setStatus('error');
     }
-<<<<<<< HEAD
-  };
-=======
+
     const w = window as Window & { grecaptcha?: Grecaptcha };
 
     if (!w.grecaptcha || !siteKey) {
@@ -153,7 +151,7 @@ const Contact = ({}: ContactProps) => {
   }
 };
 
->>>>>>> 7f838a0a64a66680955e25ace51944497e54d392
+
 
   return (
     <>
@@ -191,17 +189,10 @@ const Contact = ({}: ContactProps) => {
             </h2>
 
             {/* Subtitle */}
-<<<<<<< HEAD
-            <p
-              className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
-              style={{ animationDelay: '0.3s' }}
-            >
-              Have a project in mind? We'd love to hear about your vision and discuss how we can
-              help bring your ideas to life with cutting-edge technology.
-=======
+
             <p className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90" style={{ animationDelay: '0.3s' }}>
               Have a project in mind? We&apos;d love to hear about your vision and discuss how we can help bring your ideas to life with cutting-edge technology.
->>>>>>> 7f838a0a64a66680955e25ace51944497e54d392
+
             </p>
           </div>
 

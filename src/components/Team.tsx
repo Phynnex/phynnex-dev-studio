@@ -1,7 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Github, Linkedin, Twitter, Mail, MapPin, Star, Award, Users, Coffee } from 'lucide-react';
-=======
 import Image from 'next/image';
 import {
   Github,
@@ -14,7 +11,7 @@ import {
   Users,
   Coffee
 } from 'lucide-react';
->>>>>>> 7f838a0a64a66680955e25ace51944497e54d392
+
 
 interface TeamMemberProps {
   name: string;
@@ -68,11 +65,9 @@ const TeamMember = ({
         {/* Profile Image */}
         <div className="relative mb-6 mx-auto w-32 h-32">
           <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary-purple/20 to-secondary-magenta/20 p-1">
-<<<<<<< HEAD
-            <img
-=======
+
             <Image
->>>>>>> 7f838a0a64a66680955e25ace51944497e54d392
+
               src={image}
               alt={name}
               width={128}
