@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import type { GetStaticProps } from 'next';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
@@ -11,14 +10,13 @@ import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact';
 import Technologies from '../components/Technologies';
 import Faq from '../components/FAQ';
-
+import SEO from '../components/SEO';
 
 type HomePageProps = {
   siteUrl: string;
 };
 
 const HomePage = ({ siteUrl }: HomePageProps) => {
-
   const sections = [
     Services,
     Process,
@@ -40,32 +38,20 @@ const HomePage = ({ siteUrl }: HomePageProps) => {
 
   return (
     <>
-      <Head>
-        <title>Phynnex Dev Studio - Home</title>
-        <meta
-          name="description"
-          content="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
-        />
-                <link rel="canonical" href={siteUrl} />
-        <meta property="og:title" content="Phynnex Dev Studio" />
-        <meta
-          property="og:description"
-          content="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={siteUrl} />
-        <meta property="og:image" content="https://picsum.photos/seed/hero/1200/630" />
+      <SEO
+        title="Phynnex Dev Studio - Home"
+        description="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
+        url={siteUrl}
+        image="https://picsum.photos/seed/hero/1200/630"
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-      </Head>
+      </SEO>
       <Hero />
       {sections.map((Section, idx) => (
-        <div
-          key={idx}
-         
-        >
+        <div key={idx}>
           <Section />
         </div>
       ))}

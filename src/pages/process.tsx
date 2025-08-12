@@ -1,17 +1,11 @@
 import React from 'react';
-import Head from 'next/head';
+import SEO from '../components/SEO';
 import Process from '../components/Process';
 
 const ProcessPage = () => {
   return (
     <>
-      <Head>
-        <title>Phynnex Dev Studio - Process</title>
-        <meta
-          name="description"
-          content="Learn about the proven methodology we use at Phynnex Dev Studio."
-        />
-      </Head>
+      <SEO title="Phynnex Dev Studio - Process" description="Learn about the proven methodology we use at Phynnex Dev Studio." />
       <div className="bg-black py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold text-center text-off-white">Our Process</h1>
