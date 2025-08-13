@@ -15,12 +15,11 @@
 // module.exports = nextConfig;
 
 // next.config.mjs
-import { withAmplifyHosting } from '@aws-amplify/adapter-nextjs';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  // Remove the withAmplifyHosting wrapper for now
 };
 
-export default withAmplifyHosting(nextConfig);
+export default nextConfig;
