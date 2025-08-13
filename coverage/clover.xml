@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1755033070576" clover="3.2.0">
-  <project timestamp="1755033070577" name="All files">
+<coverage generated="1755118856538" clover="3.2.0">
+  <project timestamp="1755118856538" name="All files">
     <metrics statements="201" coveredstatements="143" conditionals="121" coveredconditionals="67" methods="53" coveredmethods="35" elements="375" coveredelements="245" complexity="0" loc="201" ncloc="201" packages="4" files="10" classes="10"/>
     <package name="components">
       <metrics statements="120" coveredstatements="88" conditionals="64" coveredconditionals="39" methods="47" coveredmethods="30"/>
-      <file name="Contact.tsx" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\components\Contact.tsx">
+      <file name="Contact.tsx" path="/workspace/phynnex-dev-studio/src/components/Contact.tsx">
         <metrics statements="28" coveredstatements="12" conditionals="11" coveredconditionals="4" methods="8" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -35,14 +35,14 @@
         <line num="109" count="0" type="stmt"/>
         <line num="348" count="1" type="stmt"/>
       </file>
-      <file name="Footer.tsx" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\components\Footer.tsx">
+      <file name="Footer.tsx" path="/workspace/phynnex-dev-studio/src/components/Footer.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="96" count="1" type="stmt"/>
       </file>
-      <file name="Hero.tsx" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\components\Hero.tsx">
+      <file name="Hero.tsx" path="/workspace/phynnex-dev-studio/src/components/Hero.tsx">
         <metrics statements="21" coveredstatements="17" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -66,7 +66,7 @@
         <line num="28" count="1" type="stmt"/>
         <line num="178" count="1" type="stmt"/>
       </file>
-      <file name="Navbar.tsx" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\components\Navbar.tsx">
+      <file name="Navbar.tsx" path="/workspace/phynnex-dev-studio/src/components/Navbar.tsx">
         <metrics statements="45" coveredstatements="33" conditionals="28" coveredconditionals="16" methods="22" coveredmethods="12"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -114,7 +114,7 @@
         <line num="335" count="0" type="stmt"/>
         <line num="348" count="2" type="stmt"/>
       </file>
-      <file name="Process.tsx" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\components\Process.tsx">
+      <file name="Process.tsx" path="/workspace/phynnex-dev-studio/src/components/Process.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="16" coveredconditionals="15" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -125,14 +125,14 @@
         <line num="227" count="6" type="stmt"/>
         <line num="352" count="1" type="stmt"/>
       </file>
-      <file name="Services.tsx" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\components\Services.tsx">
+      <file name="Services.tsx" path="/workspace/phynnex-dev-studio/src/components/Services.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="107" count="1" type="stmt"/>
         <line num="336" count="1" type="stmt"/>
       </file>
-      <file name="Team.tsx" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\components\Team.tsx">
+      <file name="Team.tsx" path="/workspace/phynnex-dev-studio/src/components/Team.tsx">
         <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -148,7 +148,7 @@
     </package>
     <package name="config">
       <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="8" methods="0" coveredmethods="0"/>
-      <file name="contact.ts" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\config\contact.ts">
+      <file name="contact.ts" path="/workspace/phynnex-dev-studio/src/config/contact.ts">
         <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="8" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="1" type="cond" truecount="2" falsecount="0"/>
@@ -160,7 +160,7 @@
     </package>
     <package name="hooks">
       <metrics statements="18" coveredstatements="13" conditionals="10" coveredconditionals="4" methods="3" coveredmethods="2"/>
-      <file name="useTheme.ts" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\hooks\useTheme.ts">
+      <file name="useTheme.ts" path="/workspace/phynnex-dev-studio/src/hooks/useTheme.ts">
         <metrics statements="18" coveredstatements="13" conditionals="10" coveredconditionals="4" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
@@ -184,7 +184,7 @@
     </package>
     <package name="pages.api">
       <metrics statements="57" coveredstatements="36" conditionals="39" coveredconditionals="16" methods="3" coveredmethods="3"/>
-      <file name="contact.ts" path="C:\Users\USER\Desktop\DevStudio\phynnex-dev-studio\src\pages\api\contact.ts">
+      <file name="contact.ts" path="/workspace/phynnex-dev-studio/src/pages/api/contact.ts">
         <metrics statements="57" coveredstatements="36" conditionals="39" coveredconditionals="16" methods="3" coveredmethods="3"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>

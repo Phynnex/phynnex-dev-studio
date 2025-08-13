@@ -1,5 +1,5 @@
 TN:
-SF:src\components\Contact.tsx
+SF:src/components/Contact.tsx
 FN:29,(anonymous_5)
 FN:70,(anonymous_6)
 FN:80,(anonymous_7)
@@ -63,7 +63,7 @@ BRF:11
 BRH:4
 end_of_record
 TN:
-SF:src\components\Footer.tsx
+SF:src/components/Footer.tsx
 FN:6,(anonymous_2)
 FNF:1
 FNH:1
@@ -78,7 +78,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\components\Hero.tsx
+SF:src/components/Hero.tsx
 FN:6,(anonymous_5)
 FN:11,(anonymous_6)
 FN:14,(anonymous_7)
@@ -123,7 +123,7 @@ BRF:5
 BRH:0
 end_of_record
 TN:
-SF:src\components\Navbar.tsx
+SF:src/components/Navbar.tsx
 FN:10,(anonymous_5)
 FN:19,(anonymous_6)
 FN:20,(anonymous_7)
@@ -249,7 +249,7 @@ BRF:28
 BRH:16
 end_of_record
 TN:
-SF:src\components\Process.tsx
+SF:src/components/Process.tsx
 FN:12,(anonymous_2)
 FN:108,(anonymous_3)
 FN:207,(anonymous_4)
@@ -290,7 +290,7 @@ BRF:16
 BRH:15
 end_of_record
 TN:
-SF:src\components\Services.tsx
+SF:src/components/Services.tsx
 FN:10,(anonymous_2)
 FN:107,(anonymous_3)
 FNF:2
@@ -307,7 +307,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\components\Team.tsx
+SF:src/components/Team.tsx
 FN:22,(anonymous_2)
 FN:97,(anonymous_3)
 FN:159,(anonymous_4)
@@ -340,7 +340,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:src\config\contact.ts
+SF:src/config/contact.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -363,7 +363,7 @@ BRF:8
 BRH:8
 end_of_record
 TN:
-SF:src\hooks\useTheme.ts
+SF:src/hooks/useTheme.ts
 FN:10,(anonymous_1)
 FN:13,(anonymous_2)
 FN:24,(anonymous_3)
@@ -406,7 +406,7 @@ BRF:10
 BRH:4
 end_of_record
 TN:
-SF:src\pages\api\contact.ts
+SF:src/pages/api/contact.ts
 FN:8,(anonymous_2)
 FN:21,rateLimited
 FN:36,handler
