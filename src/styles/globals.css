@@ -54,7 +54,7 @@
   .section-subtitle {
     @apply text-lg text-dark-gray max-w-3xl mx-auto;
   }
-
+  
   .container-custom {
     @apply container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12;
   }
