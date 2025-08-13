@@ -1,16 +1,28 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   reactStrictMode: true,
+//   images: {
+//     unoptimized: true,
+
+//     remotePatterns: [
+//       {
+//         protocol: 'https',
+//         hostname: 'picsum.photos',
+//         pathname: '/**',
+//       },
+//     ],
+//   },
+// };
+
+// export default nextConfig;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    // Optional: you had this already
     unoptimized: true,
-
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        pathname: '/**',
-      },
-    ],
+    remotePatterns: [{ protocol: 'https', hostname: 'picsum.photos', pathname: '/**' }],
   },
 };
 
