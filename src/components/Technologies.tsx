@@ -197,7 +197,7 @@ const Technologies = ({}: TechnologiesProps) => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { number: '50+', label: 'Technologies', icon: <Cpu size={20} /> },
-              { number: '100+', label: 'Projects', icon: <Box size={20} /> },
+              { number: '10+', label: 'Projects', icon: <Box size={20} /> },
               { number: '99%', label: 'Success Rate', icon: <Zap size={20} /> },
               { number: '24/7', label: 'Support', icon: <Settings size={20} /> },
             ].map((stat, index) => (

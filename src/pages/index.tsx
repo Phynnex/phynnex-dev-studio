@@ -1,6 +1,9 @@
 import React from 'react';
 import type { GetStaticProps } from 'next';
 import Hero from '../components/Hero';
+import TrustedBy from '../components/TrustedBy';
+import Testimonials from '../components/Testimonials';
+import DiscoverySprint from '../components/DiscoverySprint';
 import Services from '../components/Services';
 import Process from '../components/Process';
 import Benefits from '../components/Benefits';
@@ -17,7 +20,20 @@ type HomePageProps = {
 };
 
 const HomePage = ({ siteUrl }: HomePageProps) => {
-  const sections = [Services, Process, Technologies, Portfolio, Benefits, Team, Faq, CTA, Contact];
+  const sections = [
+    TrustedBy,
+    Services,
+    Process,
+    Technologies,
+    Portfolio,
+    Testimonials,
+    DiscoverySprint,
+    Benefits,
+    Team,
+    Faq,
+    CTA,
+    Contact,
+  ];
 
   const structuredData = {
     '@context': 'https://schema.org',

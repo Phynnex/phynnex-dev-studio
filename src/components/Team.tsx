@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Github, Linkedin, Twitter, Mail, MapPin, Star, Award, Users, Coffee } from 'lucide-react';
 
 interface TeamMemberProps {
@@ -159,51 +160,37 @@ type TeamProps = object;
 const Team = ({}: TeamProps) => {
   const teamMembers = [
     {
-      name: 'Alex Johnson',
-      role: 'Lead Full-Stack Developer',
-      bio: 'Passionate about creating scalable web applications with modern technologies. 8+ years of experience in React, Node.js, and cloud architecture.',
+      name: 'Fyne Iwari',
+      role: 'Founder & Full‑Stack Developer',
+      bio: 'Builds reliable web apps end‑to‑end architecture, implementation, and DevOps‑lite.',
       image:
         'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
-      location: 'San Francisco, CA',
-      experience: '8+ years',
-      specialties: ['React', 'Node.js', 'AWS', 'GraphQL'],
-      social: {
-        github: 'https://github.com',
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
-        email: 'alex@company.com',
-      },
+      location: 'Remote',
+      experience: '5+ years',
+      specialties: ['React', 'Next.js', 'Node.js', 'TypeScript', 'AWS'],
+      social: {},
     },
     {
-      name: 'Sarah Chen',
-      role: 'UI/UX Designer & Frontend Dev',
-      bio: 'Design-focused developer who bridges the gap between beautiful interfaces and functional code. Expert in user experience and modern frontend frameworks.',
+      name: 'Henry Tonye Angala',
+      role: 'Project Manager',
+      bio: 'Turns ideas into clear plans and keeps delivery on time and in scope.',
       image:
         'https://images.unsplash.com/photo-1494790108755-2616b60c2c8c?w=300&h=300&fit=crop&crop=face',
-      location: 'New York, NY',
+      location: 'Remote',
       experience: '6+ years',
-      specialties: ['Figma', 'React', 'TypeScript', 'Design Systems'],
-      social: {
-        github: 'https://github.com',
-        linkedin: 'https://linkedin.com',
-        email: 'sarah@company.com',
-      },
+      specialties: ['Scoping', 'Roadmaps', 'Agile', 'QA', 'Client Comms'],
+      social: {},
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'DevOps & Backend Engineer',
-      bio: 'Infrastructure specialist focused on building robust, scalable systems. Expert in cloud platforms, containerization, and CI/CD pipelines.',
+      name: 'Soibibo Tonye Sam Angala',
+      role: 'Sales & Marketing Lead',
+      bio: 'Connects solutions to real needs — outreach, proposals, and content that converts.',
       image:
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
-      location: 'Austin, TX',
+      location: 'Remote',
       experience: '7+ years',
-      specialties: ['Docker', 'Kubernetes', 'Python', 'AWS'],
-      social: {
-        github: 'https://github.com',
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
-        email: 'michael@company.com',
-      },
+      specialties: ['Lead Gen', 'Proposals', 'SEO', 'Content', 'Partnerships'],
+      social: {},
     },
   ];
 
@@ -244,8 +231,8 @@ const Team = ({}: TeamProps) => {
             className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
             style={{ animationDelay: '0.3s' }}
           >
-            Our diverse team of experts combines creativity, technical excellence, and passion to
-            deliver extraordinary digital experiences that drive your success.
+            A lean core team Full‑Stack Developer, Project Manager, and Sales/Marketing.
+            We partner with seasoned product designers per project for world‑class UX/UI.
           </p>
         </div>
 
@@ -255,14 +242,15 @@ const Team = ({}: TeamProps) => {
             <TeamMember key={index} {...member} delay={`${0.4 + index * 0.15}s`} />
           ))}
         </div>
+        
 
         {/* Team Stats */}
         <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: <Users size={24} />, number: '15+', label: 'Team Members' },
+              { icon: <Users size={24} />, number: '3+', label: 'Team Members' },
               { icon: <Award size={24} />, number: '25+', label: 'Years Combined' },
-              { icon: <Star size={24} />, number: '500+', label: 'Projects Delivered' },
+              { icon: <Star size={24} />, number: '10+', label: 'Projects Delivered' },
               { icon: <Coffee size={24} />, number: '∞', label: 'Cups of Coffee' },
             ].map((stat, index) => (
               <div

@@ -8,10 +8,13 @@ interface ProjectCardProps {
   description: string;
   image?: string;
   tags: string[];
+  role?: string;
+  metrics?: string[];
+  link?: string;
   delay: string;
 }
 
-const ProjectCard = ({ title, category, description, image, tags, delay }: ProjectCardProps) => {
+const ProjectCard = ({ title, category, description, image, tags, role, metrics, link, delay }: ProjectCardProps) => {
   return (
     <div
       className="
@@ -36,6 +39,7 @@ const ProjectCard = ({ title, category, description, image, tags, delay }: Proje
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           width={400}
           height={300}
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         />
         {/* Image overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -66,25 +70,45 @@ const ProjectCard = ({ title, category, description, image, tags, delay }: Proje
           ))}
         </div>
 
-        {/* Project link indicator */}
-        <div className="mt-4 pt-4 border-t border-white/10">
-          <div className="flex items-center text-primary-purple text-sm font-inter group-hover:text-secondary-magenta transition-colors duration-300">
-            <span>View Project</span>
-            <svg
-              className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+        {/* Role & Metrics */}
+        {(role || (metrics && metrics.length)) && (
+          <div className="mt-4 grid gap-2 text-sm text-gray-300 font-inter">
+            {role && (
+              <div>
+                <span className="text-white/80">Role:</span> {role}
+              </div>
+            )}
+            {metrics && metrics.length > 0 && (
+              <ul className="list-disc pl-5 space-y-1">
+                {metrics.map((m, i) => (
+                  <li key={i} className="text-gray-300">{m}</li>
+                ))}
+              </ul>
+            )}
           </div>
-        </div>
+        )}
+
+        {/* Project link indicator */}
+        {link && (
+          <div className="mt-4 pt-4 border-t border-white/10">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-primary-purple text-sm font-inter group-hover:text-secondary-magenta transition-colors duration-300"
+            >
+              <span>View Project</span>
+              <svg
+                className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -99,62 +123,80 @@ const Portfolio = ({}: PortfolioProps) => {
     {
       id: 1,
       title: 'E-Commerce Platform',
-      category: 'Web Development',
+      category: 'Client Work (Web)',
       description:
         'A modern e-commerce solution with integrated payment processing, inventory management, and advanced analytics dashboard.',
       image: 'https://picsum.photos/seed/project1/400/300',
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      role: 'Full‑stack Engineer at Employer',
+      metrics: ['+22% conversion', '–35% LCP', 'PCI‑compliant checkout'],
+      link: 'https://example.com',
       type: 'web',
     },
     {
       id: 2,
-      title: 'Healthcare Mobile App',
-      category: 'Mobile Development',
+      title: 'Internal Admin Portal',
+      category: 'Client Work (Web)',
       description:
-        'Patient-centric mobile application for scheduling appointments, accessing medical records, and telemedicine consultations.',
+        'Secure admin portal for operations with role‑based access, audit trails, and robust reporting.',
       image: 'https://picsum.photos/seed/project2/400/300',
-      tags: ['React Native', 'Firebase', 'Redux', 'API Integration'],
-      type: 'mobile',
+      tags: ['Next.js', 'PostgreSQL', 'tRPC', 'RBAC'],
+      role: 'Full‑stack Engineer at Employer',
+      metrics: ['–40% ops time', 'SLA 99.95%', 'A11y AA compliance'],
+      link: 'https://example.com/admin',
+      type: 'web',
     },
     {
       id: 3,
       title: 'Corporate Website Redesign',
-      category: 'UI/UX Design',
+      category: 'Client Work (Web)',
       description:
-        'Complete redesign of a corporate website focusing on user experience, conversion optimization, and brand identity.',
+        'Conversion‑focused marketing site with component library and CMS integration.',
       image: 'https://picsum.photos/seed/project3/400/300',
-      tags: ['UI/UX', 'Figma', 'HTML/CSS', 'JavaScript'],
-      type: 'design',
+      tags: ['Next.js', 'Tailwind', 'CMS', 'SEO'],
+      role: 'Frontend Engineer at Employer',
+      metrics: ['+30% leads', 'Core Web Vitals green', 'Multilingual'],
+      link: 'https://example.com/marketing',
+      type: 'web',
     },
     {
       id: 4,
       title: 'Inventory Management System',
-      category: 'Web Development',
+      category: 'Client Work (Web)',
       description:
         'Custom inventory tracking solution with real-time analytics, reporting capabilities, and automated reordering.',
       image: 'https://picsum.photos/seed/project4/400/300',
-      tags: ['React', 'Node.js', 'PostgreSQL', 'Charts.js'],
+      tags: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
+      role: 'Full‑stack Engineer at Employer',
+      metrics: ['Realtime dashboards', 'Automated reordering', 'Audit logs'],
+      link: 'https://example.com/inventory',
       type: 'web',
     },
     {
       id: 5,
-      title: 'Fitness Tracking App',
-      category: 'Mobile Development',
+      title: 'Onboarding Wizard',
+      category: 'Client Work (Web)',
       description:
-        'Mobile application for tracking workouts, nutrition, personal fitness goals, and social fitness challenges.',
+        'Guided onboarding flow integrated with billing and CRM, reducing time‑to‑value.',
       image: 'https://picsum.photos/seed/project5/400/300',
-      tags: ['React Native', 'TypeScript', 'Firebase', 'Health API'],
-      type: 'mobile',
+      tags: ['React', 'Zod', 'REST', 'Stripe'],
+      role: 'Frontend Engineer at Employer',
+      metrics: ['–25% onboarding time', '+12% activation rate'],
+      link: 'https://example.com/onboarding',
+      type: 'web',
     },
     {
       id: 6,
       title: 'SaaS Dashboard',
-      category: 'UI/UX Design',
+      category: 'Client Work (Web)',
       description:
-        'Intuitive dashboard design for a SaaS platform, focusing on data visualization, usability, and user engagement.',
+        'Modular dashboard with role‑based widgets and saved views for power users.',
       image: 'https://picsum.photos/seed/project6/400/300',
-      tags: ['UI/UX', 'Adobe XD', 'Design System', 'Prototyping'],
-      type: 'design',
+      tags: ['Next.js', 'Chart.js', 'Prisma', 'Auth'],
+      role: 'Full‑stack Engineer at Employer',
+      metrics: ['NPS +10', 'Support tickets –18%'],
+      link: 'https://example.com/dashboard',
+      type: 'web',
     },
   ];
 
@@ -162,10 +204,8 @@ const Portfolio = ({}: PortfolioProps) => {
     filter === 'all' ? projects : projects.filter((project) => project.type === filter);
 
   const filterButtons = [
-    { key: 'all', label: 'All Projects' },
-    { key: 'web', label: 'Web Development' },
-    { key: 'mobile', label: 'Mobile Apps' },
-    { key: 'design', label: 'UI/UX Design' },
+    { key: 'all', label: 'All (Web)' },
+    { key: 'web', label: 'Client Work (Web)' },
   ];
 
   return (
@@ -185,7 +225,7 @@ const Portfolio = ({}: PortfolioProps) => {
           {/* Overline */}
           <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
-              Our Work
+              Client Work (Web)
             </span>
           </div>
 
@@ -240,6 +280,9 @@ const Portfolio = ({}: PortfolioProps) => {
               description={project.description}
               image={project.image}
               tags={project.tags}
+              role={(project as any).role}
+              metrics={(project as any).metrics}
+              link={(project as any).link}
               delay={`${0.5 + index * 0.1}s`}
             />
           ))}

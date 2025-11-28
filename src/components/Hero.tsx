@@ -32,7 +32,7 @@ const Hero = () => {
     <section className="relative w-full min-h-screen overflow-hidden pb-12 pt-28">
       {/* Background */}
       <div ref={bgRef} className="absolute inset-0 parallax -z-10">
-        <Image src={heroBg} alt="" aria-hidden="true" fill className="object-cover" />
+        <Image src={heroBg} alt="" aria-hidden="true" fill className="object-cover" priority sizes="100vw" />
       </div>
       {/* Gradient */}
       <div
