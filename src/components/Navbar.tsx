@@ -184,8 +184,6 @@ const Navbar = ({}: NavbarProps) => {
 
           {/* Right side controls */}
           <div className="flex items-center space-x-4">
-            
-
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
               <Link

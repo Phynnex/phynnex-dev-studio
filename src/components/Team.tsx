@@ -39,7 +39,10 @@ const Team = ({}: TeamProps) => {
             className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
             style={{ animationDelay: '0.3s' }}
           >
-            6+ years building and scaling web products across fintech, cybersecurity, and e-commerce. I ship secure, performant React/Next.js frontends, Node.js APIs, and reliable CI/CD translating complex requirements into maintainable systems while keeping stakeholders in the loop.
+            6+ years building and scaling web products across fintech, cybersecurity, and
+            e-commerce. I ship secure, performant React/Next.js frontends, Node.js APIs, and
+            reliable CI/CD translating complex requirements into maintainable systems while keeping
+            stakeholders in the loop.
           </p>
         </div>
 
@@ -77,7 +80,10 @@ const Team = ({}: TeamProps) => {
                   </div>
 
                   <p className="text-gray-300 font-inter leading-relaxed">
-                    I focus on React/Next.js, TypeScript, Node.js, and UI that feels premium without sacrificing performance. I work best with founders and product teams who want an accountable partner to scope, design, build, and launch web apps quickly—while keeping security and reliability front and center.
+                    I focus on React/Next.js, TypeScript, Node.js, and UI that feels premium without
+                    sacrificing performance. I work best with founders and product teams who want an
+                    accountable partner to scope, design, build, and launch web apps quickly—while
+                    keeping security and reliability front and center.
                   </p>
 
                   <div className="flex flex-wrap gap-2">
@@ -116,8 +122,23 @@ const Team = ({}: TeamProps) => {
                     </a>
                   </div>
                   <div className="text-sm text-gray-400 font-inter">
-                    <div>Portfolio: <a className="text-primary-purple hover:underline" href="https://fyne-angala-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">fyne-angala-portfolio.vercel.app</a></div>
-                    <div>Phone: <a className="text-primary-purple hover:underline" href="tel:+2347034390904">+234 703 439 0904</a></div>
+                    <div>
+                      Portfolio:{' '}
+                      <a
+                        className="text-primary-purple hover:underline"
+                        href="https://fyne-angala-portfolio.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        fyne-angala-portfolio.vercel.app
+                      </a>
+                    </div>
+                    <div>
+                      Phone:{' '}
+                      <a className="text-primary-purple hover:underline" href="tel:+2347034390904">
+                        +234 703 439 0904
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -128,16 +149,27 @@ const Team = ({}: TeamProps) => {
             <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
               <h3 className="text-lg font-montserrat font-bold text-white mb-2">Recent impact</h3>
               <ul className="space-y-2 text-gray-300 text-sm font-inter list-disc pl-5">
-                <li>Cut bundle size 25% on a Next.js fintech dashboard via code-splitting and memoization.</li>
-                <li>Improved data responsiveness 30% on a security platform with WebSocket-driven updates.</li>
-                <li>Set up CI/CD (GitHub Actions + Vercel) achieving 95%+ successful deployments.</li>
-                <li>Documented UI libraries in Storybook to standardize components across teams.</li>
+                <li>
+                  Cut bundle size 25% on a Next.js fintech dashboard via code-splitting and
+                  memoization.
+                </li>
+                <li>
+                  Improved data responsiveness 30% on a security platform with WebSocket-driven
+                  updates.
+                </li>
+                <li>
+                  Set up CI/CD (GitHub Actions + Vercel) achieving 95%+ successful deployments.
+                </li>
+                <li>
+                  Documented UI libraries in Storybook to standardize components across teams.
+                </li>
               </ul>
             </div>
             <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
               <h3 className="text-lg font-montserrat font-bold text-white mb-2">Studio model</h3>
               <p className="text-gray-300 text-sm font-inter">
-                I lead delivery and bring in trusted designers or backend specialists when needed. You get one point of contact and a small, accountable team.
+                I lead delivery and bring in trusted designers or backend specialists when needed.
+                You get one point of contact and a small, accountable team.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -171,7 +203,9 @@ const Team = ({}: TeamProps) => {
               <li>Senior Frontend Engineer — GetMoore (Fintech) · Nov 2023 – Present</li>
               <li>Full-Stack JavaScript Developer — Ethnos Cyber · Sep 2022 – Oct 2024</li>
               <li>Frontend Developer — Zealight Innovation Labs · Jul 2021 – Aug 2022</li>
-              <li>Junior Software Developer — Canary Point Corporate Services · Jan 2021 – Jun 2021</li>
+              <li>
+                Junior Software Developer — Canary Point Corporate Services · Jan 2021 – Jun 2021
+              </li>
             </ul>
           </div>
           <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">

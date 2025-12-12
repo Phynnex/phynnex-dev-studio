@@ -11,8 +11,8 @@ const DiscoverySprint = () => {
             <div className="md:col-span-2">
               <h3 className="heading-2">Discovery Sprint</h3>
               <p className="text-dark-gray font-inter mt-2 md:mt-3 max-w-2xl">
-                A focused 1–2 week engagement to align goals, scope, and a delivery plan.
-                You get a concise brief, timeline, and budget — plus early risk reduction.
+                A focused 1–2 week engagement to align goals, scope, and a delivery plan. You get a
+                concise brief, timeline, and budget — plus early risk reduction.
               </p>
               <ul className="mt-4 text-off-white/90 font-inter text-sm list-disc pl-5 space-y-1">
                 <li>Workshops, user flows, and a prioritized backlog</li>
@@ -21,7 +21,9 @@ const DiscoverySprint = () => {
               </ul>
             </div>
             <div className="flex md:justify-end">
-              <Link href="/contact" className="btn-primary">Book a Sprint</Link>
+              <Link href="/contact" className="btn-primary">
+                Book a Sprint
+              </Link>
             </div>
           </div>
         </div>
@@ -31,4 +33,3 @@ const DiscoverySprint = () => {
 };
 
 export default DiscoverySprint;
-

@@ -19,7 +19,8 @@ const Benefits = ({}: BenefitsProps) => {
     {
       icon: '✓',
       title: 'Transparent delivery',
-      description: 'Weekly demos, async updates, and Looms so you always know what is shipped next.',
+      description:
+        'Weekly demos, async updates, and Looms so you always know what is shipped next.',
     },
     {
       icon: '✓',
@@ -62,7 +63,8 @@ const Benefits = ({}: BenefitsProps) => {
                 className="text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-8 animate-fade-in-up opacity-90"
                 style={{ animationDelay: '0.3s' }}
               >
-                Builders who can ship and think in outcomes are rare. I bring both: hands-on code and the discipline to keep releases aligned to business goals.
+                Builders who can ship and think in outcomes are rare. I bring both: hands-on code
+                and the discipline to keep releases aligned to business goals.
               </p>
             </div>
 

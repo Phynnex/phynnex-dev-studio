@@ -19,7 +19,17 @@ type Project = Omit<ProjectCardProps, 'delay'> & {
   type: string;
 };
 
-const ProjectCard = ({ title, category, description, image, tags, role, metrics, link, delay }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  category,
+  description,
+  image,
+  tags,
+  role,
+  metrics,
+  link,
+  delay,
+}: ProjectCardProps) => {
   return (
     <div
       className="
@@ -105,7 +115,12 @@ const ProjectCard = ({ title, category, description, image, tags, role, metrics,
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </a>
           </div>
@@ -211,7 +226,8 @@ const Portfolio = ({}: PortfolioProps) => {
             className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-12 animate-fade-in-up opacity-90"
             style={{ animationDelay: '0.3s' }}
           >
-            Impact-focused builds: secure uploads, data-rich dashboards, real-time tracking, and clear user journeys that reduce friction.
+            Impact-focused builds: secure uploads, data-rich dashboards, real-time tracking, and
+            clear user journeys that reduce friction.
           </p>
 
           <div
@@ -257,7 +273,8 @@ const Portfolio = ({}: PortfolioProps) => {
             </h3>
 
             <p className="text-gray-300 font-inter mb-8 text-lg">
-              Let&apos;s walk through architecture decisions, timelines, and outcomes for a project similar to yours.
+              Let&apos;s walk through architecture decisions, timelines, and outcomes for a project
+              similar to yours.
             </p>
 
             <Link

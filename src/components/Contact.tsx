@@ -144,7 +144,8 @@ const Contact = ({}: ContactProps) => {
               className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
               style={{ animationDelay: '0.3s' }}
             >
-              Tell me about your product, the problem you are solving, and the outcome you want. I&apos;ll reply with timelines and a simple plan to move forward.
+              Tell me about your product, the problem you are solving, and the outcome you want.
+              I&apos;ll reply with timelines and a simple plan to move forward.
             </p>
           </div>
 

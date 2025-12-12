@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-
     remotePatterns: [
       {
         protocol: 'https',
@@ -16,10 +15,7 @@ const nextConfig = {
       },
     ],
     unoptimized: true,
-
   },
 };
-
-
 
 export default nextConfig;

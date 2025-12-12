@@ -76,7 +76,8 @@ const CTA = ({}: CTAProps) => {
                 className="text-xl lg:text-2xl text-gray-300 font-inter leading-relaxed max-w-3xl mx-auto mb-10 animate-fade-in-up opacity-90"
                 style={{ animationDelay: '0.4s' }}
               >
-                  If you need a partner to scope, build, and launch a web product, let&apos;s talk. I can help you ship faster with clear communication and production-ready code.
+                If you need a partner to scope, build, and launch a web product, let&apos;s talk. I
+                can help you ship faster with clear communication and production-ready code.
               </p>
 
               {/* CTA Buttons */}

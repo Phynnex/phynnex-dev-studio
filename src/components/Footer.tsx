@@ -16,14 +16,20 @@ const Footer = ({}: FooterProps) => {
           <div className="pointer-events-none absolute inset-0 hero-gradient opacity-10"></div>
           <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h3 className="text-2xl md:text-3xl font-montserrat font-bold">Let’s build something remarkable</h3>
+              <h3 className="text-2xl md:text-3xl font-montserrat font-bold">
+                Let’s build something remarkable
+              </h3>
               <p className="mt-2 text-dark-gray font-inter max-w-2xl">
                 From idea to production — we craft performant, elegant digital products.
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <Link href="/contact" className="btn-primary">Start a Project</Link>
-              <Link href="/process" className="btn-outline">Our Process</Link>
+              <Link href="/contact" className="btn-primary">
+                Start a Project
+              </Link>
+              <Link href="/process" className="btn-outline">
+                Our Process
+              </Link>
             </div>
           </div>
         </div>
@@ -105,7 +111,10 @@ const Footer = ({}: FooterProps) => {
             <h4 className="font-montserrat font-semibold text-off-white">Services</h4>
             <ul className="mt-3 space-y-2 font-inter text-sm">
               <li>
-                <Link href="/services" className="text-dark-gray hover:text-white transition-colors">
+                <Link
+                  href="/services"
+                  className="text-dark-gray hover:text-white transition-colors"
+                >
                   Our Services
                 </Link>
               </li>

@@ -90,7 +90,8 @@ const Process = ({}: ProcessProps) => {
     {
       number: '2',
       title: 'Build',
-      description: 'Design systems, frontends, and APIs in small, shippable increments. Weekly demos keep you in the loop.',
+      description:
+        'Design systems, frontends, and APIs in small, shippable increments. Weekly demos keep you in the loop.',
     },
     {
       number: '3',
@@ -145,7 +146,8 @@ const Process = ({}: ProcessProps) => {
           </h2>
 
           <p className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90 [animation-delay:0.3s]">
-            Outcome-first, transparent, and paced to ship. You always know what we&apos;re building and why.
+            Outcome-first, transparent, and paced to ship. You always know what we&apos;re building
+            and why.
           </p>
         </div>
 
@@ -192,7 +194,8 @@ const Process = ({}: ProcessProps) => {
             </h3>
 
             <p className="text-gray-300 font-inter mb-8 text-lg">
-              No commitment an intro call to shape scope, timelines, and budget before we write a line of code.
+              No commitment an intro call to shape scope, timelines, and budget before we write a
+              line of code.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

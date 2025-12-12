@@ -174,7 +174,12 @@ const Services = ({}: ServicesProps) => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l-2-2m0 0l-2-2m2 2h12M14 4l2 2m0 0l2 2m-2-2H4" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 20l-2-2m0 0l-2-2m2 2h12M14 4l2 2m0 0l2 2m-2-2H4"
+                />
               </svg>
             }
           />
@@ -191,7 +196,12 @@ const Services = ({}: ServicesProps) => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6l-2 4h4l-2 4m-7 2h14" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 6l-2 4h4l-2 4m-7 2h14"
+                />
               </svg>
             }
           />
@@ -208,7 +218,12 @@ const Services = ({}: ServicesProps) => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12h3m6-9v3m9 6h-3m-6 9v-3M7.5 7.5l1.5 1.5m6 6 1.5 1.5m0-9L14 9m-4 4-1.5 1.5" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 12h3m6-9v3m9 6h-3m-6 9v-3M7.5 7.5l1.5 1.5m6 6 1.5 1.5m0-9L14 9m-4 4-1.5 1.5"
+                />
               </svg>
             }
           />

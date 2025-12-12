@@ -13,7 +13,8 @@ const testimonials: Testimonial[] = [
     title: 'Fintech Startup',
   },
   {
-    quote: 'Strong engineering with a product mindset. He pushed for decisions that kept scope tight.',
+    quote:
+      'Strong engineering with a product mindset. He pushed for decisions that kept scope tight.',
     name: 'Engineering Manager',
     title: 'Security Platform',
   },

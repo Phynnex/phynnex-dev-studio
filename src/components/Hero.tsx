@@ -32,7 +32,15 @@ const Hero = () => {
     <section className="relative w-full min-h-screen overflow-hidden pb-12 pt-28">
       {/* Background */}
       <div ref={bgRef} className="absolute inset-0 parallax -z-10">
-        <Image src={heroBg} alt="" aria-hidden="true" fill className="object-cover" priority sizes="100vw" />
+        <Image
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
       </div>
       {/* Gradient */}
       <div
@@ -72,7 +80,7 @@ const Hero = () => {
           >
             <span className="block">Fyne Tonye Angala</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
-            Software Engineer
+              Software Engineer
             </span>
           </h1>
 
@@ -85,8 +93,8 @@ const Hero = () => {
             opacity-90
           "
           >
-            I build secure, high-performance web apps in React, Next.js, Node.js, and TypeScript.
-            6+ years across fintech, cybersecurity, and e-commerce shipping dashboards, portals, and
+            I build secure, high-performance web apps in React, Next.js, Node.js, and TypeScript. 6+
+            years across fintech, cybersecurity, and e-commerce shipping dashboards, portals, and
             platforms with clear communication and reliable delivery.
           </p>
         </div>

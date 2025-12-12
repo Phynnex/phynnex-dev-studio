@@ -1,6 +1,12 @@
 import React from 'react';
 
-const logos = ['Ethnos Cyber', 'Fintech Founders', 'SME Teams', 'Innovation Labs', 'Product Communities'];
+const logos = [
+  'Ethnos Cyber',
+  'Fintech Founders',
+  'SME Teams',
+  'Innovation Labs',
+  'Product Communities',
+];
 
 const TrustedBy = () => {
   return (
