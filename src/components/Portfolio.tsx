@@ -14,6 +14,11 @@ interface ProjectCardProps {
   delay: string;
 }
 
+type Project = Omit<ProjectCardProps, 'delay'> & {
+  id: number;
+  type: string;
+};
+
 const ProjectCard = ({ title, category, description, image, tags, role, metrics, link, delay }: ProjectCardProps) => {
   return (
     <div
@@ -115,7 +120,7 @@ type PortfolioProps = object;
 const Portfolio = ({}: PortfolioProps) => {
   const [filter] = useState('all');
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: 'Aquila Mobile Security',
@@ -229,17 +234,17 @@ const Portfolio = ({}: PortfolioProps) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 lg:mb-20">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map(({ id, type, ...project }, index) => (
             <ProjectCard
-              key={project.id}
+              key={id}
               title={project.title}
               category={project.category}
               description={project.description}
               image={project.image}
               tags={project.tags}
-              role={(project as any).role}
-              metrics={(project as any).metrics}
-              link={(project as any).link}
+              role={project.role}
+              metrics={project.metrics}
+              link={project.link}
               delay={`${0.5 + index * 0.1}s`}
             />
           ))}

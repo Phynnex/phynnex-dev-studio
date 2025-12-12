@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Full from '../assets/images/New.png';
-import useTheme from '../hooks/useTheme';
 
 type NavbarProps = object;
 
@@ -13,7 +12,6 @@ const Navbar = ({}: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const [theme, toggleTheme] = useTheme();
 
   // Handle scroll effect
   useEffect(() => {
