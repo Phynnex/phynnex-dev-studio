@@ -10,9 +10,9 @@ interface SEOProps {
   children?: React.ReactNode;
 }
 
-const defaultTitle = 'Phynnex Dev Studio';
+const defaultTitle = 'Fyne Tonye Angala | Software Engineer & Product Partner';
 const defaultDescription =
-  'Welcome to Phynnex Dev Studio, your partner for custom digital solutions.';
+  'Portfolio of Fyne Tonye Angala — software engineer and studio partner building secure, high-performance web products for startups and SMEs.';
 const defaultImage = 'https://picsum.photos/seed/hero/1200/630';
 
 const SEO = ({

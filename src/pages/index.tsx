@@ -38,15 +38,15 @@ const HomePage = ({ siteUrl }: HomePageProps) => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Phynnex Dev Studio',
+    name: 'Fyne Tonye Angala | Phynnex Dev Studio',
     url: siteUrl,
   };
 
   return (
     <>
       <SEO
-        title="Phynnex Dev Studio - Home"
-        description="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
+        title="Fyne Tonye Angala | Software Engineer & Product Partner"
+        description="I build and ship secure, high-performance web products for founders and teams. React, Next.js, TypeScript, and product thinking from scope to launch."
         url={siteUrl}
         image="https://picsum.photos/seed/hero/1200/630"
       >

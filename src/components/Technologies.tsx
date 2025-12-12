@@ -20,6 +20,7 @@ import {
   Cpu,
   Box,
   Workflow,
+  Shield,
 } from 'lucide-react';
 
 interface TechnologyItemProps {
@@ -101,47 +102,38 @@ type TechnologiesProps = object;
 const Technologies = ({}: TechnologiesProps) => {
   const frontendTechnologies = [
     { name: 'React', icon: <Code size={24} /> },
-    { name: 'JavaScript', icon: <FileText size={24} /> },
-    { name: 'HTML5', icon: <Globe size={24} /> },
-    { name: 'CSS3', icon: <Palette size={24} /> },
-    { name: 'Tailwind CSS', icon: <Palette size={24} /> },
     { name: 'Next.js', icon: <Zap size={24} /> },
-    { name: 'React Native', icon: <Smartphone size={24} /> },
-    { name: 'Redux', icon: <Layers size={24} /> },
     { name: 'TypeScript', icon: <Code size={24} /> },
-    { name: 'Bootstrap', icon: <Box size={24} /> },
-    { name: 'Vue.js', icon: <Code size={24} /> },
-    { name: 'Angular', icon: <Code size={24} /> },
+    { name: 'Tailwind CSS', icon: <Palette size={24} /> },
+    { name: 'Redux Toolkit', icon: <Layers size={24} /> },
+    { name: 'Zustand', icon: <Layers size={24} /> },
+    { name: 'React Query', icon: <Workflow size={24} /> },
+    { name: 'shadcn/Radix UI', icon: <Palette size={24} /> },
+    { name: 'Framer Motion', icon: <Zap size={24} /> },
+    { name: 'Material UI', icon: <Box size={24} /> },
   ];
 
   const backendTechnologies = [
     { name: 'Node.js', icon: <Server size={24} /> },
     { name: 'Express', icon: <Zap size={24} /> },
-    { name: 'MongoDB', icon: <Database size={24} /> },
+    { name: 'REST APIs', icon: <Globe size={24} /> },
+    { name: 'WebSockets', icon: <Zap size={24} /> },
     { name: 'PostgreSQL', icon: <Database size={24} /> },
-    { name: 'Firebase', icon: <Cloud size={24} /> },
-    { name: 'Python', icon: <Code size={24} /> },
-    { name: 'Django', icon: <Server size={24} /> },
-    { name: 'GraphQL', icon: <Workflow size={24} /> },
-    { name: 'REST API', icon: <Globe size={24} /> },
-    { name: 'AWS', icon: <Cloud size={24} /> },
-    { name: 'Docker', icon: <Container size={24} /> },
-    { name: 'Kubernetes', icon: <Settings size={24} /> },
+    { name: 'MongoDB', icon: <Database size={24} /> },
+    { name: 'Prisma ORM', icon: <Package size={24} /> },
+    { name: 'NextAuth', icon: <Shield size={24} /> },
+    { name: 'JWT/OAuth', icon: <Shield size={24} /> },
+    { name: 'Supabase', icon: <Zap size={24} /> },
   ];
 
   const tools = [
-    { name: 'Git', icon: <GitBranch size={24} /> },
-    { name: 'GitHub', icon: <Github size={24} /> },
-    { name: 'VS Code', icon: <Monitor size={24} /> },
-    { name: 'Figma', icon: <Palette size={24} /> },
-    { name: 'Adobe XD', icon: <Palette size={24} /> },
-    { name: 'Postman', icon: <Zap size={24} /> },
-    { name: 'Docker', icon: <Container size={24} /> },
-    { name: 'Webpack', icon: <Package size={24} /> },
-    { name: 'Jest', icon: <TestTube size={24} /> },
-    { name: 'CI/CD', icon: <Workflow size={24} /> },
+    { name: 'GitHub Actions', icon: <Workflow size={24} /> },
     { name: 'Vercel', icon: <Cloud size={24} /> },
     { name: 'Netlify', icon: <Cloud size={24} /> },
+    { name: 'AWS Amplify', icon: <Cloud size={24} /> },
+    { name: 'Jest & RTL', icon: <TestTube size={24} /> },
+    { name: 'Cypress', icon: <Monitor size={24} /> },
+    { name: 'Postman', icon: <Zap size={24} /> },
   ];
 
   return (
@@ -196,10 +188,10 @@ const Technologies = ({}: TechnologiesProps) => {
         <div className="mt-20 animate-fade-in-up [animation-delay:1s]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '50+', label: 'Technologies', icon: <Cpu size={20} /> },
-              { number: '10+', label: 'Projects', icon: <Box size={20} /> },
-              { number: '99%', label: 'Success Rate', icon: <Zap size={20} /> },
-              { number: '24/7', label: 'Support', icon: <Settings size={20} /> },
+              { number: '4+', label: 'Launches', icon: <Cpu size={20} /> },
+              { number: '8+', label: 'Core tools', icon: <Box size={20} /> },
+              { number: '95%', label: 'On-time delivery', icon: <Zap size={20} /> },
+              { number: '2-6 wks', label: 'Typical sprints', icon: <Settings size={20} /> },
             ].map((stat, index) => (
               <div
                 key={index}

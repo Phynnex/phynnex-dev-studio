@@ -76,8 +76,7 @@ const CTA = ({}: CTAProps) => {
                 className="text-xl lg:text-2xl text-gray-300 font-inter leading-relaxed max-w-3xl mx-auto mb-10 animate-fade-in-up opacity-90"
                 style={{ animationDelay: '0.4s' }}
               >
-                Ready to transform your business with powerful digital solutions? Let&apos;s discuss
-                your vision and bring your ideas to life with cutting-edge technology.
+                  If you need a partner to scope, build, and launch a web product, let&apos;s talk. I can help you ship faster with clear communication and production-ready code.
               </p>
 
               {/* CTA Buttons */}
@@ -93,7 +92,7 @@ const CTA = ({}: CTAProps) => {
                   <div className="rounded-2xl bg-black px-8 py-4 group-hover:bg-transparent transition-colors duration-300">
                     <div className="flex items-center space-x-3">
                       <span className="font-montserrat font-bold text-lg text-white">
-                        Start Your Project
+                        Book a project intro
                       </span>
                       <ArrowRight
                         size={20}

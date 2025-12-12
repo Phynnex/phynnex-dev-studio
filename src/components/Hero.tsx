@@ -48,7 +48,7 @@ const Hero = () => {
           className="mb-12 md:mb-16 max-w-5xl animate-fade-in-up"
           style={{ animationDelay: '0.1s' }}
         >
-          {/* Overline/Tagline - New addition for better hierarchy */}
+          {/* Overline/Tagline */}
           <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
             <span
               className="
@@ -58,7 +58,7 @@ const Hero = () => {
               font-inter
             "
             >
-              Digital Innovation Studio
+              Software Engineer & Product Partner
             </span>
           </div>
 
@@ -70,9 +70,9 @@ const Hero = () => {
             mb-2
           "
           >
-            <span className="block">From Vision to Impact</span>
+            <span className="block">Fyne Tonye Angala</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
-              We Build What&apos;s Next
+            Software Engineer
             </span>
           </h1>
 
@@ -85,9 +85,9 @@ const Hero = () => {
             opacity-90
           "
           >
-            We craft digital products that solve real problems and inspire growth. By combining
-            advanced technology with creative thinking, we turn bold ideas into market-ready
-            solutions.
+            I build secure, high-performance web apps in React, Next.js, Node.js, and TypeScript.
+            6+ years across fintech, cybersecurity, and e-commerce shipping dashboards, portals, and
+            platforms with clear communication and reliable delivery.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             {/* Primary CTA */}
             <Link
-              href="/contact"
+              href="#contact"
               className="
                 group inline-flex items-center justify-center
                 px-10 py-4 rounded-full font-semibold text-base
@@ -110,13 +110,13 @@ const Hero = () => {
                 relative overflow-hidden
               "
             >
-              <span className="relative z-10">Start Your Project</span>
+              <span className="relative z-10">Hire Me</span>
               <div className="absolute inset-0 bg-gradient-to-r from-secondary-magenta to-primary-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
 
             {/* Secondary CTA */}
             <Link
-              href="/services"
+              href="#portfolio"
               className="
                 group inline-flex items-center justify-center
                 px-10 py-4 rounded-full font-semibold text-base
@@ -128,7 +128,7 @@ const Hero = () => {
                 min-w-[200px]
               "
             >
-              Explore Our Work
+              View Work
               <svg
                 className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
                 fill="none"

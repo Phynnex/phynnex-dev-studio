@@ -8,21 +8,19 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    quote:
-      'They moved from brief to launch quickly and kept us aligned the whole way. The first release exceeded expectations.',
-    name: 'J. Williams',
-    title: 'Founder, NovaLabs',
+    quote: 'Weekly updates, demo recordings, and clear next steps. Delivery stayed on track.',
+    name: 'Product Lead',
+    title: 'Fintech Startup',
   },
   {
-    quote:
-      'Clear plans, tight execution, and a polished product. Communication was stellar from kickoff to handoff.',
-    name: 'S. Patel',
-    title: 'COO, Helios',
+    quote: 'Strong engineering with a product mindset. He pushed for decisions that kept scope tight.',
+    name: 'Engineering Manager',
+    title: 'Security Platform',
   },
   {
-    quote: 'Strong engineering with a product mindset. Exactly the partner we needed.',
-    name: 'M. Lee',
-    title: 'Product Lead, Nimbus',
+    quote: 'Handed off a stable build with docs, Looms, and a clean backlog for my team.',
+    name: 'Founder',
+    title: 'SME Client',
   },
 ];
 
@@ -33,7 +31,7 @@ const Testimonials = () => {
       <div className="relative z-10 container-custom">
         <div className="text-center mb-12">
           <h2 className="section-title">What Clients Say</h2>
-          <p className="section-subtitle">Short notes from recent collaborations</p>
+          <p className="section-subtitle">What you can expect when we work together</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
@@ -56,4 +54,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-

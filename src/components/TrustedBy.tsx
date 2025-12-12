@@ -1,6 +1,6 @@
 import React from 'react';
 
-const logos = ['Astra', 'NovaLabs', 'Quanta', 'Helios', 'Nimbus'];
+const logos = ['Ethnos Cyber', 'Fintech Founders', 'SME Teams', 'Innovation Labs', 'Product Communities'];
 
 const TrustedBy = () => {
   return (
@@ -23,4 +23,3 @@ const TrustedBy = () => {
 };
 
 export default TrustedBy;
-

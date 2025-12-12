@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface ServiceCardProps {
   title: string;
@@ -130,7 +131,7 @@ const Services = ({}: ServicesProps) => {
               font-inter
             "
             >
-              Our Expertise
+              Services for founders & teams
             </span>
           </div>
 
@@ -141,9 +142,9 @@ const Services = ({}: ServicesProps) => {
               animate-fade-in-up [animation-delay:0.2s]
             "
           >
-            <span className="block">Expert Digital Solutions</span>
+            <span className="block">From idea to launch</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
-              for Your Business
+              with one accountable partner
             </span>
           </h2>
 
@@ -154,16 +155,16 @@ const Services = ({}: ServicesProps) => {
               animate-fade-in-up opacity-90 [animation-delay:0.3s]
             "
           >
-            We offer specialized services to help transform your ideas into powerful digital
-            realities that drive growth and innovation.
+            Clear scopes, fast delivery, and production-ready engineering for web apps, dashboards,
+            and secure platforms using React, Next.js, Node.js, and TypeScript.
           </p>
         </div>
 
         {/* Services grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           <ServiceCard
-            title="Website Development"
-            description="Professional, responsive websites built with cutting-edge technologies that deliver exceptional user experiences and drive business growth."
+            title="Product Discovery"
+            description="Workshops, scope, and clickable prototypes to align on the right thing to build. Roadmaps you can share with stakeholders."
             delay="0.4s"
             icon={
               <svg
@@ -173,19 +174,14 @@ const Services = ({}: ServicesProps) => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l-2-2m0 0l-2-2m2 2h12M14 4l2 2m0 0l2 2m-2-2H4" />
               </svg>
             }
           />
 
           <ServiceCard
-            title="Custom Software Development"
-            description="Tailored software solutions designed to address your specific business challenges, streamline operations, and enhance productivity."
+            title="Build & Integrate"
+            description="Full-stack delivery for dashboards, client portals, and mobile-ready web apps. Auth, payments, and APIs baked in from day one."
             delay="0.5s"
             icon={
               <svg
@@ -195,19 +191,14 @@ const Services = ({}: ServicesProps) => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6l-2 4h4l-2 4m-7 2h14" />
               </svg>
             }
           />
 
           <ServiceCard
-            title="Mobile App Development"
-            description="Native and cross-platform mobile applications that provide seamless experiences across devices while meeting your business objectives."
+            title="Stabilize & Optimize"
+            description="Performance, security hardening, and UX refinements for products already in market. Faster load times, clearer flows, happier users."
             delay="0.6s"
             icon={
               <svg
@@ -217,80 +208,7 @@ const Services = ({}: ServicesProps) => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                />
-              </svg>
-            }
-          />
-
-          <ServiceCard
-            title="Technical Support"
-            description="Comprehensive support services to ensure your digital solutions operate smoothly, with quick resolution of issues and minimal downtime."
-            delay="0.7s"
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-primary-purple"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              </svg>
-            }
-          />
-
-          <ServiceCard
-            title="Development Training"
-            description="Specialized training programs to equip your team with the skills needed to understand, maintain, and extend your software solutions."
-            delay="0.8s"
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-primary-purple"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                />
-              </svg>
-            }
-          />
-
-          <ServiceCard
-            title="Consultation & Strategy"
-            description="Expert advice on digital transformation, technology selection, and implementation strategies to maximize your return on investment."
-            delay="0.9s"
-            icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-primary-purple"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12h3m6-9v3m9 6h-3m-6 9v-3M7.5 7.5l1.5 1.5m6 6 1.5 1.5m0-9L14 9m-4 4-1.5 1.5" />
               </svg>
             }
           />
@@ -299,10 +217,11 @@ const Services = ({}: ServicesProps) => {
         {/* Bottom CTA */}
         <div className="text-center mt-16 lg:mt-20 animate-fade-in-up [animation-delay:1s]">
           <p className="text-gray-400 font-inter mb-6">
-            Ready to transform your business with cutting-edge digital solutions?
+            Ready to ship your next feature or launch?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
+            <Link
+              href="/#contact"
               className="
               px-8 py-4 rounded-full font-semibold text-base
               bg-gradient-to-r from-primary-purple to-secondary-magenta
@@ -312,9 +231,10 @@ const Services = ({}: ServicesProps) => {
               focus:outline-none focus:ring-2 focus:ring-primary-purple/50
             "
             >
-              Get Started Today
-            </button>
-            <button
+              Book a project intro
+            </Link>
+            <Link
+              href="/#portfolio"
               className="
               px-8 py-4 rounded-full font-semibold text-base
               border-2 border-white/20 text-white
@@ -324,8 +244,8 @@ const Services = ({}: ServicesProps) => {
               focus:outline-none focus:ring-2 focus:ring-white/30
             "
             >
-              View Our Portfolio
-            </button>
+              See recent work
+            </Link>
           </div>
         </div>
       </div>

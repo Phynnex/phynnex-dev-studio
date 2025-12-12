@@ -135,9 +135,9 @@ const Contact = ({}: ContactProps) => {
               className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up"
               style={{ animationDelay: '0.2s' }}
             >
-              <span className="block">Get in Touch</span>
+              <span className="block">Get in touch</span>
               <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
-                & Start Building
+                & book a project intro
               </span>
             </h2>
 
@@ -145,8 +145,7 @@ const Contact = ({}: ContactProps) => {
               className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
               style={{ animationDelay: '0.3s' }}
             >
-              Have a project in mind? We&apos;d love to hear about your vision and discuss how we
-              can help bring your ideas to life with cutting-edge technology.
+              Tell me about your product, the problem you are solving, and the outcome you want. I&apos;ll reply with timelines and a simple plan to move forward.
             </p>
           </div>
 
@@ -194,7 +193,7 @@ const Contact = ({}: ContactProps) => {
                     Send us a Message
                   </h3>
                   <p className="text-gray-300 font-inter">
-                    Fill out the form below and we&apos;ll get back to you within 24 hours.
+                    Fill out the form below and I&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
 

@@ -51,15 +51,17 @@ const Navbar = ({}: NavbarProps) => {
   const isActiveRoute = (path: string) => router.pathname === path;
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/services', label: 'Services' },
+    { href: '/#about', label: 'About' },
+    { href: '/#services', label: 'Services' },
+    { href: '/#portfolio', label: 'Work' },
+    { href: '/#process', label: 'Process' },
+    { href: '/#contact', label: 'Contact' },
   ];
 
   const dropdownLinks = [
-    { href: '/portfolio', label: 'Portfolio' },
-    { href: '/process', label: 'Our Process' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/portfolio', label: 'Case Studies' },
+    { href: '/about', label: 'Full Bio' },
+    { href: '/contact', label: 'Book a Call' },
   ];
 
   return (
@@ -189,7 +191,7 @@ const Navbar = ({}: NavbarProps) => {
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
               <Link
-                href="/join"
+                href="https://fyne-angala-portfolio.vercel.app"
                 className="
                   px-5 py-2.5 rounded-lg font-inter font-semibold text-sm
                   border-2 border-primary-purple/60 text-white
@@ -198,10 +200,10 @@ const Navbar = ({}: NavbarProps) => {
                   focus:outline-none focus:ring-2 focus:ring-primary-purple/50
                 "
               >
-                Join
+                View Resume
               </Link>
               <Link
-                href="/learn"
+                href="/#contact"
                 className="
                   px-5 py-2.5 rounded-lg font-inter font-semibold text-sm
                   bg-gradient-to-r from-primary-purple to-secondary-magenta
@@ -211,7 +213,7 @@ const Navbar = ({}: NavbarProps) => {
                   focus:outline-none focus:ring-2 focus:ring-primary-purple/50
                 "
               >
-                Learn
+                Hire Me
               </Link>
             </div>
 
@@ -289,7 +291,7 @@ const Navbar = ({}: NavbarProps) => {
               {/* Mobile CTA Buttons */}
               <div className="flex flex-col space-y-3 pt-4 border-t border-white/10 mt-4">
                 <Link
-                  href="/join"
+                  href="mailto:angalafynetonye@gmail.com"
                   className="
                     mx-4 px-4 py-3 rounded-lg font-inter font-semibold text-center
                     border-2 border-primary-purple/60 text-white
@@ -298,10 +300,10 @@ const Navbar = ({}: NavbarProps) => {
                   "
                   onClick={() => setIsOpen(false)}
                 >
-                  Join
+                  Download Resume
                 </Link>
                 <Link
-                  href="/learn"
+                  href="/#contact"
                   className="
                     mx-4 px-4 py-3 rounded-lg font-inter font-semibold text-center
                     bg-gradient-to-r from-primary-purple to-secondary-magenta
@@ -310,7 +312,7 @@ const Navbar = ({}: NavbarProps) => {
                   "
                   onClick={() => setIsOpen(false)}
                 >
-                  Learn
+                  Hire Me
                 </Link>
               </div>
             </nav>

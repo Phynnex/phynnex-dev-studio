@@ -1,205 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Github, Linkedin, Twitter, Mail, MapPin, Star, Award, Users, Coffee } from 'lucide-react';
-
-interface TeamMemberProps {
-  name: string;
-  role: string;
-  bio: string;
-  image: string;
-  location: string;
-  experience: string;
-  specialties: string[];
-  social: {
-    github?: string;
-    linkedin?: string;
-    twitter?: string;
-    email?: string;
-  };
-  delay: string;
-}
-
-const TeamMember = ({
-  name,
-  role,
-  bio,
-  image,
-  location,
-  experience,
-  specialties,
-  social,
-  delay,
-}: TeamMemberProps) => {
-  return (
-    <div
-      className="
-        group relative overflow-hidden rounded-3xl p-8 
-        bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40
-        backdrop-blur-sm border border-white/10
-        hover:border-primary-purple/50 hover:bg-gradient-to-br hover:from-gray-800/60 hover:via-gray-700/40 hover:to-black/50
-        transform transition-all duration-700 ease-out
-        hover:-translate-y-4 hover:shadow-2xl hover:shadow-primary-purple/20
-        animate-fade-in-up
-      "
-      style={{ animationDelay: delay }}
-    >
-      {/* Gradient overlay on hover */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-primary-purple via-secondary-magenta to-primary-purple transition-opacity duration-500 rounded-3xl" />
-
-      {/* Floating background shapes */}
-      <div className="absolute top-4 right-4 w-16 h-16 bg-primary-purple/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute bottom-4 left-4 w-12 h-12 bg-secondary-magenta/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-      <div className="relative z-10">
-        {/* Profile Image */}
-        <div className="relative mb-6 mx-auto w-32 h-32">
-          <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary-purple/20 to-secondary-magenta/20 p-1">
-            <Image
-              src={image}
-              alt={name}
-              width={128}
-              height={128}
-              className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-purple rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <Star size={12} className="text-white fill-white" />
-          </div>
-        </div>
-
-        {/* Name and Role */}
-        <div className="text-center mb-4">
-          <h3 className="text-xl font-montserrat font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary-purple group-hover:to-secondary-magenta group-hover:bg-clip-text transition-all duration-300">
-            {name}
-          </h3>
-          <p className="text-primary-purple font-inter font-medium text-sm">{role}</p>
-        </div>
-
-        {/* Location and Experience */}
-        <div className="flex items-center justify-center space-x-4 mb-4 text-gray-400 text-sm">
-          <div className="flex items-center space-x-1">
-            <MapPin size={14} />
-            <span>{location}</span>
-          </div>
-          <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
-          <div className="flex items-center space-x-1">
-            <Award size={14} />
-            <span>{experience}</span>
-          </div>
-        </div>
-
-        {/* Bio */}
-        <p className="text-gray-300 font-inter text-sm leading-relaxed mb-6 text-center">{bio}</p>
-
-        {/* Specialties */}
-        <div className="mb-6">
-          <div className="flex flex-wrap justify-center gap-2">
-            {specialties.map((specialty, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 font-inter group-hover:border-primary-purple/30 group-hover:bg-primary-purple/10 transition-all duration-300"
-              >
-                {specialty}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Social Links */}
-        <div className="flex justify-center space-x-4">
-          {social.github && (
-            <a
-              href={social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
-            >
-              <Github size={18} />
-            </a>
-          )}
-          {social.linkedin && (
-            <a
-              href={social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
-            >
-              <Linkedin size={18} />
-            </a>
-          )}
-          {social.twitter && (
-            <a
-              href={social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
-            >
-              <Twitter size={18} />
-            </a>
-          )}
-          {social.email && (
-            <a
-              href={`mailto:${social.email}`}
-              className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
-            >
-              <Mail size={18} />
-            </a>
-          )}
-        </div>
-      </div>
-
-      {/* Corner accent */}
-      <div className="absolute top-4 left-4 w-2 h-2 bg-primary-purple/40 rounded-full group-hover:bg-primary-purple group-hover:scale-150 transition-all duration-300" />
-    </div>
-  );
-};
+import { Github, Linkedin, Mail, MapPin, Award, Star, Users } from 'lucide-react';
 
 type TeamProps = object;
 
 const Team = ({}: TeamProps) => {
-  const teamMembers = [
-    {
-      name: 'Fyne Iwari',
-      role: 'Founder & Full‑Stack Developer',
-      bio: 'Builds reliable web apps end‑to‑end architecture, implementation, and DevOps‑lite.',
-      image:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
-      location: 'Remote',
-      experience: '5+ years',
-      specialties: ['React', 'Next.js', 'Node.js', 'TypeScript', 'AWS'],
-      social: {},
-    },
-    {
-      name: 'Henry Tonye Angala',
-      role: 'Project Manager',
-      bio: 'Turns ideas into clear plans and keeps delivery on time and in scope.',
-      image:
-        'https://images.unsplash.com/photo-1494790108755-2616b60c2c8c?w=300&h=300&fit=crop&crop=face',
-      location: 'Remote',
-      experience: '6+ years',
-      specialties: ['Scoping', 'Roadmaps', 'Agile', 'QA', 'Client Comms'],
-      social: {},
-    },
-    {
-      name: 'Soibibo Tonye Sam Angala',
-      role: 'Sales & Marketing Lead',
-      bio: 'Connects solutions to real needs — outreach, proposals, and content that converts.',
-      image:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
-      location: 'Remote',
-      experience: '7+ years',
-      specialties: ['Lead Gen', 'Proposals', 'SEO', 'Content', 'Partnerships'],
-      social: {},
-    },
-  ];
+  const specialties = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'Framer Motion'];
 
   return (
-    <section id="team" className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Background elements */}
+    <section id="about" className="relative py-20 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black" />
 
-      {/* Floating background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-10 w-40 h-40 bg-primary-purple/3 rounded-full blur-3xl animate-drift-slow" />
         <div className="absolute bottom-1/4 left-20 w-32 h-32 bg-secondary-magenta/4 rounded-full blur-2xl animate-drift-slower" />
@@ -208,66 +19,167 @@ const Team = ({}: TeamProps) => {
 
       <div className="relative z-10 container-custom">
         <div className="text-center mb-16 lg:mb-20">
-          {/* Overline */}
           <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
-              Our Team
+              About
             </span>
           </div>
 
-          {/* Main title */}
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}
           >
-            <span className="block">Meet the Brilliant</span>
+            <span className="block">Fyne Tonye Angala</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
-              Minds Behind Innovation
+              Software Engineer and Studio Lead
             </span>
           </h2>
 
-          {/* Subtitle */}
           <p
             className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
             style={{ animationDelay: '0.3s' }}
           >
-            A lean core team Full‑Stack Developer, Project Manager, and Sales/Marketing.
-            We partner with seasoned product designers per project for world‑class UX/UI.
+            6+ years building and scaling web products across fintech, cybersecurity, and e-commerce. I ship secure, performant React/Next.js frontends, Node.js APIs, and reliable CI/CD translating complex requirements into maintainable systems while keeping stakeholders in the loop.
           </p>
         </div>
 
-        {/* Team Members Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
-          {teamMembers.map((member, index) => (
-            <TeamMember key={index} {...member} delay={`${0.4 + index * 0.15}s`} />
-          ))}
-        </div>
-        
-
-        {/* Team Stats */}
-        <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { icon: <Users size={24} />, number: '3+', label: 'Team Members' },
-              { icon: <Award size={24} />, number: '25+', label: 'Years Combined' },
-              { icon: <Star size={24} />, number: '10+', label: 'Projects Delivered' },
-              { icon: <Coffee size={24} />, number: '∞', label: 'Cups of Coffee' },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 group"
-              >
-                <div className="flex items-center justify-center mb-4">
-                  <div className="text-primary-purple/70 group-hover:text-primary-purple transition-colors duration-300">
-                    {stat.icon}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="lg:col-span-2">
+            <div className="group relative overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/50 hover:-translate-y-2 transition-all duration-500">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br from-primary-purple via-secondary-magenta to-primary-purple transition-opacity duration-500 rounded-3xl" />
+              <div className="relative z-10 flex flex-col md:flex-row gap-6 items-start">
+                <div className="relative">
+                  <div className="w-28 h-28 rounded-2xl bg-gradient-to-br from-primary-purple/20 to-secondary-magenta/20 p-1">
+                    <Image
+                      src="https://picsum.photos/seed/fyne/300/300"
+                      alt="Fyne Tonye Angala"
+                      width={112}
+                      height={112}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-purple rounded-full flex items-center justify-center">
+                    <Star size={12} className="text-white fill-white" />
                   </div>
                 </div>
-                <div className="text-3xl lg:text-4xl font-black font-montserrat bg-gradient-to-r from-primary-purple to-secondary-magenta bg-clip-text text-transparent mb-2">
-                  {stat.number}
+
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-center space-x-4 text-gray-400 text-sm">
+                    <div className="flex items-center space-x-1">
+                      <MapPin size={14} />
+                      <span>Lagos, Nigeria · Remote</span>
+                    </div>
+                    <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
+                    <div className="flex items-center space-x-1">
+                      <Award size={14} />
+                      <span>6+ years</span>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-300 font-inter leading-relaxed">
+                    I focus on React/Next.js, TypeScript, Node.js, and UI that feels premium without sacrificing performance. I work best with founders and product teams who want an accountable partner to scope, design, build, and launch web apps quickly—while keeping security and reliability front and center.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {specialties.map((specialty, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 font-inter group-hover:border-primary-purple/30 group-hover:bg-primary-purple/10 transition-all duration-300"
+                      >
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <a
+                      href="https://linkedin.com/in/fyne-tonye-angala"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
+                    >
+                      <Linkedin size={18} />
+                    </a>
+                    <a
+                      href="https://github.com/Phynnex"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
+                    >
+                      <Github size={18} />
+                    </a>
+                    <a
+                      href="mailto:angalafynetonye@gmail.com"
+                      className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
+                    >
+                      <Mail size={18} />
+                    </a>
+                  </div>
+                  <div className="text-sm text-gray-400 font-inter">
+                    <div>Portfolio: <a className="text-primary-purple hover:underline" href="https://fyne-angala-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">fyne-angala-portfolio.vercel.app</a></div>
+                    <div>Phone: <a className="text-primary-purple hover:underline" href="tel:+2347034390904">+234 703 439 0904</a></div>
+                  </div>
                 </div>
-                <div className="text-gray-300 font-inter text-sm">{stat.label}</div>
               </div>
-            ))}
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
+              <h3 className="text-lg font-montserrat font-bold text-white mb-2">Recent impact</h3>
+              <ul className="space-y-2 text-gray-300 text-sm font-inter list-disc pl-5">
+                <li>Cut bundle size 25% on a Next.js fintech dashboard via code-splitting and memoization.</li>
+                <li>Improved data responsiveness 30% on a security platform with WebSocket-driven updates.</li>
+                <li>Set up CI/CD (GitHub Actions + Vercel) achieving 95%+ successful deployments.</li>
+                <li>Documented UI libraries in Storybook to standardize components across teams.</li>
+              </ul>
+            </div>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
+              <h3 className="text-lg font-montserrat font-bold text-white mb-2">Studio model</h3>
+              <p className="text-gray-300 text-sm font-inter">
+                I lead delivery and bring in trusted designers or backend specialists when needed. You get one point of contact and a small, accountable team.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: <Users size={20} />, number: '15+', label: 'Projects delivered' },
+                { icon: <Star size={20} />, number: '4', label: 'Industries served' },
+                { icon: <Award size={20} />, number: '2-6w', label: 'Typical timelines' },
+                { icon: <MapPin size={20} />, number: 'Remote', label: 'Available globally' },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10 hover:border-primary-purple/30 transition-all duration-500 group"
+                >
+                  <div className="flex items-center justify-center mb-2 text-primary-purple/70 group-hover:text-primary-purple transition-colors duration-300">
+                    {stat.icon}
+                  </div>
+                  <div className="text-2xl font-black font-montserrat bg-gradient-to-r from-primary-purple to-secondary-magenta bg-clip-text text-transparent mb-1">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-300 font-inter text-xs">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
+            <h3 className="text-lg font-montserrat font-bold text-white mb-2">Recent roles</h3>
+            <ul className="space-y-2 text-gray-300 text-sm font-inter list-disc pl-5">
+              <li>Senior Frontend Engineer — GetMoore (Fintech) · Nov 2023 – Present</li>
+              <li>Full-Stack JavaScript Developer — Ethnos Cyber · Sep 2022 – Oct 2024</li>
+              <li>Frontend Developer — Zealight Innovation Labs · Jul 2021 – Aug 2022</li>
+              <li>Junior Software Developer — Canary Point Corporate Services · Jan 2021 – Jun 2021</li>
+            </ul>
+          </div>
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
+            <h3 className="text-lg font-montserrat font-bold text-white mb-2">Education</h3>
+            <ul className="space-y-2 text-gray-300 text-sm font-inter list-disc pl-5">
+              <li>PGD Information Technology — National Open University of Nigeria (2024–2025)</li>
+              <li>B.Sc. Computer Science — University of Benin (2015)</li>
+            </ul>
           </div>
         </div>
       </div>
