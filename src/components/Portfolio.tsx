@@ -234,7 +234,7 @@ const Portfolio = ({}: PortfolioProps) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-16 lg:mb-20">
-          {filteredProjects.map(({ id, type, ...project }, index) => (
+          {filteredProjects.map(({ id, ...project }, index) => (
             <ProjectCard
               key={id}
               title={project.title}

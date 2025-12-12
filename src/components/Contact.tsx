@@ -104,7 +104,7 @@ const Contact = ({}: ContactProps) => {
 
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (err) {
+    } catch {
       setStatus('error');
     }
   };
