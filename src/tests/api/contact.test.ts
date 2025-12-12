@@ -1,4 +1,4 @@
-import handler from '../contact';
+import handler from '../pages/api/contact';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
