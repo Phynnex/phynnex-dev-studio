@@ -5,7 +5,17 @@ import { Github, Linkedin, Mail, MapPin, Award, Star, Users } from 'lucide-react
 type TeamProps = object;
 
 const Team = ({}: TeamProps) => {
-  const specialties = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'Framer Motion'];
+  const specialties = [
+    'Next.js',
+    'TypeScript',
+    'React',
+    'Node.js',
+    'Zod',
+    'Zustand',
+    'Tailwind CSS',
+    'Recharts',
+    'AWS',
+  ];
 
   return (
     <section id="about" className="relative py-20 lg:py-32 overflow-hidden">
@@ -29,9 +39,9 @@ const Team = ({}: TeamProps) => {
             className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-black tracking-tight text-white mb-6 animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}
           >
-            <span className="block">Fyne Tonye Angala</span>
+            <span className="block">Fyne Beulah Iwari-Dick</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
-              Software Engineer and Studio Lead
+              Product Engineer in Cybersecurity
             </span>
           </h2>
 
@@ -39,10 +49,9 @@ const Team = ({}: TeamProps) => {
             className="mx-auto max-w-3xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed animate-fade-in-up opacity-90"
             style={{ animationDelay: '0.3s' }}
           >
-            6+ years building and scaling web products across fintech, cybersecurity, and
-            e-commerce. I ship secure, performant React/Next.js frontends, Node.js APIs, and
-            reliable CI/CD translating complex requirements into maintainable systems while keeping
-            stakeholders in the loop.
+            I build cybersecurity platforms end-to-end, combining product thinking with secure,
+            reliable engineering. Formerly Fyne Tonye Angala, I now focus on product engineering for
+            security teams at CyberCapSec and Ethnos Cyber Ltd.
           </p>
         </div>
 
@@ -55,7 +64,7 @@ const Team = ({}: TeamProps) => {
                   <div className="w-28 h-28 rounded-2xl bg-gradient-to-br from-primary-purple/20 to-secondary-magenta/20 p-1">
                     <Image
                       src="https://picsum.photos/seed/fyne/300/300"
-                      alt="Fyne Tonye Angala"
+                      alt="Fyne Beulah Iwari-Dick"
                       width={112}
                       height={112}
                       className="w-full h-full object-cover rounded-xl"
@@ -80,10 +89,10 @@ const Team = ({}: TeamProps) => {
                   </div>
 
                   <p className="text-gray-300 font-inter leading-relaxed">
-                    I focus on React/Next.js, TypeScript, Node.js, and UI that feels premium without
-                    sacrificing performance. I work best with founders and product teams who want an
-                    accountable partner to scope, design, build, and launch web apps quickly—while
-                    keeping security and reliability front and center.
+                    I focus on secure, data-rich product interfaces, API integrations, and
+                    operational dashboards that make security work measurable. My approach blends
+                    UX clarity, system design, and security-by-default implementation across web
+                    platforms.
                   </p>
 
                   <div className="flex flex-wrap gap-2">
@@ -126,11 +135,11 @@ const Team = ({}: TeamProps) => {
                       Portfolio:{' '}
                       <a
                         className="text-primary-purple hover:underline"
-                        href="https://fyne-angala-portfolio.vercel.app"
+                        href="https://phynnex-dev-studio.vercel.app"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        fyne-angala-portfolio.vercel.app
+                        phynnex-dev-studio.vercel.app
                       </a>
                     </div>
                     <div>
@@ -150,33 +159,33 @@ const Team = ({}: TeamProps) => {
               <h3 className="text-lg font-montserrat font-bold text-white mb-2">Recent impact</h3>
               <ul className="space-y-2 text-gray-300 text-sm font-inter list-disc pl-5">
                 <li>
-                  Cut bundle size 25% on a Next.js fintech dashboard via code-splitting and
-                  memoization.
+                  Shipped multi-tenant security workflows for Shomar, including RBAC, audit trails,
+                  and evidence capture.
                 </li>
                 <li>
-                  Improved data responsiveness 30% on a security platform with WebSocket-driven
-                  updates.
+                  Built assessment pipelines for Aquila to reduce security review turnaround time.
                 </li>
                 <li>
-                  Set up CI/CD (GitHub Actions + Vercel) achieving 95%+ successful deployments.
+                  Delivered Castellum management dashboards with asset visibility and compliance
+                  reporting.
                 </li>
                 <li>
-                  Documented UI libraries in Storybook to standardize components across teams.
+                  Standardized data visualization patterns across security products with Recharts.
                 </li>
               </ul>
             </div>
             <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
-              <h3 className="text-lg font-montserrat font-bold text-white mb-2">Studio model</h3>
+              <h3 className="text-lg font-montserrat font-bold text-white mb-2">Product approach</h3>
               <p className="text-gray-300 text-sm font-inter">
-                I lead delivery and bring in trusted designers or backend specialists when needed.
-                You get one point of contact and a small, accountable team.
+                I align user needs, security requirements, and engineering decisions early, then
+                build in tight feedback loops to ship reliable, scalable platforms.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: <Users size={20} />, number: '15+', label: 'Projects delivered' },
-                { icon: <Star size={20} />, number: '4', label: 'Industries served' },
-                { icon: <Award size={20} />, number: '2-6w', label: 'Typical timelines' },
+                { icon: <Users size={20} />, number: '3', label: 'Security products shipped' },
+                { icon: <Star size={20} />, number: '2', label: 'Cybersecurity teams served' },
+                { icon: <Award size={20} />, number: 'Full-stack', label: 'Product scope' },
                 { icon: <MapPin size={20} />, number: 'Remote', label: 'Available globally' },
               ].map((stat, index) => (
                 <div
@@ -200,8 +209,8 @@ const Team = ({}: TeamProps) => {
           <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
             <h3 className="text-lg font-montserrat font-bold text-white mb-2">Recent roles</h3>
             <ul className="space-y-2 text-gray-300 text-sm font-inter list-disc pl-5">
-              <li>Senior Frontend Engineer — GetMoore (Fintech) · Nov 2023 – Present</li>
-              <li>Full-Stack JavaScript Developer — Ethnos Cyber · Sep 2022 – Oct 2024</li>
+              <li>Product Engineer — CyberCapSec (Shomar) · 2024 – Present</li>
+              <li>Full-Stack JavaScript Developer — Ethnos Cyber Ltd · Sep 2022 – Oct 2024</li>
               <li>Frontend Developer — Zealight Innovation Labs · Jul 2021 – Aug 2022</li>
               <li>
                 Junior Software Developer — Canary Point Corporate Services · Jan 2021 – Jun 2021

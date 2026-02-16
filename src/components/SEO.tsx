@@ -10,9 +10,9 @@ interface SEOProps {
   children?: React.ReactNode;
 }
 
-const defaultTitle = 'Fyne Tonye Angala | Software Engineer & Product Partner';
+const defaultTitle = 'Fyne Beulah Iwari-Dick | Product Engineer (Cybersecurity)';
 const defaultDescription =
-  'Portfolio of Fyne Tonye Angala — software engineer and studio partner building secure, high-performance web products for startups and SMEs.';
+  'Portfolio of Fyne Beulah Iwari-Dick, a product engineer building secure, data-driven cybersecurity platforms.';
 const defaultImage = 'https://picsum.photos/seed/hero/1200/630';
 
 const SEO = ({

@@ -5,8 +5,6 @@ describe('Team component', () => {
   it('renders section heading', () => {
     render(<Team />);
 
-    expect(
-      screen.getByRole('heading', { name: /meet the brilliant minds behind innovation/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /fyne beulah iwari-dick/i })).toBeInTheDocument();
   });
 });

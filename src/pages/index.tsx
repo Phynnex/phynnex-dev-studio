@@ -14,6 +14,7 @@ import Contact from '../components/Contact';
 import Technologies from '../components/Technologies';
 import Faq from '../components/FAQ';
 import SEO from '../components/SEO';
+import WhatIBuild from '../components/WhatIBuild';
 
 type HomePageProps = {
   siteUrl: string;
@@ -23,6 +24,7 @@ const HomePage = ({ siteUrl }: HomePageProps) => {
   const sections = [
     TrustedBy,
     Services,
+    WhatIBuild,
     Process,
     Technologies,
     Portfolio,
@@ -37,16 +39,16 @@ const HomePage = ({ siteUrl }: HomePageProps) => {
 
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Fyne Tonye Angala | Phynnex Dev Studio',
+    '@type': 'Person',
+    name: 'Fyne Beulah Iwari-Dick',
     url: siteUrl,
   };
 
   return (
     <>
       <SEO
-        title="Fyne Tonye Angala | Software Engineer & Product Partner"
-        description="I build and ship secure, high-performance web products for founders and teams. React, Next.js, TypeScript, and product thinking from scope to launch."
+        title="Fyne Beulah Iwari-Dick | Product Engineer (Cybersecurity)"
+        description="I build secure, data-driven cybersecurity products with modern web technologies. Product engineering from discovery to delivery."
         url={siteUrl}
         image="https://picsum.photos/seed/hero/1200/630"
       >

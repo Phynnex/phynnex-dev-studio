@@ -187,7 +187,7 @@ const Navbar = ({}: NavbarProps) => {
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
               <Link
-                href="https://fyne-angala-portfolio.vercel.app"
+                href="https://phynnex-dev-studio.vercel.app"
                 className="
                   px-5 py-2.5 rounded-lg font-inter font-semibold text-sm
                   border-2 border-primary-purple/60 text-white

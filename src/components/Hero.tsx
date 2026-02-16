@@ -66,7 +66,7 @@ const Hero = () => {
               font-inter
             "
             >
-              Software Engineer & Product Partner
+              Product Engineer · Cybersecurity
             </span>
           </div>
 
@@ -78,9 +78,9 @@ const Hero = () => {
             mb-2
           "
           >
-            <span className="block">Fyne Tonye Angala</span>
+            <span className="block">Fyne Beulah Iwari-Dick</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
-              Software Engineer
+              Product Engineer (Cybersecurity)
             </span>
           </h1>
 
@@ -93,9 +93,7 @@ const Hero = () => {
             opacity-90
           "
           >
-            I build secure, high-performance web apps in React, Next.js, Node.js, and TypeScript. 6+
-            years across fintech, cybersecurity, and e-commerce shipping dashboards, portals, and
-            platforms with clear communication and reliable delivery.
+            I build secure, data-driven products with modern web technologies.
           </p>
         </div>
 

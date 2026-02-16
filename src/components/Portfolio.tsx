@@ -5,11 +5,11 @@ import Image from 'next/image';
 interface ProjectCardProps {
   title: string;
   category: string;
-  description: string;
+  problem: string;
   image?: string;
-  tags: string[];
+  stack: string[];
   role?: string;
-  metrics?: string[];
+  features?: string[];
   link?: string;
   delay: string;
 }
@@ -22,11 +22,11 @@ type Project = Omit<ProjectCardProps, 'delay'> & {
 const ProjectCard = ({
   title,
   category,
-  description,
+  problem,
   image,
-  tags,
+  stack,
   role,
-  metrics,
+  features,
   link,
   delay,
 }: ProjectCardProps) => {
@@ -66,39 +66,41 @@ const ProjectCard = ({
           {title}
         </h3>
 
-        <p className="text-gray-300 mb-6 font-inter leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-          {description}
-        </p>
-
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag, index) => (
-            <span
-              key={index}
-              className="text-xs font-medium px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:border-primary-purple/30 hover:text-primary-purple transition-all duration-300"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {(role || (metrics && metrics.length)) && (
-          <div className="mt-4 grid gap-2 text-sm text-gray-300 font-inter">
-            {role && (
-              <div>
-                <span className="text-white/80">Role:</span> {role}
-              </div>
-            )}
-            {metrics && metrics.length > 0 && (
+        <div className="space-y-4 text-sm text-gray-300 font-inter leading-relaxed">
+          <div>
+            <span className="text-white/80 font-semibold">Problem:</span> {problem}
+          </div>
+          {role && (
+            <div>
+              <span className="text-white/80 font-semibold">Role:</span> {role}
+            </div>
+          )}
+          {features && features.length > 0 && (
+            <div>
+              <div className="text-white/80 font-semibold mb-2">Key features:</div>
               <ul className="list-disc pl-5 space-y-1">
-                {metrics.map((m, i) => (
+                {features.map((feature, i) => (
                   <li key={i} className="text-gray-300">
-                    {m}
+                    {feature}
                   </li>
                 ))}
               </ul>
-            )}
+            </div>
+          )}
+          <div>
+            <div className="text-white/80 font-semibold mb-2">Tech stack:</div>
+            <div className="flex flex-wrap gap-2">
+              {stack.map((item, index) => (
+                <span
+                  key={index}
+                  className="text-xs font-medium px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:border-primary-purple/30 hover:text-primary-purple transition-all duration-300"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
-        )}
+        </div>
 
         {link && (
           <div className="mt-4 pt-4 border-t border-white/10">
@@ -138,61 +140,60 @@ const Portfolio = ({}: PortfolioProps) => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Aquila Mobile Security',
-      category: 'Featured Project',
-      description:
-        'Mobile security platform where developers upload APK/ipa files to scan for vulnerabilities, with real-time insights and guided remediation.',
+      title: 'Shomar — Cybersecurity Platform',
+      category: 'Security Products',
+      problem:
+        'Security teams needed a single platform to track risks, investigations, and evidence without losing auditability or speed.',
       image: '/images/project1.png',
-      tags: ['React', 'Redux Toolkit', 'React Query', 'Tailwind CSS'],
-      role: 'Lead Frontend Engineer, Ethnos Cyber',
-      metrics: ['Scan to insight in under 2 minutes', 'Secure upload and RBAC'],
-      link: 'https://www.aquilasec.io/',
+      stack: ['Next.js', 'TypeScript', 'Zod', 'Zustand', 'Tailwind CSS', 'AWS'],
+      role: 'Product Engineer, CyberCapSec',
+      features: [
+        'Multi-tenant workspaces with RBAC and audit trails',
+        'Evidence capture and workflow automation',
+        'Real-time dashboards for risk and response visibility',
+      ],
+      link: '/portfolio/shomar',
       type: 'web',
     },
     {
       id: 2,
-      title: 'Castellum Security Platform',
-      category: 'Featured Project',
-      description:
-        'Security awareness training platform helping teams learn, test, and improve cyber hygiene with live chat support.',
+      title: 'Aquila — Security Assessment Platform',
+      category: 'Security Products',
+      problem:
+        'Security reviews were slow and inconsistent, with manual handoffs and limited visibility into assessment status.',
       image: '/images/project2.png',
-      tags: ['React', 'Tailwind CSS', 'Redux Toolkit'],
-      role: 'Software Engineer, Ethnos Cyber',
-      metrics: ['Automated modules & progress tracking', 'Embedded chat for learner support'],
-      link: 'https://www.mycastellum.com/',
+      stack: ['React', 'TypeScript', 'React Query', 'Tailwind CSS', 'Node.js'],
+      role: 'Lead Frontend Engineer, Ethnos Cyber Ltd',
+      features: [
+        'Secure file submission and assessment tracking',
+        'Guided remediation workflows with status updates',
+        'Operational dashboards for assessment throughput',
+      ],
+      link: 'https://www.aquilasec.io/',
       type: 'web',
     },
     {
       id: 3,
-      title: 'GetMoore Fintech Dashboard',
-      category: 'Featured Project',
-      description:
-        'Next.js + TypeScript analytics platform for transactions and compliance data, modular dashboards with micro-APIs.',
+      title: 'Castellum — Security Management System',
+      category: 'Security Products',
+      problem:
+        'Security teams needed a clear system to manage assets, policies, and compliance outcomes across departments.',
       image: '/images/project3.png',
-      tags: ['Next.js', 'TypeScript', 'NextAuth', 'Zustand', 'React Query'],
-      role: 'Senior Frontend Engineer, GetMoore',
-      metrics: ['25% smaller bundles via code-splitting', '95%+ successful deployments via CI/CD'],
-      link: 'https://getmoore.africa/',
-      type: 'web',
-    },
-    {
-      id: 4,
-      title: 'Client Portal Demo',
-      category: 'Featured Project',
-      description:
-        'Full-stack SaaS portal with Next.js, NextAuth, Prisma + PostgreSQL, React Query, and secure client messaging.',
-      image: '/images/project4.png',
-      tags: ['Next.js', 'TypeScript', 'NextAuth', 'Prisma', 'React Query'],
-      role: 'Full-Stack Developer',
-      metrics: ['Role-based access, secure messaging', 'CI/CD with GitHub Actions'],
-      link: 'https://client-portal-demo-ten.vercel.app/',
+      stack: ['React', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
+      role: 'Software Engineer, Ethnos Cyber Ltd',
+      features: [
+        'Asset inventory and policy management',
+        'Compliance reporting and executive summaries',
+        'Role-aware dashboards for multiple stakeholders',
+      ],
+      link: 'https://www.mycastellum.com/',
       type: 'web',
     },
   ];
 
   const filteredProjects = projects;
 
-  const filterButtons = [{ key: 'all', label: 'Featured Work' }];
+  const filterButtons = [{ key: 'all', label: 'Security Products' }];
 
   return (
     <section id="portfolio" className="relative py-20 lg:py-32 overflow-hidden">
@@ -208,7 +209,7 @@ const Portfolio = ({}: PortfolioProps) => {
         <div className="text-center mb-16 lg:mb-20">
           <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <span className="inline-block px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 text-primary-purple font-medium text-sm tracking-wide uppercase font-inter">
-              Case Studies
+              Security Products
             </span>
           </div>
 
@@ -218,7 +219,7 @@ const Portfolio = ({}: PortfolioProps) => {
           >
             <span className="block">Selected work</span>
             <span className="block mt-2 bg-gradient-to-r from-primary-purple via-secondary-magenta to-primary-purple bg-clip-text text-transparent">
-              for security & fintech teams
+              for cybersecurity teams
             </span>
           </h2>
 
@@ -226,8 +227,8 @@ const Portfolio = ({}: PortfolioProps) => {
             className="mx-auto max-w-2xl text-gray-300 font-inter text-lg lg:text-xl leading-relaxed mb-12 animate-fade-in-up opacity-90"
             style={{ animationDelay: '0.3s' }}
           >
-            Impact-focused builds: secure uploads, data-rich dashboards, real-time tracking, and
-            clear user journeys that reduce friction.
+            Fewer projects, deeper outcomes. Each product solves a specific security workflow with
+            measurable improvements in clarity, speed, and accountability.
           </p>
 
           <div
@@ -255,11 +256,11 @@ const Portfolio = ({}: PortfolioProps) => {
               key={id}
               title={project.title}
               category={project.category}
-              description={project.description}
+              problem={project.problem}
               image={project.image}
-              tags={project.tags}
+              stack={project.stack}
               role={project.role}
-              metrics={project.metrics}
+              features={project.features}
               link={project.link}
               delay={`${0.5 + index * 0.1}s`}
             />
@@ -273,15 +274,15 @@ const Portfolio = ({}: PortfolioProps) => {
             </h3>
 
             <p className="text-gray-300 font-inter mb-8 text-lg">
-              Let&apos;s walk through architecture decisions, timelines, and outcomes for a project
-              similar to yours.
+              Walk through the Shomar case study to see the product decisions, technical trade-offs,
+              and delivery lessons.
             </p>
 
             <Link
-              href="/#contact"
+              href="/portfolio/shomar"
               className="group inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-base bg-gradient-to-r from-primary-purple to-secondary-magenta text-white shadow-lg transition-all duration-300 ease-out hover:shadow-xl hover:shadow-primary-purple/40 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-purple/50 relative overflow-hidden"
             >
-              <span className="relative z-10">Book a walkthrough</span>
+              <span className="relative z-10">Read the case study</span>
               <svg
                 className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
                 fill="none"
