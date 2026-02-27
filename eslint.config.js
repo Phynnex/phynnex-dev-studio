@@ -1,14 +1,13 @@
 'use strict'
 
-const base = require('neostandard')({})
+const next = require('eslint-config-next')
 
 module.exports = [
   {
     ignores: ['next-env.d.ts', '.next/**', 'node_modules/**']
   },
-  ...base,
+  ...next,
   {
-    name: 'old-standard',
     rules: {
       'no-var': 'off',
       'object-shorthand': 'off'
