@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { Github, Linkedin, Mail, MapPin, Award, Star, Users } from 'lucide-react';
+import { Mail, MapPin, Award, Star, Users } from 'lucide-react';
+import { LuGithub, LuLinkedin } from 'react-icons/lu';
 
 type TeamProps = object;
 
@@ -90,8 +91,8 @@ const Team = ({}: TeamProps) => {
 
                   <p className="text-gray-300 font-inter leading-relaxed">
                     I focus on secure, data-rich product interfaces, API integrations, and
-                    operational dashboards that make security work measurable. My approach blends
-                    UX clarity, system design, and security-by-default implementation across web
+                    operational dashboards that make security work measurable. My approach blends UX
+                    clarity, system design, and security-by-default implementation across web
                     platforms.
                   </p>
 
@@ -113,7 +114,7 @@ const Team = ({}: TeamProps) => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
                     >
-                      <Linkedin size={18} />
+                      <LuGithub size={18} />
                     </a>
                     <a
                       href="https://github.com/Phynnex"
@@ -121,7 +122,7 @@ const Team = ({}: TeamProps) => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
                     >
-                      <Github size={18} />
+                      <LuLinkedin size={18} />
                     </a>
                     <a
                       href="mailto:angalafynetonye@gmail.com"
@@ -175,7 +176,9 @@ const Team = ({}: TeamProps) => {
               </ul>
             </div>
             <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/40 backdrop-blur-sm border border-white/10">
-              <h3 className="text-lg font-montserrat font-bold text-white mb-2">Product approach</h3>
+              <h3 className="text-lg font-montserrat font-bold text-white mb-2">
+                Product approach
+              </h3>
               <p className="text-gray-300 text-sm font-inter">
                 I align user needs, security requirements, and engineering decisions early, then
                 build in tight feedback loops to ship reliable, scalable platforms.

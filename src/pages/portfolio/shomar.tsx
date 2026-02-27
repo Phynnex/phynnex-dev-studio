@@ -79,7 +79,8 @@ const ShomarCaseStudyPage = () => {
               </h2>
               <p className="leading-relaxed">
                 Product Engineer responsible for translating workflows into user journeys, defining
-                the data model, and shipping the core front-end architecture with secure integrations.
+                the data model, and shipping the core front-end architecture with secure
+                integrations.
               </p>
             </div>
             <div>
