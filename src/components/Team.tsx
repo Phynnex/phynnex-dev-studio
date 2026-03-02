@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Mail, MapPin, Award, Star, Users } from 'lucide-react';
-import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
+import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io5';
 
 type TeamProps = object;
 
@@ -114,8 +114,7 @@ const Team = ({}: TeamProps) => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
                     >
-                    
-                      <IoLogoGithub size={18}/>
+                      <IoLogoGithub size={18} />
                     </a>
                     <a
                       href="https://github.com/Phynnex"
@@ -123,7 +122,6 @@ const Team = ({}: TeamProps) => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary-purple hover:border-primary-purple/50 hover:bg-primary-purple/10 transition-all duration-300"
                     >
-                     
                       <IoLogoLinkedin size={18} />
                     </a>
                     <a
