@@ -1,0 +1,20 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html",
+  "/about": "pages/about.html",
+  "/api/contact": "pages/api/contact.js",
+  "/contact": "pages/contact.html",
+  "/cookies": "pages/cookies.html",
+  "/join": "pages/join.html",
+  "/learn": "pages/learn.html",
+  "/portfolio": "pages/portfolio.html",
+  "/portfolio/shomar": "pages/portfolio/shomar.html",
+  "/_error": "pages/_error.js",
+  "/privacy": "pages/privacy.html",
+  "/process": "pages/process.html",
+  "/services": "pages/services.html",
+  "/support": "pages/support.html",
+  "/terms": "pages/terms.html",
+  "/": "pages/index.js"
+}
