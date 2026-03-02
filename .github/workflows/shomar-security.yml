@@ -1,0 +1,61 @@
+name: SHOMAR CI/CD Security Gate
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Trigger SHOMAR scan and enforce gate
+        env:
+          SHOMAR_BASE_URL: https://shomar-production.up.railway.app
+          SHOMAR_CICD_API_KEY: ${{ secrets.SHOMAR_CICD_API_KEY }}
+        run: |
+          set -euo pipefail
+
+          TRIGGER_RESPONSE=$(curl -sS -X POST "$SHOMAR_BASE_URL/api/cicd/trigger" \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: $SHOMAR_CICD_API_KEY" \
+            -d "$(jq -n \
+              --arg repository_url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
+              --arg branch "$GITHUB_REF_NAME" \
+              --arg commit_sha "$GITHUB_SHA" \
+              --arg author "$GITHUB_ACTOR" \
+              '{
+                repository_url: $repository_url,
+                branch: $branch,
+                commit_sha: $commit_sha,
+                author: $author,
+                scan_types: ["sast","secrets"],
+                fail_on_critical: true,
+                severity_threshold: "medium"
+              }'
+            )")
+
+          JOB_ID=$(echo "$TRIGGER_RESPONSE" | jq -r '.job_id')
+          [ -n "$JOB_ID" ] && [ "$JOB_ID" != "null" ] || exit 2
+
+          for i in {1..60}; do
+            STATUS_RESPONSE=$(curl -sS -H "X-API-Key: $SHOMAR_CICD_API_KEY" "$SHOMAR_BASE_URL/api/cicd/scans/$JOB_ID")
+            STATUS=$(echo "$STATUS_RESPONSE" | jq -r '.status')
+
+            case "$STATUS" in
+              passed|completed|clean) exit 0 ;;
+              failed|blocked|policy_failed) exit 1 ;;
+              error|timeout|cancelled) exit 2 ;;
+              queued|running|processing) sleep 10 ;;
+              *) sleep 10 ;;
+            esac
+          done
+
+          exit 2

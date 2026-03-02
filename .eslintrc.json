@@ -1,10 +1,8 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
-  "plugins": ["@typescript-eslint"],
-  "parser": "@typescript-eslint/parser",
+  "extends": ["next/core-web-vitals"],
+  "ignorePatterns": ["next-env.d.ts", ".next/**", "node_modules/**"],
   "rules": {
-    "react/react-in-jsx-scope": "off",
-    "no-console": "warn",
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+    "no-var": "off",
+    "object-shorthand": "off"
   }
 }

@@ -24,15 +24,15 @@
 /* Custom utility classes */
 @layer components {
   .btn-primary {
-    @apply bg-primary-purple text-white py-3 px-8 rounded-md font-medium hover:bg-opacity-90 transition-colors;
+    @apply bg-primary-purple text-white py-3 px-8 rounded-md font-medium hover:bg-opacity-90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black;
   }
 
   .btn-secondary {
-    @apply bg-transparent text-off-white border border-primary-purple py-3 px-8 rounded-md font-medium hover:bg-primary-purple hover:text-white transition-colors;
+    @apply bg-transparent text-off-white border border-primary-purple py-3 px-8 rounded-md font-medium hover:bg-primary-purple hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black;
   }
 
   .btn-outline {
-    @apply border border-primary-purple text-primary-purple py-3 px-8 rounded-md font-medium hover:bg-primary-purple hover:text-white transition-colors;
+    @apply border border-primary-purple text-primary-purple py-3 px-8 rounded-md font-medium hover:bg-primary-purple hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black;
   }
 
   .heading-1 {
@@ -109,5 +109,18 @@
 </svg>");
     background-size: 300px 300px;
     mix-blend-mode: overlay; /* gives it that film-like texture over gradients */
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .drift-slow,
+    .drift-slower,
+    .drift-slowest {
+      animation: none !important;
+    }
+    html:focus-within {
+      scroll-behavior: auto;
+    }
   }
 }

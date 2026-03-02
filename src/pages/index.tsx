@@ -1,6 +1,9 @@
 import React from 'react';
 import type { GetStaticProps } from 'next';
 import Hero from '../components/Hero';
+import TrustedBy from '../components/TrustedBy';
+import Testimonials from '../components/Testimonials';
+import DiscoverySprint from '../components/DiscoverySprint';
 import Services from '../components/Services';
 import Process from '../components/Process';
 import Benefits from '../components/Benefits';
@@ -11,26 +14,41 @@ import Contact from '../components/Contact';
 import Technologies from '../components/Technologies';
 import Faq from '../components/FAQ';
 import SEO from '../components/SEO';
+import WhatIBuild from '../components/WhatIBuild';
 
 type HomePageProps = {
   siteUrl: string;
 };
 
 const HomePage = ({ siteUrl }: HomePageProps) => {
-  const sections = [Services, Process, Technologies, Portfolio, Benefits, Team, Faq, CTA, Contact];
+  const sections = [
+    TrustedBy,
+    Services,
+    WhatIBuild,
+    Process,
+    Technologies,
+    Portfolio,
+    Testimonials,
+    DiscoverySprint,
+    Benefits,
+    Team,
+    Faq,
+    CTA,
+    Contact,
+  ];
 
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Phynnex Dev Studio',
+    '@type': 'Person',
+    name: 'Fyne Beulah Iwari-Dick',
     url: siteUrl,
   };
 
   return (
     <>
       <SEO
-        title="Phynnex Dev Studio - Home"
-        description="Welcome to Phynnex Dev Studio, your partner for custom digital solutions."
+        title="Fyne Beulah Iwari-Dick | Product Engineer (Cybersecurity)"
+        description="I build secure, data-driven cybersecurity products with modern web technologies. Product engineering from discovery to delivery."
         url={siteUrl}
         image="https://picsum.photos/seed/hero/1200/630"
       >

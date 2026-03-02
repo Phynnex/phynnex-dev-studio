@@ -33,9 +33,9 @@ describe('Navbar component', () => {
     expect(screen.getByRole('link', { name: /phynnex dev studio logo/i })).toBeInTheDocument();
   });
 
-  it('shows theme toggle button', () => {
+  it('shows mobile menu toggle button', () => {
     render(<Navbar />);
 
-    expect(screen.getByRole('button', { name: /toggle theme/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /toggle mobile menu/i })).toBeInTheDocument();
   });
 });

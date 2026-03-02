@@ -5,7 +5,7 @@ describe('Services component', () => {
   it('renders heading', () => {
     render(<Services />);
     expect(
-      screen.getByRole('heading', { name: /expert digital solutions for your business/i })
+      screen.getByRole('heading', { name: /from idea to launch with one accountable partner/i })
     ).toBeInTheDocument();
   });
 });

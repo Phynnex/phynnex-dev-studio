@@ -10,9 +10,9 @@ interface SEOProps {
   children?: React.ReactNode;
 }
 
-const defaultTitle = 'Phynnex Dev Studio';
+const defaultTitle = 'Fyne Beulah Iwari-Dick | Product Engineer (Cybersecurity)';
 const defaultDescription =
-  'Welcome to Phynnex Dev Studio, your partner for custom digital solutions.';
+  'Portfolio of Fyne Beulah Iwari-Dick, a product engineer building secure, data-driven cybersecurity platforms.';
 const defaultImage = 'https://picsum.photos/seed/hero/1200/630';
 
 const SEO = ({
@@ -33,6 +33,11 @@ const SEO = ({
       <meta property="og:type" content={type} />
       {url && <meta property="og:url" content={url} />}
       {image && <meta property="og:image" content={image} />}
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {image && <meta name="twitter:image" content={image} />}
       {children}
     </Head>
   );
