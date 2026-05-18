@@ -1,7 +1,7 @@
 // components/Footer.tsx
 import React from 'react';
 import Link from 'next/link';
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Facebook, Github, Linkedin, Mail } from 'lucide-react';
 
 type FooterProps = object;
 const Footer = ({}: FooterProps) => {
@@ -48,7 +48,7 @@ const Footer = ({}: FooterProps) => {
             {/* Socials */}
             <div className="mt-4 flex items-center gap-4">
               <a
-                href="https://github.com/"
+                href="https://github.com/Phynnex"
                 aria-label="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -57,16 +57,16 @@ const Footer = ({}: FooterProps) => {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://twitter.com/"
-                aria-label="Twitter"
+                href="https://web.facebook.com/fynnexzx/"
+                aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-md border border-white/10 hover:border-primary-purple/60 hover:text-white transition-colors"
               >
-                <Twitter className="h-5 w-5" />
+                <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/fyne-beulah-iwari-dick/"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"

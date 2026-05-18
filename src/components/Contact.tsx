@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Script from 'next/script';
 import {
   Phone,
   Mail,
@@ -14,6 +13,7 @@ import {
 } from 'lucide-react';
 import {
   CONTACT_PHONE,
+  CONTACT_WHATSAPP_NUMBER,
   CONTACT_EMAIL,
   CONTACT_ADDRESS_LINE1,
   CONTACT_ADDRESS_LINE2,
@@ -62,11 +62,6 @@ const ContactMethod = ({ icon, title, text, delay }: ContactMethodProps) => {
 
 type ContactProps = Record<string, never>;
 
-interface Grecaptcha {
-  ready(cb: () => void): void;
-  execute(siteKey: string, options: { action: string }): Promise<string>;
-}
-
 const Contact = ({}: ContactProps) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -75,32 +70,32 @@ const Contact = ({}: ContactProps) => {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     try {
       setStatus('loading');
 
-      const w = window as Window & { grecaptcha?: Grecaptcha };
-      if (!w.grecaptcha || !siteKey) throw new Error('reCAPTCHA not loaded');
+      const whatsappMessage = [
+        'New project inquiry',
+        '',
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Phone: ${formData.phone || 'Not provided'}`,
+        '',
+        'Message:',
+        formData.message,
+      ].join('\n');
+      const whatsappUrl = `https://wa.me/${CONTACT_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+        whatsappMessage
+      )}`;
 
-      await new Promise<void>((resolve) => w.grecaptcha!.ready(() => resolve()));
-      const token = await w.grecaptcha!.execute(siteKey, { action: 'submit' });
-
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, token }),
-      });
-
-      const body = await res.json().catch(() => null);
-      if (!res.ok) throw new Error(body?.error || `HTTP ${res.status}`);
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
@@ -111,7 +106,6 @@ const Contact = ({}: ContactProps) => {
 
   return (
     <>
-      <Script src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`} />
       <section id="contact" className="relative py-20 lg:py-32 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black" />
@@ -193,7 +187,7 @@ const Contact = ({}: ContactProps) => {
                     Send us a Message
                   </h3>
                   <p className="text-gray-300 font-inter">
-                    Fill out the form below and I&apos;ll get back to you within 24 hours.
+                    Fill out the form below and send it directly through WhatsApp.
                   </p>
                 </div>
 
@@ -294,7 +288,7 @@ const Contact = ({}: ContactProps) => {
                                 className="text-primary-purple group-hover:text-white animate-spin"
                               />
                               <span className="font-montserrat font-bold text-lg text-white">
-                                Sending...
+                                Opening WhatsApp...
                               </span>
                             </>
                           ) : (
@@ -304,7 +298,7 @@ const Contact = ({}: ContactProps) => {
                                 className="text-primary-purple group-hover:text-white group-hover:translate-x-1 transition-all duration-300"
                               />
                               <span className="font-montserrat font-bold text-lg text-white">
-                                Send Message
+                                Send via WhatsApp
                               </span>
                             </>
                           )}
@@ -316,7 +310,7 @@ const Contact = ({}: ContactProps) => {
                       {status === 'success' && (
                         <div className="flex items-center justify-center space-x-2 text-green-400 font-inter">
                           <CheckCircle size={20} />
-                          <span>Message sent successfully! We&apos;ll get back to you soon.</span>
+                          <span>WhatsApp opened with your message ready to send.</span>
                         </div>
                       )}
                       {status === 'error' && (
